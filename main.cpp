@@ -11,6 +11,7 @@ int main() {
 
     //for simple version, there are only square matrix
     nr_rows_A = nr_cols_A = nr_rows_B = nr_cols_B = nr_rows_C = nr_cols_C = dimension;
+    dimension = 512;
 
     //Allocate 3 arrays on CPU pour 3 matrix
     double *h_A = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
