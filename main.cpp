@@ -35,10 +35,17 @@ int main() {
 
    /*
    Create directly two random matrix on GPU
+   GPU_fill_rand(d_A, nr_rows_A, nr_cols_A);
+   GPU_fill_rand(d_B, nr_rows_B, nr_cols_B);
    */
 
-    //Now matrix A and B are initialized and transfered on GPU
-    //main algo
+    //Multiply A and B on GPU
+    gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B);
+
+    //Copy (and print) the result on host memory
+    cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(float),cudaMemcpyDeviceToHost);
+    std::cout << "C =" << std::endl;
+    print_matrix(h_C, nr_rows_C, nr_cols_C);
 
     //Free GPU memory
     cudaFree(d_A);
