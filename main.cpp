@@ -41,8 +41,8 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < dimension; i ++){
         for (int j = 0; j < dimension; j ++){
             // passer colonne i vers i+1, il faut sauter (dans le stockage) LED( ici est la dimension ).
-            h_A[i+ dimension*j] = 1/(i+j);
-            h_B[i+ dimension*j] = 2/(i+j);
+            h_A[i+ dimension*j] = 1.0/(1+i+j);
+            h_B[i+ dimension*j] = 2.0/(1+i+j);
             h_C[i+ dimension*j] = 0.0;
         }
     }
