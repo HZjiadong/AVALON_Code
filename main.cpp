@@ -1,28 +1,43 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
+#include <time.h>
 #include <curand.h>
 #include <cublas_v2.h>
 
-int main() {
+int main(int argc, char *argv[]) {
     //dimensions of 3 matrix
     int nr_rows_A, nr_cols_A, nr_rows_B, nr_cols_B, nr_rows_C, nr_cols_C;
     int dimension;
 
+    //get information from standard input
+    if (argc <= 1) {
+        utils::abort_with_error_message("NUMBER OF DIMENSION WAS NOT FOUND!");
+    }
+    dimension = atoi(argv[1])
+
     //for simple version, there are only square matrix
     nr_rows_A = nr_cols_A = nr_rows_B = nr_cols_B = nr_rows_C = nr_cols_C = dimension;
-    dimension = 512;
 
     //Allocate 3 arrays on CPU pour 3 matrix
     double *h_A = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
-    double *h_A = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
-    double *h_A = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
+    double *h_B = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
+    double *h_C = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
 
     //Allocate 3 arrays on GPU
     double *d_A, *d_B, *d_C;
     cudaMalloc(&d_A,nr_rows_A * nr_cols_A * sizeof(double));
     cudaMalloc(&d_B,nr_rows_B * nr_cols_B * sizeof(double));
     cudaMalloc(&d_C,nr_rows_C * nr_cols_C * sizeof(double));
+
+    //Initialization of matrix A and B
+    #pragma omp parallel for collapse(2)
+    for (int i = 0; i < dimension; i ++){
+        for (int j = 0; j < dimension; j ++){
+            h_A[i,j] = 1/(i+j);
+            h_B[i,j] = 2/(i+j);
+        }
+    }
 
     //Fill matrix A and B with large amount of number, then copy them on GPU
     cudaMemcpy(d_A,h_A,nr_rows_A * nr_cols_A * sizeof(double),cudaMemcpyHostToDevice);
@@ -40,13 +55,27 @@ int main() {
    GPU_fill_rand(d_B, nr_rows_B, nr_cols_B);
    */
 
-    //Multiply A and B on GPU
-    gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B);
+    //Create a handle for CUBLAS
+    cublasHandle_t handle;
+    cublasCreate(&handle);
+
+    //Create time tracker
+
+
+    //Multiply A and B on GPU for several times(10 times here)
+    for (int k=0; k < 10; k ++){
+        gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle);
+    }
+    
 
     //Copy (and print) the result on host memory
     cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(float),cudaMemcpyDeviceToHost);
     std::cout << "C =" << std::endl;
     print_matrix(h_C, nr_rows_C, nr_cols_C);
+
+    
+    //Distroy the handle
+    cublasDestroy(handle);
 
     //Free GPU memory
     cudaFree(d_A);
@@ -73,22 +102,15 @@ cublasStatus_t cublasDgemm(cublasHandle_t handle,
 */
 //Multiply the arrays A and B on GPU and save the result in C
 //C(m,n) = A(m,k) * B(k,n)
-void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n){
+void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle){
     int lda=m, ldb=k, ldc=m;
     const double alf = 1;
     const double bet = 0;
     const double *alpha = &alf;
     const double *beta = &bet;
 
-    //Create a handle for CUBLAS
-    cublasHandle_t handle;
-    cublasCreate(&handle);
-
     //Do the actual multiplication
     cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alpa, A, lda, B, ldb, beta, C, ldc);
-
-    //Distroy the handle
-    cublasDestroy(handle);
 
 }
 
