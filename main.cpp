@@ -4,6 +4,9 @@
 #include <time.h>
 #include <curand.h>
 #include <cublas_v2.h>
+using namespace std;
+
+timespec time_diff(timespec start, timespec end);
 
 int main(int argc, char *argv[]) {
     //dimensions of 3 matrix
@@ -12,9 +15,9 @@ int main(int argc, char *argv[]) {
 
     //get information from standard input
     if (argc <= 1) {
-        utils::abort_with_error_message("NUMBER OF DIMENSION WAS NOT FOUND!");
+        cout << "NUMBER OF DIMENSION WAS NOT FOUND!" << endl;
     }
-    dimension = atoi(argv[1])
+    dimension = atoi(argv[1]);
 
     //for simple version, there are only square matrix
     nr_rows_A = nr_cols_A = nr_rows_B = nr_cols_B = nr_rows_C = nr_cols_C = dimension;
@@ -60,17 +63,19 @@ int main(int argc, char *argv[]) {
     cublasCreate(&handle);
 
     //Create time tracker
-
+    timespec start_time, end_time;
 
     //Multiply A and B on GPU for several times(10 times here)
     for (int k=0; k < 10; k ++){
+        clock_gettime(CLOCK_REALTIME, &start_time);
         gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle);
+        clock_gettime(CLOCK_REALTIME, &end_time);
+        cout << time_diff(start_time,end_time).tv_sec << " : " << time_diff(start_time,end_time).tv_nsec << endl;
     }
     
-
     //Copy (and print) the result on host memory
     cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(float),cudaMemcpyDeviceToHost);
-    std::cout << "C =" << std::endl;
+    cout << "C =" << endl;
     print_matrix(h_C, nr_rows_C, nr_cols_C);
 
     
@@ -104,13 +109,13 @@ cublasStatus_t cublasDgemm(cublasHandle_t handle,
 //C(m,n) = A(m,k) * B(k,n)
 void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle){
     int lda=m, ldb=k, ldc=m;
-    const double alf = 1;
-    const double bet = 0;
-    const double *alpha = &alf;
-    const double *beta = &bet;
+    double alf = 1.5;
+    double bet = 0.5;
+    double *alpha = &alf;
+    double *beta = &bet;
 
     //Do the actual multiplication
-    cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alpa, A, lda, B, ldb, beta, C, ldc);
+    cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alf, A, lda, B, ldb, beta, C, ldc);
 
 }
 
@@ -134,12 +139,25 @@ void GPU_fill_rand(float *A, int nr_rows_A, int nr_cols_A) {
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A) {
     for (int i = 0; i < nr_rows_A; ++i){
         for(int j=0; j<nr_cols_A; ++j){
-            std::cout << A[j * nr_rows_A + i] << " ";
+            cout << A[j * nr_rows_A + i] << " ";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
-    std::cout << std::endl;
+    cout << endl;
 }
+
+timespec time_diff(timespec start, timespec end){
+    timespec temp;
+    if ((end.tv_nsec - start.tv_nsec) < 0 ){
+        temp.tv_sec = end.tv_sec - start.tv_sec - 1 ;
+        temp.tv_nsec = 1000000000 + end.tv_nsec - start.tv_nsec;
+    } else {
+        temp.tv_sec = end.tv_sec - start.tv_sec;
+        temp.tv_nsec = end.tv_nsec - start.tv_nsec;
+        }
+        return temp;
+}
+
 
 /*
 //If more than one matrix multiplication in the code is needed, 
