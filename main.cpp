@@ -37,14 +37,17 @@ int main(int argc, char *argv[]) {
     #pragma omp parallel for collapse(2)
     for (int i = 0; i < dimension; i ++){
         for (int j = 0; j < dimension; j ++){
-            h_A[i,j] = 1/(i+j);
-            h_B[i,j] = 2/(i+j);
+            // passer colonne i vers i+1, il faut sauter (dans le stockage) LED( ici est la dimension ).
+            h_A[i+ dimension*j] = 1/(i+j);
+            h_B[i+ dimension*j] = 2/(i+j);
+            h_C[i+ dimension*j] = 0.0;
         }
     }
 
     //Fill matrix A and B with large amount of number, then copy them on GPU
     cudaMemcpy(d_A,h_A,nr_rows_A * nr_cols_A * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_B,h_B,nr_rows_B * nr_cols_B * sizeof(double),cudaMemcpyHostToDevice);
+    cudaMemcpy(d_C,h_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyHostToDevice);
     /*
     std::cout << "A =" << std::endl;
     print_matrix(h_A, nr_rows_A, nr_cols_A);
@@ -109,13 +112,13 @@ cublasStatus_t cublasDgemm(cublasHandle_t handle,
 //C(m,n) = A(m,k) * B(k,n)
 void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle){
     int lda=m, ldb=k, ldc=m;
-    double alf = 1.5;
-    double bet = 0.5;
-    double *alpha = &alf;
-    double *beta = &bet;
+    const double alf = 1.5;
+    const double bet = 0.5;
+    const double *alpha = &alf;
+    const double *beta = &bet;
 
     //Do the actual multiplication
-    cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alf, A, lda, B, ldb, beta, C, ldc);
+    cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alpha, A, lda, B, ldb, beta, C, ldc);
 
 }
 
