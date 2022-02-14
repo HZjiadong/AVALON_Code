@@ -27,8 +27,8 @@ int main(int argc, char *argv[]) {
 
     //Allocate 3 arrays on CPU pour 3 matrix
     double *h_A = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
-    double *h_B = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
-    double *h_C = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
+    double *h_B = (double *)malloc(nr_rows_B * nr_cols_B * sizeof(double));
+    double *h_C = (double *)malloc(nr_rows_C * nr_cols_C * sizeof(double));
 
     //Allocate 3 arrays on GPU
     double *d_A, *d_B, *d_C;
@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
     }
     
     //Copy (and print) the result on host memory
-    cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(float),cudaMemcpyDeviceToHost);
+    cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyDeviceToHost);
     cout << "C =" << endl;
     print_matrix(h_C, nr_rows_C, nr_cols_C);
 
