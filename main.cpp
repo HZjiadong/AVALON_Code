@@ -6,6 +6,9 @@
 #include <cublas_v2.h>
 using namespace std;
 
+//Declaration des functions utiliser
+void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle);
+void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 
 int main(int argc, char *argv[]) {
