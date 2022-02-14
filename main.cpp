@@ -72,18 +72,20 @@ int main(int argc, char *argv[]) {
     timespec start_time, end_time;
 
     //Multiply A and B on GPU for several times(10 times here)
-    for (int k=0; k < 10; k ++){
+    for (int k=0; k < 200; k ++){
         clock_gettime(CLOCK_REALTIME, &start_time);
         gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle);
+        cudaDeviceSynchronize();
         clock_gettime(CLOCK_REALTIME, &end_time);
         cout << time_diff(start_time,end_time).tv_sec << " : " << time_diff(start_time,end_time).tv_nsec << endl;
     }
     
     //Copy (and print) the result on host memory
     cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyDeviceToHost);
-    cout << "C =" << endl;
-    print_matrix(h_C, nr_rows_C, nr_cols_C);
-
+    if (dimension <= 32){
+        cout << "C =" << endl;
+        print_matrix(h_C, nr_rows_C, nr_cols_C);
+    }    
     
     //Distroy the handle
     cublasDestroy(handle);
