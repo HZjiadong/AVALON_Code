@@ -11,6 +11,7 @@ void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, con
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 
+//Main function
 int main(int argc, char *argv[]) {
     //dimensions of 3 matrix
     int nr_rows_A, nr_cols_A, nr_rows_B, nr_cols_B, nr_rows_C, nr_cols_C;
@@ -51,18 +52,12 @@ int main(int argc, char *argv[]) {
     cudaMemcpy(d_A,h_A,nr_rows_A * nr_cols_A * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_B,h_B,nr_rows_B * nr_cols_B * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_C,h_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyHostToDevice);
+    
     /*
-    std::cout << "A =" << std::endl;
-    print_matrix(h_A, nr_rows_A, nr_cols_A);
-    std::cout << "B =" << std::endl;
-    print_matrix(h_B, nr_rows_B, nr_cols_B);
+    Create directly two random matrix on GPU
+    GPU_fill_rand(d_A, nr_rows_A, nr_cols_A);
+    GPU_fill_rand(d_B, nr_rows_B, nr_cols_B);
     */
-
-   /*
-   Create directly two random matrix on GPU
-   GPU_fill_rand(d_A, nr_rows_A, nr_cols_A);
-   GPU_fill_rand(d_B, nr_rows_B, nr_cols_B);
-   */
 
     //Create a handle for CUBLAS
     cublasHandle_t handle;
@@ -71,18 +66,19 @@ int main(int argc, char *argv[]) {
     //Create time tracker
     timespec start_time, end_time;
 
-    //Multiply A and B on GPU for several times(10 times here)
+    //Multiply A and B on GPU for several times(200 times here)
     for (int k=0; k < 200; k ++){
         clock_gettime(CLOCK_REALTIME, &start_time);
         gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle);
         cudaDeviceSynchronize();
         clock_gettime(CLOCK_REALTIME, &end_time);
-        cout << time_diff(start_time,end_time).tv_sec << " : " << time_diff(start_time,end_time).tv_nsec << endl;
+        //high resolution timer
+        printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
     }
     
     //Copy (and print) the result on host memory
     cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyDeviceToHost);
-    if (dimension <= 32){
+    if (dimension <= 16){
         cout << "C =" << endl;
         print_matrix(h_C, nr_rows_C, nr_cols_C);
     }    
@@ -127,10 +123,10 @@ void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, con
 
 }
 
-// This code create two random matrix directly on GPU, maybe will be useful later.
-// But here we will not use this directly on GPU, but build matrix on CPU and copy them into GPU.
-// Fill the array A(nr_rows_A, nr_cols_A) with random numbers on GPU
-
+/*
+This code create two random matrix directly on GPU, maybe will be useful later.
+But here we will not use this directly on GPU, but build matrix on CPU and copy them into GPU.
+Fill the array A(nr_rows_A, nr_cols_A) with random numbers on GPU*/
 void GPU_fill_rand(float *A, int nr_rows_A, int nr_cols_A) {
     // Create a pseudo-random number generator
     curandGenerator_t prng;
@@ -154,6 +150,7 @@ void print_matrix(const double *A, int nr_rows_A, int nr_cols_A) {
     cout << endl;
 }
 
+//Get time used by two time labels of type "timespec": label 'start' and label 'end'
 timespec time_diff(timespec start, timespec end){
     timespec temp;
     if ((end.tv_nsec - start.tv_nsec) < 0 ){
@@ -166,24 +163,8 @@ timespec time_diff(timespec start, timespec end){
         return temp;
 }
 
-
-/*
-//If more than one matrix multiplication in the code is needed, 
-//it is better to move the create/destory handle code from original gpu_blas_mmul function into the main function,
-//then use the same handle for all multiplications.
-//In this case, the gpu_blas_mmul function becomes:
-
-void gpu_blas_mmul(cublasHandle_t &handle, const float *A, const float *B, float *C, const int m, const int k, const int n) {
-    int lda=m,ldb=k,ldc=m;
-    const float alf = 1;
-    const float bet = 0;
-    const float *alpha = &alf;
-    const float *beta = &bet;
-    
-    // Do the actual multiplication
-    cublasSgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alpha, A, lda, B, ldb, beta, C, ldc);
+double time_to_double(timespec time){
+    double double_time;
+    double_time = double(time.tv_sec) + double(time.tv_nsec) * 1e-9; 
+    return double_time; 
 }
-
-*/
-
-
