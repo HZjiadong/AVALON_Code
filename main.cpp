@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <time.h>
 #include <curand.h>
+#include <cublas.h>
 #include <cublas_v2.h>
 using namespace std;
 
@@ -58,6 +59,34 @@ int main(int argc, char *argv[]) {
     GPU_fill_rand(d_A, nr_rows_A, nr_cols_A);
     GPU_fill_rand(d_B, nr_rows_B, nr_cols_B);
     */
+   
+    //Transfert A,B,C -> device
+    int lda = dimension;
+    int ldb = dimension;
+    cublasStatus stat;
+    stat = cublasSetMatrix(nr_rows_A, nr_cols_A, sizeof(double), *h_A, lda, *d_A, ldb);
+
+/*
+    //Creation of CUDA Graph
+    bool graphCreated=false;
+    cudaGraph_t graph;
+    cudaGraphExec_t instance;
+    
+    for(int istep=0; istep<NSTEP; istep++){
+        if(!graphCreated){
+            cudaStreamBeginCapture(stream, cudaStreamCaptureModeGlobal);
+            for(int ikrnl=0; ikrnl<NKERNEL; ikrnl++){
+                shortKernel<<<blocks, threads, 0, stream>>>(out_d, in_d);
+            }
+            cudaStreamEndCapture(stream, &graph);
+            cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
+            graphCreated=true;
+        }
+        cudaGraphLaunch(instance, stream);
+        cudaStreamSynchronize(stream);
+    }
+*/
+
 
     //Create a handle for CUBLAS
     cublasHandle_t handle;
