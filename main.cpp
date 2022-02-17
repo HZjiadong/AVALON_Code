@@ -53,20 +53,11 @@ int main(int argc, char *argv[]) {
     cudaMemcpy(d_A,h_A,nr_rows_A * nr_cols_A * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_B,h_B,nr_rows_B * nr_cols_B * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_C,h_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyHostToDevice);
-    
+
     /*
     Create directly two random matrix on GPU
     GPU_fill_rand(d_A, nr_rows_A, nr_cols_A);
     GPU_fill_rand(d_B, nr_rows_B, nr_cols_B);
-    */
-   
-    //Transfert A,B,C -> device
-    int lda = dimension;
-    int ldb = dimension;
-    cublasStatus stat;
-    stat = cublasSetMatrix(nr_rows_A, nr_cols_A, sizeof(double), *h_A, lda, *d_A, ldb);
-
-/*
     //Creation of CUDA Graph
     bool graphCreated=false;
     cudaGraph_t graph;
@@ -197,3 +188,4 @@ double time_to_double(timespec time){
     double_time = double(time.tv_sec) + double(time.tv_nsec) * 1e-9; 
     return double_time; 
 }
+    
