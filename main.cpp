@@ -53,35 +53,14 @@ int main(int argc, char *argv[]) {
     cudaMemcpy(d_A,h_A,nr_rows_A * nr_cols_A * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_B,h_B,nr_rows_B * nr_cols_B * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_C,h_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyHostToDevice);
-
-    /*
-    Create directly two random matrix on GPU
-    GPU_fill_rand(d_A, nr_rows_A, nr_cols_A);
-    GPU_fill_rand(d_B, nr_rows_B, nr_cols_B);
-    //Creation of CUDA Graph
-    bool graphCreated=false;
-    cudaGraph_t graph;
-    cudaGraphExec_t instance;
     
-    for(int istep=0; istep<NSTEP; istep++){
-        if(!graphCreated){
-            cudaStreamBeginCapture(stream, cudaStreamCaptureModeGlobal);
-            for(int ikrnl=0; ikrnl<NKERNEL; ikrnl++){
-                shortKernel<<<blocks, threads, 0, stream>>>(out_d, in_d);
-            }
-            cudaStreamEndCapture(stream, &graph);
-            cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
-            graphCreated=true;
-        }
-        cudaGraphLaunch(instance, stream);
-        cudaStreamSynchronize(stream);
-    }
-*/
-
-
     //Create a handle for CUBLAS
     cublasHandle_t handle;
     cublasCreate(&handle);
+
+    // creation of cuda stream through function cudaStreamCreate ( cudaStream_t* pStream )
+    // creation of cuda stream, then bound the stream with the "handle" that has been created
+    cublasSetStream( handle, stream); 
 
     //Create time tracker
     timespec start_time, end_time;
@@ -89,7 +68,9 @@ int main(int argc, char *argv[]) {
     //Multiply A and B on GPU for several times(200 times here)
     for (int k=0; k < 200; k ++){
         clock_gettime(CLOCK_REALTIME, &start_time);
-        gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle);
+        //  Begin Caputure
+        gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
+        //  End Capture
         cudaDeviceSynchronize();
         clock_gettime(CLOCK_REALTIME, &end_time);
         //high resolution timer
@@ -139,6 +120,7 @@ void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, con
     const double *beta = &bet;
 
     //Do the actual multiplication
+    //Cuda stream is branched with cuda handle, so gemm will also be done in(?) the stream created
     cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alpha, A, lda, B, ldb, beta, C, ldc);
 
 }
