@@ -68,9 +68,18 @@ int main(int argc, char *argv[]) {
     //Multiply A and B on GPU for several times(200 times here)
     for (int k=0; k < 200; k ++){
         clock_gettime(CLOCK_REALTIME, &start_time);
+
         //  Begin Caputure
+        cudaGraph_t graph;
+        cudaStreamBeginCapture(stream);
+        //  Begin Caputure
+        
         gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
+        
         //  End Capture
+        cudaStreamEndCapture(stream, &graph);
+        //  End Capture
+        
         cudaDeviceSynchronize();
         clock_gettime(CLOCK_REALTIME, &end_time);
         //high resolution timer
