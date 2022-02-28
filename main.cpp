@@ -2,6 +2,12 @@
 #include <iomanip>
 #include <cstdlib>
 #include <time.h>
+// System includes
+#include <stdio.h>
+#include <assert.h>
+
+// CUDA runtime
+#include <cuda_runtime.h>
 #include <curand.h>
 #include <cublas.h>
 #include <cublas_v2.h>
@@ -79,7 +85,7 @@ int main(int argc, char *argv[]) {
         //  End Capture
         cudaStreamEndCapture(stream, &graph);
         //  End Capture
-        
+
         cudaDeviceSynchronize();
         clock_gettime(CLOCK_REALTIME, &end_time);
         //high resolution timer
