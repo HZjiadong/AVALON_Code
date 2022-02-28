@@ -65,6 +65,10 @@ int main(int argc, char *argv[]) {
     cublasCreate(&handle);
 
     // creation of cuda stream through function cudaStreamCreate ( cudaStream_t* pStream )
+    // allocate and initialize an array of stream handles
+    cudaStream_t *stream = (cudaStream_t *)malloc(nstream * sizeof(cudaStream_t));
+    checkCudaErrors(cudaStreamCreate(&(stream[i])));
+
     // creation of cuda stream, then bound the stream with the "handle" that has been created
     cublasSetStream( handle, stream); 
 
