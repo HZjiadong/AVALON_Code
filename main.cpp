@@ -64,33 +64,43 @@ int main(int argc, char *argv[]) {
     cublasHandle_t handle;
     cublasCreate(&handle);
 
+    /*
     // creation of cuda stream through function cudaStreamCreate ( cudaStream_t* pStream )
     // allocate and initialize an array of stream handles
     cudaStream_t *stream = (cudaStream_t *)malloc(nstream * sizeof(cudaStream_t));
     checkCudaErrors(cudaStreamCreate(&(stream[i])));
+    //Here we need only one stream to be bounded to the CUBLAS handle.
+    */
 
     // creation of cuda stream, then bound the stream with the "handle" that has been created
+    cudaStream_t stream;
+    checkCudaErrors(cudaStreamCreate(&stream));
     cublasSetStream( handle, stream); 
 
     //Create time tracker
     timespec start_time, end_time;
 
+    //Initialization of cuda graph
+    bool graphCreated = false
+    clock_gettime(CLOCK_REALTIME, &start_time);
+    cudaGraph_t graph;
+    cudaGraphExec_t instance;
+    //  Begin Caputure
+    cudaStreamBeginCapture(stream, cudaStreamCaptureModeGlobal);
+    gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
+    //  End Capture
+    cudaStreamEndCapture(stream, &graph);
+    //  Instantiate
+    cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
+    clock_gettime(CLOCK_REALTIME, &end_time);
+    printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+
     //Multiply A and B on GPU for several times(200 times here)
     for (int k=0; k < 200; k ++){
         clock_gettime(CLOCK_REALTIME, &start_time);
-
-        //  Begin Caputure
-        cudaGraph_t graph;
-        cudaStreamBeginCapture(stream);
-        //  Begin Caputure
-        
-        gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
-        
-        //  End Capture
-        cudaStreamEndCapture(stream, &graph);
-        //  End Capture
-
-        cudaDeviceSynchronize();
+        //lanch the cuda graph
+        cudaGraphLaunch(instance, stream);
+        cudaDeviceSynchronize(stream);
         clock_gettime(CLOCK_REALTIME, &end_time);
         //high resolution timer
         printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
