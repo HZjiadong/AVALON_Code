@@ -40,3 +40,15 @@ endif
 ############################
 # end deprecated interface #
 ############################
+
+# Architecture
+g++ main.cpp -o executable -I${CUDA_HOME}/include -L${CUDA_HOME}/lib64 -lcublas -lcurand -fopenmp -lcudart
+
+################################################################################
+
+# Gencode arguments
+numactl -m 0 -C 0 ./executable 10240
+
+################################################################################
+
+# Target rules
