@@ -90,10 +90,14 @@ int main(int argc, char *argv[]) {
     gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
     //  End Capture
     cudaStreamEndCapture(stream, &graph);
-    //  Instantiate
-    cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
     clock_gettime(CLOCK_REALTIME, &end_time);
     printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+
+    //  Instantiate
+    clock_gettime(CLOCK_REALTIME, &start_time);
+    cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
+    clock_gettime(CLOCK_REALTIME, &end_time);
+    printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
     //Multiply A and B on GPU for several times(200 times here)
     for (int k=0; k < 200; k ++){
