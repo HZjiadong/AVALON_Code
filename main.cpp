@@ -18,6 +18,15 @@ void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, con
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 
+//Macro Cuda error check
+//Macro for checking cuda errors following a cuda launch or api call
+#define cudaCheckErrors(e) {                                        \
+ if(e!=cudaSuccess) {                                              \
+   printf("Cuda failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(e));           \
+   exit(0); \
+ }                                                                 \
+}
+
 //Main function
 int main(int argc, char *argv[]) {
     //dimensions of 3 matrix
