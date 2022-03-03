@@ -20,7 +20,7 @@ timespec time_diff(timespec start, timespec end);
 
 //Macro Cuda error check
 //Macro for checking cuda errors following a cuda launch or api call
-#define cudaCheckErrors(e) {                                        \
+#define checkCudaErrors(e) {                                        \
  if(e!=cudaSuccess) {                                              \
    printf("Cuda failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(e));           \
    exit(0); \
