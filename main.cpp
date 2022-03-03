@@ -17,6 +17,7 @@ using namespace std;
 void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle);
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
+double time_to_double(timespec time);
 
 //Macro Cuda error check
 //Macro for checking cuda errors following a cuda launch or api call
@@ -90,7 +91,7 @@ int main(int argc, char *argv[]) {
     timespec start_time, end_time;
 
     //Initialization of cuda graph
-    bool graphCreated = false
+    bool graphCreated = false;
     clock_gettime(CLOCK_REALTIME, &start_time);
     cudaGraph_t graph;
     cudaGraphExec_t instance;
@@ -113,7 +114,7 @@ int main(int argc, char *argv[]) {
         clock_gettime(CLOCK_REALTIME, &start_time);
         //lanch the cuda graph
         cudaGraphLaunch(instance, stream);
-        cudaDeviceSynchronize(stream);
+        cudaStreamSynchronize(stream);
         clock_gettime(CLOCK_REALTIME, &end_time);
         //high resolution timer
         printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
@@ -207,7 +208,7 @@ timespec time_diff(timespec start, timespec end){
         return temp;
 }
 
-double time_to_double(timespec time){
+v{
     double double_time;
     double_time = double(time.tv_sec) + double(time.tv_nsec) * 1e-9; 
     return double_time; 
