@@ -208,7 +208,7 @@ timespec time_diff(timespec start, timespec end){
         return temp;
 }
 
-v{
+double time_to_double(timespec time){
     double double_time;
     double_time = double(time.tv_sec) + double(time.tv_nsec) * 1e-9; 
     return double_time; 
