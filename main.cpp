@@ -1,11 +1,12 @@
 #include <iostream>
+// Output CSV
+#include <fstream>
 #include <iomanip>
 #include <cstdlib>
 #include <time.h>
 // System includes
 #include <stdio.h>
 #include <assert.h>
-
 // CUDA runtime
 #include <cuda_runtime.h>
 #include <curand.h>
@@ -74,51 +75,76 @@ int main(int argc, char *argv[]) {
     cublasHandle_t handle;
     cublasCreate(&handle);
 
-    /*
-    // creation of cuda stream through function cudaStreamCreate ( cudaStream_t* pStream )
-    // allocate and initialize an array of stream handles
-    cudaStream_t *stream = (cudaStream_t *)malloc(nstream * sizeof(cudaStream_t));
-    checkCudaErrors(cudaStreamCreate(&(stream[i])));
-    //Here we need only one stream to be bounded to the CUBLAS handle.
-    */
+    //csv file object
+    ofstream captureTimeCsv;
+    csvFile.open("captureTime.csv",ios::out | ios::app);
+    double captureTime;
 
-    // creation of cuda stream, then bound the stream with the "handle" that has been created
-    cudaStream_t stream;
-    checkCudaErrors(cudaStreamCreate(&stream));
-    cublasSetStream( handle, stream); 
+    ofstream instantiationTimeCsv;
+    csvFile.open("instantiationTime.csv",ios::out | ios::app);
+    double instantiationTime;
 
-    //Create time tracker
-    timespec start_time, end_time;
+    ofstream launchingTimeCsv;
+    csvFile.open("launchingTime.csv",ios::out | ios::app);
+    double launchingTime;
 
-    //Initialization of cuda graph
-    bool graphCreated = false;
-    clock_gettime(CLOCK_REALTIME, &start_time);
-    cudaGraph_t graph;
-    cudaGraphExec_t instance;
-    //  Begin Caputure
-    cudaStreamBeginCapture(stream, cudaStreamCaptureModeGlobal);
-    gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
-    //  End Capture
-    cudaStreamEndCapture(stream, &graph);
-    clock_gettime(CLOCK_REALTIME, &end_time);
-    printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+    //Mesurement Time Cost loop
+    for (int j = 0 ; j < 10; j ++)
+    {
+        /*
+        // creation of cuda stream through function cudaStreamCreate ( cudaStream_t* pStream )
+        // allocate and initialize an array of stream handles
+        cudaStream_t *stream = (cudaStream_t *)malloc(nstream * sizeof(cudaStream_t));
+        checkCudaErrors(cudaStreamCreate(&(stream[i])));
+        //Here we need only one stream to be bounded to the CUBLAS handle.
+        */
 
-    //  Instantiate
-    clock_gettime(CLOCK_REALTIME, &start_time);
-    cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
-    clock_gettime(CLOCK_REALTIME, &end_time);
-    printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+        // creation of cuda stream, then bound the stream with the "handle" that has been created
+        cudaStream_t stream;
+        checkCudaErrors(cudaStreamCreate(&stream));
+        cublasSetStream( handle, stream); 
 
-    //Multiply A and B on GPU for several times(200 times here)
-    for (int k=0; k < 200; k ++){
+        //Create time tracker
+        timespec start_time, end_time;
+
+        //Initialization of cuda graph
+        bool graphCreated = false;
         clock_gettime(CLOCK_REALTIME, &start_time);
-        //lanch the cuda graph
-        cudaGraphLaunch(instance, stream);
-        cudaStreamSynchronize(stream);
+        cudaGraph_t graph;
+        cudaGraphExec_t instance;
+        //  Begin Caputure
+        cudaStreamBeginCapture(stream, cudaStreamCaptureModeGlobal);
+        gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
+        //  End Capture
+        cudaStreamEndCapture(stream, &graph);
         clock_gettime(CLOCK_REALTIME, &end_time);
-        //high resolution timer
-        printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
-    }
+
+        captureTime = time_to_double(time_diff(start_time, end_time));
+        captureTimeCsv << i << "," << captureTime << "\n";
+        //printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+
+        //  Instantiate
+        clock_gettime(CLOCK_REALTIME, &start_time);
+        cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
+        clock_gettime(CLOCK_REALTIME, &end_time);
+        instantiationTime = time_to_double(time_diff(start_time, end_time));
+        instantiationTimeCsv << i << "," << instantiationTime << "\n";
+        //printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+
+        // Graph Launch loop 
+        for (int k=0; k < 20; k ++){
+            clock_gettime(CLOCK_REALTIME, &start_time);
+            //lanch the cuda graph
+            cudaGraphLaunch(instance, stream);
+            cudaStreamSynchronize(stream);
+            clock_gettime(CLOCK_REALTIME, &end_time);
+            //high resolution timer
+            launchingTime = time_to_double(time_diff(start_time, end_time));
+            launchingTimeCsv << i << "," << launchingTime << "\n";
+            //printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+        }
+    } 
+    
     
     //Copy (and print) the result on host memory
     cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyDeviceToHost);
