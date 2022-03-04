@@ -77,15 +77,15 @@ int main(int argc, char *argv[]) {
 
     //csv file object
     ofstream captureTimeCsv;
-    csvFile.open("captureTime.csv",ios::out | ios::app);
+    csvFile.open("./captureTime.csv",ios::out | ios::app);
     double captureTime;
 
     ofstream instantiationTimeCsv;
-    csvFile.open("instantiationTime.csv",ios::out | ios::app);
+    csvFile.open("./instantiationTime.csv",ios::out | ios::app);
     double instantiationTime;
 
     ofstream launchingTimeCsv;
-    csvFile.open("launchingTime.csv",ios::out | ios::app);
+    csvFile.open("./launchingTime.csv",ios::out | ios::app);
     double launchingTime;
 
     //Mesurement Time Cost loop
