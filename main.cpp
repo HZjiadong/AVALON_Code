@@ -78,14 +78,17 @@ int main(int argc, char *argv[]) {
     //csv file object
     ofstream captureTimeCsv;
     captureTimeCsv.open("./captureTime.csv",ios::out | ios::app);
+    cout << "prepare to write capture time into csv file" << "\n" << endl;
     double captureTime;
 
     ofstream instantiationTimeCsv;
     instantiationTimeCsv.open("./instantiationTime.csv",ios::out | ios::app);
+    cout << "prepare to write instantiate time into csv file" << "\n" << endl;
     double instantiationTime;
 
     ofstream launchingTimeCsv;
     launchingTimeCsv.open("./launchingTime.csv",ios::out | ios::app);
+    cout << "prepare to write launch time into csv file" << "\n" << endl;
     double launchingTime;
 
     //Mesurement Time Cost loop
@@ -120,6 +123,7 @@ int main(int argc, char *argv[]) {
         clock_gettime(CLOCK_REALTIME, &end_time);
 
         captureTime = time_to_double(time_diff(start_time, end_time));
+        cin >> j >> captureTime;
         captureTimeCsv << j << "," << captureTime << "\n";
         //printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
@@ -128,6 +132,7 @@ int main(int argc, char *argv[]) {
         cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
         clock_gettime(CLOCK_REALTIME, &end_time);
         instantiationTime = time_to_double(time_diff(start_time, end_time));
+        cin >> j >> instantiationTime;
         instantiationTimeCsv << j << "," << instantiationTime << "\n";
         //printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
@@ -141,6 +146,7 @@ int main(int argc, char *argv[]) {
             //high resolution timer
             launchingTime = time_to_double(time_diff(start_time, end_time));
             int index = j * 10 + k;
+            cin >> index >> launchingTime;
             launchingTimeCsv << index << "," << launchingTime << "\n";
             //printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
