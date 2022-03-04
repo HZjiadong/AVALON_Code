@@ -77,15 +77,15 @@ int main(int argc, char *argv[]) {
 
     //csv file object
     ofstream captureTimeCsv;
-    csvFile.open("./captureTime.csv",ios::out | ios::app);
+    captureTimeCsv.open("./captureTime.csv",ios::out | ios::app);
     double captureTime;
 
     ofstream instantiationTimeCsv;
-    csvFile.open("./instantiationTime.csv",ios::out | ios::app);
+    instantiationTimeCsv.open("./instantiationTime.csv",ios::out | ios::app);
     double instantiationTime;
 
     ofstream launchingTimeCsv;
-    csvFile.open("./launchingTime.csv",ios::out | ios::app);
+    launchingTimeCsv.open("./launchingTime.csv",ios::out | ios::app);
     double launchingTime;
 
     //Mesurement Time Cost loop
@@ -120,7 +120,7 @@ int main(int argc, char *argv[]) {
         clock_gettime(CLOCK_REALTIME, &end_time);
 
         captureTime = time_to_double(time_diff(start_time, end_time));
-        captureTimeCsv << i << "," << captureTime << "\n";
+        captureTimeCsv << j << "," << captureTime << "\n";
         //printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         //  Instantiate
@@ -128,7 +128,7 @@ int main(int argc, char *argv[]) {
         cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
         clock_gettime(CLOCK_REALTIME, &end_time);
         instantiationTime = time_to_double(time_diff(start_time, end_time));
-        instantiationTimeCsv << i << "," << instantiationTime << "\n";
+        instantiationTimeCsv << j << "," << instantiationTime << "\n";
         //printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         // Graph Launch loop 
@@ -140,7 +140,8 @@ int main(int argc, char *argv[]) {
             clock_gettime(CLOCK_REALTIME, &end_time);
             //high resolution timer
             launchingTime = time_to_double(time_diff(start_time, end_time));
-            launchingTimeCsv << i << "," << launchingTime << "\n";
+            int index = j * 10 + k;
+            launchingTimeCsv << index << "," << launchingTime << "\n";
             //printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
     } 
