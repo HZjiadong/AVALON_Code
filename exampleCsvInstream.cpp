@@ -14,9 +14,7 @@ using namespace std;
 // create an ofstream for the file output (see the link on streams for
 // more info)
 ofstream outputFile;
-ofstream fs
-// create a name for the file output
-std::string filename = "exampleOutput.csv";
+ofstream fs;
 
 // create some variables for demonstration
 int i;
@@ -24,13 +22,13 @@ int A;
 int B;
 int C;
 
-int main(int argc, char** argv)
-{
+int main()
+{   
     // create and open the .csv file
-    fs.open(outputFile,filename);
+    fs.open(outputFile,"exampleOutput.csv");
     
     // write the file headers
-    outputFile << "Column A" << "," << "Column B" << "Column C" << std::endl;
+    outputFile << "Column A" << "," << "Column B" << "Column C" << endl;
     
     // i is just a variable to make numbers with in the file
     i = 1;
@@ -44,7 +42,7 @@ int main(int argc, char** argv)
         C = i + 20;
         
         // write the data to the output file
-        outputFile << A << "," << B << "," << C << std::endl;
+        outputFile << A << "," << B << "," << C << endl;
         
         // increase i
         i = i * 5;
