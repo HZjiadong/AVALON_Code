@@ -24,7 +24,7 @@ int A;
 int B;
 int C;
 
-int main(int argc, char** argv)
+int main()
 {
     // create and open the .csv file
     fs.open(outputFile,filename);
