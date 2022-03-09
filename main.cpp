@@ -125,7 +125,7 @@ int main(int argc, char *argv[]) {
         cudaStreamEndCapture(stream, &graph);
         clock_gettime(CLOCK_REALTIME, &end_time);
         captureTime = time_to_double(time_diff(start_time, end_time));
-        printf("I show that capture time has been created\n")
+        printf("I show that capture time has been created\n");
         captureTimeCsv << j << "," << captureTime << endl;
         printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
@@ -151,7 +151,7 @@ int main(int argc, char *argv[]) {
             //printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
         launchingTimeCsv.close();
-        launchingTimeCsv.clear()
+        launchingTimeCsv.clear();
     } 
     captureTimeCsv.close();
     captureTimeCsv.clear();
