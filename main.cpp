@@ -76,19 +76,22 @@ int main(int argc, char *argv[]) {
     cublasCreate(&handle);
 
     //csv file object
-    fstream captureTimeCsv;
-    captureTimeCsv.open("./captureTime.csv",ios::out | ios::app);
+    ofstream captureTimeCsv;
+    captureTimeCsv.open("captureTime.csv", ofstream::out | ofstream::app);
     cout << "prepare to write capture time into csv file" << "\n" << endl;
+    captureTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << endl;
     double captureTime;
 
-    fstream instantiationTimeCsv;
-    instantiationTimeCsv.open("./instantiationTime.csv",ios::out | ios::app);
+    ofstream instantiationTimeCsv;
+    instantiationTimeCsv.open("instantiationTime.csv",ofstream::out | ofstream::app);
     cout << "prepare to write instantiate time into csv file" << "\n" << endl;
+    instantiationTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << endl;
     double instantiationTime;
 
-    fstream launchingTimeCsv;
-    launchingTimeCsv.open("./launchingTime.csv",ios::out | ios::app);
+    ofstream launchingTimeCsv;
+    launchingTimeCsv.open("launchingTime.csv",ofstream::out | ofstream::app);
     cout << "prepare to write launch time into csv file" << "\n" << endl;
+    launchingTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << endl;
     double launchingTime;
 
     //Mesurement Time Cost loop
@@ -123,7 +126,7 @@ int main(int argc, char *argv[]) {
         clock_gettime(CLOCK_REALTIME, &end_time);
         captureTime = time_to_double(time_diff(start_time, end_time));
         printf("I show that capture time has been created\n")
-        captureTimeCsv << j << "," << captureTime << "\n";
+        captureTimeCsv << j << "," << captureTime << endl;
         printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         //  Instantiate
@@ -131,7 +134,7 @@ int main(int argc, char *argv[]) {
         cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
         clock_gettime(CLOCK_REALTIME, &end_time);
         instantiationTime = time_to_double(time_diff(start_time, end_time));
-        instantiationTimeCsv << j << "," << instantiationTime << "\n";
+        instantiationTimeCsv << j << "," << instantiationTime << endl;
         //printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         // Graph Launch loop 
@@ -144,11 +147,16 @@ int main(int argc, char *argv[]) {
             //high resolution timer
             launchingTime = time_to_double(time_diff(start_time, end_time));
             int index = j * 10 + k;
-            launchingTimeCsv << index << "," << launchingTime << "\n";
+            launchingTimeCsv << index << "," << launchingTime << endl;
             //printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
+        launchingTimeCsv.close();
+        launchingTimeCsv.clear()
     } 
-    
+    captureTimeCsv.close();
+    captureTimeCsv.clear();
+    instantiationTimeCsv.close();
+    instantiationTimeCsv.clear();
     
     //Copy (and print) the result on host memory
     cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyDeviceToHost);
