@@ -11,10 +11,6 @@
 
 using namespace std;
 
-// create an ofstream for the file output (see the link on streams for
-// more info)
-ofstream outputFile;
-ofstream fs;
 // create a name for the file output
 std::string filename = "exampleOutput.csv";
 
@@ -26,8 +22,9 @@ int C;
 
 int main()
 {
+    std::ofstream outputFile;
     // create and open the .csv file
-    fs.open(outputFile,filename);
+    outputFile.open(filename, std::ofstream::out | std::ofstream::app);
     
     // write the file headers
     outputFile << "Column A" << "," << "Column B" << "Column C" << endl;
@@ -52,5 +49,6 @@ int main()
     
     // close the output file
     outputFile.close();
+    outputFile.clear();
     return 0;   
 }
