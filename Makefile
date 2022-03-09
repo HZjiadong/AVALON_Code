@@ -5,11 +5,14 @@ all: executable
 
 # Compilation
 executable:
-    g++ main.cpp -o executable -I${CUDA_HOME}/include -L${CUDA_HOME}/lib64 -lcublas -lcurand -fopenmp -lcudart
+	g++ main.cpp -o executable -I${CUDA_HOME}/include -L${CUDA_HOME}/lib64 -lcublas -lcurand -fopenmp -lcudart
 
 ################################################################################
 
 # Execution
 run:
-    numactl -m 0 -C 0 ./executable 10240
+	numactl -m 0 -C 0 ./executable 10240
 
+
+clean:
+	rm -f executable
