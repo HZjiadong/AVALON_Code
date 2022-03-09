@@ -11,20 +11,20 @@
 
 using namespace std;
 
-// create a name for the file output
-std::string filename = "exampleOutput.csv";
-
-// create some variables for demonstration
-int i;
-int A;
-int B;
-int C;
-
 int main()
 {
-    std::ofstream outputFile;
+    
+    // create a name for the file output
+    std::string filename = "exampleOutput.csv";
+
+    // create some variables for demonstration
+    int i;
+    int A;
+    int B;
+    int C;
+    ofstream outputFile;
     // create and open the .csv file
-    outputFile.open(filename, std::ofstream::out | std::ofstream::app);
+    outputFile.open(filename, ofstream::out | ofstream::app);
     
     // write the file headers
     outputFile << "Column A" << "," << "Column B" << "Column C" << endl;
