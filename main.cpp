@@ -20,6 +20,19 @@ void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 double time_to_double(timespec time);
 
+// If the following macro is define, 
+// then the code is compile to generate only 1 kernel per call to gpu_blas_mmul
+// else the code compile the multi-kernel matrix multiplication 
+// To undefined the macro USE_MMUL_1_KERNEL, comment the line !
+#define USE_MMUL_1_KERNEL 
+
+#ifdef USE_MMUL_1_KERNEL
+  // this case is not use
+#else
+  // global variable BS block size
+  int BS;
+#endif
+
 //Macro Cuda error check
 //Macro for checking cuda errors following a cuda launch or api call
 #define checkCudaErrors(e) {                                        \
@@ -40,6 +53,15 @@ int main(int argc, char *argv[]) {
         cout << "NUMBER OF DIMENSION WAS NOT FOUND!" << endl;
     }
     dimension = atoi(argv[1]);
+
+#ifndef USE_MMUL_1_KERNEL 
+    if (argc <= 2) {
+        cout << "BLOCK SIZE WAS NOT FOUND!" << endl;
+        return -1; 
+        // <-Thierry -> Jiadong: here you need to abort the processu, this is a non normal terminaison
+    }
+    BS = atoi(argv[2]);
+#endif
 
     //for simple version, there are only square matrix
     nr_rows_A = nr_cols_A = nr_rows_B = nr_cols_B = nr_rows_C = nr_cols_C = dimension;
@@ -102,7 +124,7 @@ int main(int argc, char *argv[]) {
         // allocate and initialize an array of stream handles
         cudaStream_t *stream = (cudaStream_t *)malloc(nstream * sizeof(cudaStream_t));
         checkCudaErrors(cudaStreamCreate(&(stream[i])));
-        //Here we need only one stream to be bounded to the CUBLAS handle.
+        // Here we need only one stream to be bounded to the CUBLAS handle.
         */
 
         // creation of cuda stream, then bound the stream with the "handle" that has been created
@@ -200,10 +222,30 @@ void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, con
     const double *alpha = &alf;
     const double *beta = &bet;
 
+#ifdef USE_MMUL_1_KERNEL
     //Do the actual multiplication
     //Cuda stream is branched with cuda handle, so gemm will also be done in(?) the stream created
     cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alpha, A, lda, B, ldb, beta, C, ldc);
-
+#else
+    //Use global variable BS for the block size.
+    // if BS does not divide dimensions, then abort the processus
+    if ( (m % BS) || (k%BS) || (n%BS)) 
+    {
+      cout << "*** error: dimension m,n,k=(" << m << ',' << n << ',' << k << ") must be a multiple of BS=" << BS << endl;
+      abort();
+    }
+    for (int i=0; i<m; i+=BS)
+      for (int j=0; j<n; j+=BS)
+      {
+        // A,B,C have column major storage. With such storage element (i,j) of the matrix A is A[i+j*lda]
+        // launch a kernel to do Cij += alpha*Ai0*B0j + beta*Cij
+        // Note that: Ai0 = A+i = &A[i]   or B0j = &B[j*ldb]
+        const double* Ai0 = A+i;
+        const double* B0j = B+j*ldb;
+        double* Cij = C+i+j*ldc;
+        cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Ai0, lda, B0j, ldb, beta, Cij, ldc);
+      }
+#endif
 }
 
 /*
