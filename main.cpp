@@ -198,9 +198,9 @@ int main(int argc, char *argv[]) {
     cudaFree(d_C);
 
     //Free CPU memory
-    free(d_A);
-    free(d_B);
-    free(d_C);
+    free(h_A);
+    free(h_B);
+    free(h_C);
 
     return 0;
 }
