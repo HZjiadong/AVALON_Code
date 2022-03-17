@@ -52,7 +52,9 @@ int main(int argc, char *argv[]) {
     if (argc <= 1) {
         cout << "NUMBER OF DIMENSION WAS NOT FOUND!" << endl;
     }
-    dimension = atoi(argv[1]);
+    else{
+        dimension = atoi(argv[1]);
+    }
 
 #ifndef USE_MMUL_1_KERNEL 
     if (argc <= 2) {
