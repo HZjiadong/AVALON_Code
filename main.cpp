@@ -15,7 +15,7 @@
 using namespace std;
 
 //Declaration des functions utiliser
-void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle);
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle);
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 double time_to_double(timespec time);
@@ -103,19 +103,19 @@ int main(int argc, char *argv[]) {
     ofstream captureTimeCsv;
     captureTimeCsv.open("captureTime.csv", ofstream::out | ofstream::app);
     cout << "prepare to write capture time into csv file" << "\n" << endl;
-    captureTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << endl;
+    captureTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << "," << "Column 3 : kernel number" << endl;
     double captureTime;
 
     ofstream instantiationTimeCsv;
     instantiationTimeCsv.open("instantiationTime.csv",ofstream::out | ofstream::app);
     cout << "prepare to write instantiate time into csv file" << "\n" << endl;
-    instantiationTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << endl;
+    instantiationTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << "," << "Column 3 : kernel number"  << endl;
     double instantiationTime;
 
     ofstream launchingTimeCsv;
     launchingTimeCsv.open("launchingTime.csv",ofstream::out | ofstream::app);
     cout << "prepare to write launch time into csv file" << "\n" << endl;
-    launchingTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << endl;
+    launchingTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << "," << "Column 3 : kernel number"  << endl;
     double launchingTime;
 
     //Mesurement Time Cost loop
@@ -137,6 +137,9 @@ int main(int argc, char *argv[]) {
         //Create time tracker
         timespec start_time, end_time;
 
+        //Create kernel number tracker 
+        int call_kernel_number;
+
         //Initialization of cuda graph
         bool graphCreated = false;
         clock_gettime(CLOCK_REALTIME, &start_time);
@@ -144,13 +147,13 @@ int main(int argc, char *argv[]) {
         cudaGraphExec_t instance;
         //  Begin Caputure
         cudaStreamBeginCapture(stream, cudaStreamCaptureModeGlobal);
-        gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
+        call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
         //  End Capture
         cudaStreamEndCapture(stream, &graph);
         clock_gettime(CLOCK_REALTIME, &end_time);
         captureTime = time_to_double(time_diff(start_time, end_time));
         printf("I show that capture time has been created\n");
-        captureTimeCsv << j << "," << captureTime << endl;
+        captureTimeCsv << j << "," << captureTime << "," << call_kernel_number << endl;
         printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         //  Instantiate
@@ -158,7 +161,7 @@ int main(int argc, char *argv[]) {
         cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
         clock_gettime(CLOCK_REALTIME, &end_time);
         instantiationTime = time_to_double(time_diff(start_time, end_time));
-        instantiationTimeCsv << j << "," << instantiationTime << endl;
+        instantiationTimeCsv << j << "," << instantiationTime << "," << call_kernel_number  << endl;
         //printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         // Graph Launch loop 
@@ -172,7 +175,7 @@ int main(int argc, char *argv[]) {
             //high resolution timer
             launchingTime = time_to_double(time_diff(start_time, end_time));
             int index = j * 20 + k;
-            launchingTimeCsv << index << "," << launchingTime << endl;
+            launchingTimeCsv << index << "," << launchingTime << "," << call_kernel_number  << endl;
             //printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
     }
@@ -218,17 +221,21 @@ cublasStatus_t cublasDgemm(cublasHandle_t handle,
 */
 //Multiply the arrays A and B on GPU and save the result in C
 //C(m,n) = A(m,k) * B(k,n)
-void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle){
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle){
     int lda=m, ldb=k, ldc=m;
     const double alf = 1.5;
     const double bet = 0.5;
     const double *alpha = &alf;
     const double *beta = &bet;
+    int kernal_number = 0;
 
 #ifdef USE_MMUL_1_KERNEL
     //Do the actual multiplication
     //Cuda stream is branched with cuda handle, so gemm will also be done in(?) the stream created
     cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alpha, A, lda, B, ldb, beta, C, ldc);
+    kernal_number = 1;
+return kernal_number;
+
 #else
     //Use global variable BS for the block size.
     // if BS does not divide dimensions, then abort the processus
@@ -247,7 +254,9 @@ void gpu_blas_mmul(const double *A, const double *B, double *C, const int m, con
         const double* B0j = B+j*ldb;
         double* Cij = C+i+j*ldc;
         cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Ai0, lda, B0j, ldb, beta, Cij, ldc);
+        kernal_number = kernal_number + 1;
       }
+return kernal_number;
 #endif
 }
 
