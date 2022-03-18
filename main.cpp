@@ -174,9 +174,9 @@ int main(int argc, char *argv[]) {
             launchingTimeCsv << index << "," << launchingTime << endl;
             //printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
-        launchingTimeCsv.close();
-        launchingTimeCsv.clear();
-    } 
+    }
+    launchingTimeCsv.close();
+    launchingTimeCsv.clear(); 
     captureTimeCsv.close();
     captureTimeCsv.clear();
     instantiationTimeCsv.close();
