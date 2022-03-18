@@ -106,7 +106,7 @@ int main(int argc, char *argv[]) {
     
     //Create a handle for CUBLAS
     cublasHandle_t handle;
-    cublasCreate(&handle);
+    checkCublasErrors(cublasCreate(&handle));
 
     //csv file object
     ofstream captureTimeCsv;
@@ -141,7 +141,7 @@ int main(int argc, char *argv[]) {
         // creation of cuda stream, then bound the stream with the "handle" that has been created
         cudaStream_t stream;
         checkCudaErrors(cudaStreamCreate(&stream));
-        checkCudaErrors(cublasSetStream( handle, stream)); 
+        checkCublasErrors(cublasSetStream( handle, stream)); 
 
         //Create time tracker
         timespec start_time, end_time;
@@ -155,37 +155,36 @@ int main(int argc, char *argv[]) {
         cudaGraph_t graph;
         cudaGraphExec_t instance;
         //  Begin Caputure
-        cudaStreamBeginCapture(stream, cudaStreamCaptureModeGlobal);
+        checkCudaErrors(cudaStreamBeginCapture(stream, cudaStreamCaptureModeGlobal));
         call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
         //  End Capture
-        cudaStreamEndCapture(stream, &graph);
+        checkCudaErrors(cudaStreamEndCapture(stream, &graph));
         clock_gettime(CLOCK_REALTIME, &end_time);
         captureTime = time_to_double(time_diff(start_time, end_time));
-        printf("I show that capture time has been created\n");
         captureTimeCsv << j << "," << captureTime << "," << call_kernel_number << endl;
         printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         //  Instantiate
         clock_gettime(CLOCK_REALTIME, &start_time);
-        cudaGraphInstantiate(&instance, graph, NULL, NULL, 0);
+        checkCudaErrors(cudaGraphInstantiate(&instance, graph, NULL, NULL, 0));
         clock_gettime(CLOCK_REALTIME, &end_time);
         instantiationTime = time_to_double(time_diff(start_time, end_time));
         instantiationTimeCsv << j << "," << instantiationTime << "," << call_kernel_number  << endl;
-        //printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+        printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         // Graph Launch loop 
         for (int k=0; k < 20; k ++){
             printf("The index of graph launch is: %d\n", j * 20 + k);
             clock_gettime(CLOCK_REALTIME, &start_time);
             //lanch the cuda graph
-            cudaGraphLaunch(instance, stream);
-            cudaStreamSynchronize(stream);
+            checkCudaErrors(cudaGraphLaunch(instance, stream));
+            checkCudaErrors(cudaStreamSynchronize(stream));
             clock_gettime(CLOCK_REALTIME, &end_time);
             //high resolution timer
             launchingTime = time_to_double(time_diff(start_time, end_time));
             int index = j * 20 + k;
             launchingTimeCsv << index << "," << launchingTime << "," << call_kernel_number  << endl;
-            //printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+            printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
     }
     launchingTimeCsv.close();
@@ -196,19 +195,19 @@ int main(int argc, char *argv[]) {
     instantiationTimeCsv.clear();
     
     //Copy (and print) the result on host memory
-    cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyDeviceToHost);
+    checkCudaErrors(cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyDeviceToHost));
     if (dimension <= 16){
         cout << "C =" << endl;
         print_matrix(h_C, nr_rows_C, nr_cols_C);
     }    
     
     //Distroy the handle
-    cublasDestroy(handle);
+    checkCublasErrors(cublasDestroy(handle));
 
     //Free GPU memory
-    cudaFree(d_A);
-    cudaFree(d_B);
-    cudaFree(d_C);
+    checkCudaErrors(cudaFree(d_A));
+    checkCudaErrors(cudaFree(d_B));
+    checkCudaErrors(cudaFree(d_C));
 
     //Free CPU memory
     free(h_A);
@@ -241,7 +240,7 @@ int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, cons
 #ifdef USE_MMUL_1_KERNEL
     //Do the actual multiplication
     //Cuda stream is branched with cuda handle, so gemm will also be done in(?) the stream created
-    cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alpha, A, lda, B, ldb, beta, C, ldc);
+    checkCublasErrors(cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, alpha, A, lda, B, ldb, beta, C, ldc));
     kernal_number = 1;
 return kernal_number;
 
@@ -262,7 +261,7 @@ return kernal_number;
         const double* Ai0 = A+i;
         const double* B0j = B+j*ldb;
         double* Cij = C+i+j*ldc;
-        cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Ai0, lda, B0j, ldb, beta, Cij, ldc);
+        checkCublasErrors(cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Ai0, lda, B0j, ldb, beta, Cij, ldc));
         kernal_number = kernal_number + 1;
       }
 return kernal_number;
