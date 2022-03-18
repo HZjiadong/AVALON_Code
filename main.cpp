@@ -163,7 +163,7 @@ int main(int argc, char *argv[]) {
 
         // Graph Launch loop 
         for (int k=0; k < 20; k ++){
-            printf("This is the", k ,"turn of graph launch loop\n");
+            printf("The index of graph launch is: %d\n", j * 20 + k);
             clock_gettime(CLOCK_REALTIME, &start_time);
             //lanch the cuda graph
             cudaGraphLaunch(instance, stream);
@@ -171,7 +171,7 @@ int main(int argc, char *argv[]) {
             clock_gettime(CLOCK_REALTIME, &end_time);
             //high resolution timer
             launchingTime = time_to_double(time_diff(start_time, end_time));
-            int index = j * 10 + k;
+            int index = j * 20 + k;
             launchingTimeCsv << index << "," << launchingTime << endl;
             //printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
