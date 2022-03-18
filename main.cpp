@@ -38,7 +38,16 @@ double time_to_double(timespec time);
 #define checkCudaErrors(e) {                                        \
  if(e!=cudaSuccess) {                                              \
    printf("Cuda failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(e));           \
-   exit(0); \
+   exit(-1); \
+ }                                                                 \
+}
+
+//Macro Cublas error check, CUBLAS_STATUS_SUCCESS = 0 normally
+//Macro for checking cublas errors following a cublas launch or api call
+#define checkCublasErrors(e) {                                        \
+ if(e!=CUBLAS_STATUS_SUCCESS) {                                              \
+   printf("Cuda failure %s:%d \n",__FILE__,__LINE__);           \
+   exit(-1); \
  }                                                                 \
 }
 
@@ -132,7 +141,7 @@ int main(int argc, char *argv[]) {
         // creation of cuda stream, then bound the stream with the "handle" that has been created
         cudaStream_t stream;
         checkCudaErrors(cudaStreamCreate(&stream));
-        cublasSetStream( handle, stream); 
+        checkCudaErrors(cublasSetStream( handle, stream)); 
 
         //Create time tracker
         timespec start_time, end_time;
