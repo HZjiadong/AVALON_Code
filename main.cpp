@@ -163,6 +163,7 @@ int main(int argc, char *argv[]) {
 
         // Graph Launch loop 
         for (int k=0; k < 20; k ++){
+            printf("This is the", k ,"turn of graph launch loop\n");
             clock_gettime(CLOCK_REALTIME, &start_time);
             //lanch the cuda graph
             cudaGraphLaunch(instance, stream);
