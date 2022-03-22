@@ -11,7 +11,7 @@ executable: main.cpp Makefile
 
 # Execution
 run:
-	numactl -m 0 -C 0 ./test 1024 512
+	numactl -m 0 -C 0 ./executable 1024 512
 
 
 clean:
