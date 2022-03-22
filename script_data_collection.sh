@@ -18,6 +18,9 @@ do
     mv captureTime.csv $dir
     mv instantiationTime.csv $dir
     mv launchingTime.csv $dir
-    rm -f executable
   done
 done
+
+rm -f captureTime.csv
+rm -f instantiationTime.csv
+rm -f launchingTime.csv
