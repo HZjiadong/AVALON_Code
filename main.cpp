@@ -1,31 +1,24 @@
 #include <iostream>
-// Output CSV
 #include <fstream>
 #include <iomanip>
 #include <cstdlib>
 #include <time.h>
-// System includes
 #include <stdio.h>
 #include <assert.h>
-// CUDA runtime
 #include <cuda_runtime.h>
 #include <curand.h>
 #include <cublas.h>
 #include <cublas_v2.h>
 using namespace std;
 
-//Declaration des functions utiliser
+//Declaration des functions 
 int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle);
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 double time_to_double(timespec time);
 
-// If the following macro is define, 
-// then the code is compile to generate only 1 kernel per call to gpu_blas_mmul
-// else the code compile the multi-kernel matrix multiplication 
-// To undefined the macro USE_MMUL_1_KERNEL, comment the line !
-#define USE_MMUL_1_KERNEL 
-
+// If the follow line is uncommented, than kernal number = 1
+// #define USE_MMUL_1_KERNEL 
 #ifdef USE_MMUL_1_KERNEL
   // this case is not use
 #else
@@ -33,8 +26,7 @@ double time_to_double(timespec time);
   int BS;
 #endif
 
-//Macro Cuda error check
-//Macro for checking cuda errors following a cuda launch or api call
+//Macro Cuda error check, check error message during a cuda launch or cuda api call
 #define checkCudaErrors(e) {                                        \
  if(e!=cudaSuccess) {                                              \
    printf("Cuda failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(e));           \
@@ -42,8 +34,8 @@ double time_to_double(timespec time);
  }                                                                 \
 }
 
-//Macro Cublas error check, CUBLAS_STATUS_SUCCESS = 0 normally
-//Macro for checking cublas errors following a cublas launch or api call
+//Macro Cublas error check, check error message during a Cublas launch or cuda api call
+//CAN BE INPROVED BY "CublasErrorCheck.c"
 #define checkCublasErrors(e) {                                        \
  if(e!=CUBLAS_STATUS_SUCCESS) {                                              \
    printf("Cuda failure %s:%d \n",__FILE__,__LINE__);           \
@@ -57,27 +49,27 @@ int main(int argc, char *argv[]) {
     int nr_rows_A, nr_cols_A, nr_rows_B, nr_cols_B, nr_rows_C, nr_cols_C;
     int dimension;
 
-    //get information from standard input
+    // Dimension check for std::in
     if (argc <= 1) {
-        cout << "NUMBER OF DIMENSION WAS NOT FOUND!" << endl;
+        cout << "DIMENSION WAS NOT FOUND!" << endl;
     }
     else{
         dimension = atoi(argv[1]);
     }
 
+    // Blocksize check for std::in
 #ifndef USE_MMUL_1_KERNEL 
     if (argc <= 2) {
         cout << "BLOCK SIZE WAS NOT FOUND!" << endl;
         return -1; 
-        // <-Thierry -> Jiadong: here you need to abort the processu, this is a non normal terminaison
     }
     BS = atoi(argv[2]);
 #endif
 
-    //for simple version, there are only square matrix
+    //For now, there are only square matrix
     nr_rows_A = nr_cols_A = nr_rows_B = nr_cols_B = nr_rows_C = nr_cols_C = dimension;
 
-    //Allocate 3 arrays on CPU pour 3 matrix
+    //Allocate 3 arrays on CPU 
     double *h_A = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
     double *h_B = (double *)malloc(nr_rows_B * nr_cols_B * sizeof(double));
     double *h_C = (double *)malloc(nr_rows_C * nr_cols_C * sizeof(double));
@@ -99,7 +91,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    //Fill matrix A and B with large amount of number, then copy them on GPU
+    //Fill matrix A and B on CPU & copy them on GPU
     cudaMemcpy(d_A,h_A,nr_rows_A * nr_cols_A * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_B,h_B,nr_rows_B * nr_cols_B * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_C,h_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyHostToDevice);
@@ -111,43 +103,42 @@ int main(int argc, char *argv[]) {
     //csv file object
     ofstream captureTimeCsv;
     captureTimeCsv.open("captureTime.csv", ofstream::out | ofstream::app);
-    cout << "prepare to write capture time into csv file" << "\n" << endl;
-    captureTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << "," << "Column 3 : kernel number" << endl;
+    captureTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << endl;
     double captureTime;
 
     ofstream instantiationTimeCsv;
     instantiationTimeCsv.open("instantiationTime.csv",ofstream::out | ofstream::app);
-    cout << "prepare to write instantiate time into csv file" << "\n" << endl;
-    instantiationTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << "," << "Column 3 : kernel number"  << endl;
+    instantiationTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << endl;
     double instantiationTime;
 
     ofstream launchingTimeCsv;
     launchingTimeCsv.open("launchingTime.csv",ofstream::out | ofstream::app);
-    cout << "prepare to write launch time into csv file" << "\n" << endl;
-    launchingTimeCsv << "Column 1 : experience index" << "," << "Column 2 : time used" << "," << "Column 3 : kernel number"  << endl;
+    launchingTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << endl;
     double launchingTime;
 
-    //Mesurement Time Cost loop
+    // Capture & Instantiation loop
     for (int j = 0 ; j < 10; j ++)
     {   
-        /*
-        // creation of cuda stream through function cudaStreamCreate ( cudaStream_t* pStream )
-        // allocate and initialize an array of stream handles
+        /* plural stream creation segment
+        creation of cuda stream through function cudaStreamCreate ( cudaStream_t* pStream )
+        allocate and initialize an array of stream handles
         cudaStream_t *stream = (cudaStream_t *)malloc(nstream * sizeof(cudaStream_t));
         checkCudaErrors(cudaStreamCreate(&(stream[i])));
-        // Here we need only one stream to be bounded to the CUBLAS handle.
         */
 
-        // creation of cuda stream, then bound the stream with the "handle" that has been created
+        // CUDA Stream & Handler 
         cudaStream_t stream;
         checkCudaErrors(cudaStreamCreate(&stream));
         checkCublasErrors(cublasSetStream( handle, stream)); 
 
-        //Create time tracker
+        // Time Tracker
         timespec start_time, end_time;
 
-        //Create kernel number tracker 
+        // Kernel Number Tracker 
         int call_kernel_number;
+
+        // Operation Type Tracker
+        string operation_type;
 
         //Initialization of cuda graph
         bool graphCreated = false;
@@ -161,7 +152,8 @@ int main(int argc, char *argv[]) {
         checkCudaErrors(cudaStreamEndCapture(stream, &graph));
         clock_gettime(CLOCK_REALTIME, &end_time);
         captureTime = time_to_double(time_diff(start_time, end_time));
-        captureTimeCsv << j << "," << captureTime << "," << call_kernel_number << endl;
+        operation_type = "capture";
+        captureTimeCsv << j << "," << captureTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << endl;
         printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         //  Instantiate
@@ -169,12 +161,12 @@ int main(int argc, char *argv[]) {
         checkCudaErrors(cudaGraphInstantiate(&instance, graph, NULL, NULL, 0));
         clock_gettime(CLOCK_REALTIME, &end_time);
         instantiationTime = time_to_double(time_diff(start_time, end_time));
-        instantiationTimeCsv << j << "," << instantiationTime << "," << call_kernel_number  << endl;
+        operation_type = "instantiation";
+        instantiationTimeCsv << j << "," << instantiationTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << endl;
         printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         // Graph Launch loop 
         for (int k=0; k < 20; k ++){
-            printf("The index of graph launch is: %d\n", j * 20 + k);
             clock_gettime(CLOCK_REALTIME, &start_time);
             //lanch the cuda graph
             checkCudaErrors(cudaGraphLaunch(instance, stream));
@@ -183,7 +175,8 @@ int main(int argc, char *argv[]) {
             //high resolution timer
             launchingTime = time_to_double(time_diff(start_time, end_time));
             int index = j * 20 + k;
-            launchingTimeCsv << index << "," << launchingTime << "," << call_kernel_number  << endl;
+            operation_type = "launch";
+            launchingTimeCsv << index << "," << launchingTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << endl;
             printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
     }
