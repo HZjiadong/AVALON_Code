@@ -16,6 +16,7 @@ int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, cons
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 double time_to_double(timespec time);
+int dimension;
 
 // If the follow line is uncommented, than kernal number = 1
 // #define USE_MMUL_1_KERNEL 
@@ -47,7 +48,6 @@ double time_to_double(timespec time);
 int main(int argc, char *argv[]) {
     //dimensions of 3 matrix
     int nr_rows_A, nr_cols_A, nr_rows_B, nr_cols_B, nr_rows_C, nr_cols_C;
-    int dimension;
 
     // Dimension check for std::in
     if (argc <= 1) {
