@@ -240,6 +240,10 @@ return kernal_number;
 #else
     //Use global variable BS for the block size.
     // if BS does not divide dimensions, then abort the processus
+    if ( BS == 0 ) 
+    {
+        exit( -1 );
+    }
     if ( (m % BS) || (k%BS) || (n%BS)) 
     {
       cout << "*** error: dimension m,n,k=(" << m << ',' << n << ',' << k << ") must be a multiple of BS=" << BS << endl;
