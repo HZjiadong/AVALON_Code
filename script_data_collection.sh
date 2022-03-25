@@ -19,6 +19,9 @@ do
     mv instantiationTime.csv $dir
     mv launchingTime.csv $dir
   done
+  cat 2022-03-25/$n/*/*.csv > ${n}.csv
+  sort -u -n ${n}.csv > ${n}_all.csv
+  ./analysis.r ${n}_all.csv
 done
 
 rm -f captureTime.csv
