@@ -21,7 +21,7 @@ readfile <- function (filename)
 makestats<- function(dfraw)
 {	
 	citol= 0.95
-	df <- dfraw %>% filter(index != 1) %>%
+	df <- dfraw %>% filter(index != 0) %>%
 	      # make group of data with same value for following column:
 	      group_by(dimension,blocksize,kernel,operation) %>% 
 	      # summarize goup of data by computing time= mean of time of each group, etc
@@ -40,6 +40,9 @@ makestats<- function(dfraw)
 # Read file in command lines
 args <- commandArgs(trailingOnly=TRUE)
 df <- readfile(args[1]);
+
+#When using with interactive R, I define file="" to point to my file then I uncomment the next line to read the file.
+#And at the end I source the file analysis.R: source("analysis.R")
 #df <- readfile(file); 
 l <- makestats(df);
 print(l);
@@ -66,9 +69,56 @@ theplot = ggplot() +
                          x=kernel,
                          y=mean
                         )) +
-   scale_y_reverse();
-# pdf("gantt.pdf", width=10, height=6)
-# print(theplot)
-# dev.off()
+   geom_point(data=l, aes(color=operation,
+                         x=kernel,
+                         y=mean
+                        )) +
+   facet_grid( ~dimension);
 
-ggsave(theplot, file="plot.pdf", width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+theplot2 = ggplot() +
+  theme_bw(base_size=16) +
+   xlab("#kernels") +
+   ylab("Time (s)") +
+   scale_fill_brewer(palette = "Set1") +
+   theme (
+       legend.spacing = unit(.1, "line"),
+       panel.grid.major = element_blank(),
+       panel.spacing=unit(0, "cm"),
+       panel.grid=element_line(size=0),
+       legend.position = "bottom",
+       legend.title =  element_text("Helvetica")
+   ) +
+   guides(fill = guide_legend(nrow = 1)) +
+   geom_line(data=l, aes(color=operation,
+                         x=blocksize,
+                         y=mean
+                        )) +
+   geom_point(data=l, aes(color=operation,
+                         x=blocksize,
+                         y=mean
+                        )) +
+   facet_grid( ~dimension);
+ggsave(theplot2, file="plot2.pdf", width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+
+                       
+theplot3 = ggplot() +
+  theme_bw(base_size=16) +
+   xlab("#kernels") +
+   ylab("Time (s)") +
+   scale_fill_brewer(palette = "Set1") +
+   theme (
+       legend.spacing = unit(.1, "line"),
+       panel.grid.major = element_blank(),
+       panel.spacing=unit(0, "cm"),
+       panel.grid=element_line(size=0),
+       legend.position = "bottom",
+       legend.title =  element_text("Helvetica")
+   ) +
+   guides(fill = guide_legend(nrow = 1)) +
+   geom_point(data=df, aes(color=operation,
+                         x=blocksize,
+                         y=time
+                        )) +
+   facet_grid( ~dimension);
+ 
+ggsave(theplot3, file=paste(args[1],"plot.pdf"), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
