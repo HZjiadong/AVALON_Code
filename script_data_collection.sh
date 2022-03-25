@@ -21,9 +21,12 @@ do
   done
 done
 
-cat 2022-03-25/$n/*/*.csv > ${n}.csv
-sort -u -n ${n}.csv > ${n}_all.csv
-./analysis.r ${n}_all.csv
+for n in $N
+do
+  cat 2022-03-25/$n/*/*.csv > ${n}.csv
+  sort -u -n ${n}.csv > ${n}_all.csv
+  ./analysis.r ${n}_all.csv
+done
 
 rm -f captureTime.csv
 rm -f instantiationTime.csv
