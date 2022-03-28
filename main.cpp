@@ -41,6 +41,10 @@ int dimension;
  if(e!=CUBLAS_STATUS_SUCCESS) {                                              \
    printf("Cuda failure %s:%d \n",__FILE__,__LINE__);           \
    exit(-1); \
+ }
+ if(e==CUBLAS_STATUS_INVALID_VALUE) {                                              \
+   printf("Cuda failure 7 %s:%d \n",__FILE__,__LINE__);           \
+   exit(-1); \
  }                                                                 \
 }
 
@@ -69,16 +73,21 @@ int main(int argc, char *argv[]) {
     //For now, there are only square matrix
     nr_rows_A = nr_cols_A = nr_rows_B = nr_cols_B = nr_rows_C = nr_cols_C = dimension;
 
+    //size_t == unsigned long long (64 bits)
+    size_t matrix_size_A = (size_t)nr_rows_A * (size_t)nr_cols_A * sizeof(double);
+    size_t matrix_size_B = (size_t)nr_rows_B * (size_t)nr_cols_B * sizeof(double);
+    size_t matrix_size_C = (size_t)nr_rows_C * (size_t)nr_cols_C * sizeof(double); 
+
     //Allocate 3 arrays on CPU 
-    double *h_A = (double *)malloc(nr_rows_A * nr_cols_A * sizeof(double));
-    double *h_B = (double *)malloc(nr_rows_B * nr_cols_B * sizeof(double));
-    double *h_C = (double *)malloc(nr_rows_C * nr_cols_C * sizeof(double));
+    double *h_A = (double *)malloc(matrix_size_A);
+    double *h_B = (double *)malloc(matrix_size_B);
+    double *h_C = (double *)malloc(matrix_size_C);
 
     //Allocate 3 arrays on GPU
     double *d_A, *d_B, *d_C;
-    cudaMalloc(&d_A,nr_rows_A * nr_cols_A * sizeof(double));
-    cudaMalloc(&d_B,nr_rows_B * nr_cols_B * sizeof(double));
-    cudaMalloc(&d_C,nr_rows_C * nr_cols_C * sizeof(double));
+    cudaMalloc(&d_A,matrix_size_A);
+    cudaMalloc(&d_B,matrix_size_B);
+    cudaMalloc(&d_C,matrix_size_C);
 
     //Initialization of matrix A and B
     #pragma omp parallel for collapse(2)
