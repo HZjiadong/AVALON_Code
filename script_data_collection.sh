@@ -23,7 +23,7 @@ done
 
 for n in $N
 do
-  cat 2022-03-25/$n/*/*.csv > ${n}.csv
+  cat $prefix/$n/*/*.csv > ${n}.csv
   sort -u -n ${n}.csv > ${n}_all.csv
   ./analysis.r ${n}_all.csv
 done
