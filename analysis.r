@@ -51,7 +51,7 @@ print(l);
 # theplot
 # - X: number of kernels
 # - Y: the time for each operation
-theplot = ggplot() +
+theplot1 = ggplot() +
   theme_bw(base_size=16) +
    xlab("#kernels") +
    ylab("Time (s)") +
@@ -121,4 +121,6 @@ theplot3 = ggplot() +
                         )) +
    facet_grid( ~dimension);
  
-ggsave(theplot3, file=paste("myplot",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+ggsave(theplot1, file=paste("myplot1 ",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+ggsave(theplot2, file=paste("myplot2 ",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+ggsave(theplot3, file=paste("myplot3 ",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
