@@ -41,11 +41,7 @@ int dimension;
  if(e!=CUBLAS_STATUS_SUCCESS) {                                              \
    printf("Cuda failure %s:%d \n",__FILE__,__LINE__);           \
    exit(-1); \
- }
- if(e==CUBLAS_STATUS_INVALID_VALUE) {                                              \
-   printf("Cuda failure 7 %s:%d \n",__FILE__,__LINE__);           \
-   exit(-1); \
- }                                                                 \
+ }                                                               \
 }
 
 //Main function
