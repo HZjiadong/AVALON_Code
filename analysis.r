@@ -121,6 +121,6 @@ theplot3 = ggplot() +
                         )) +
    facet_grid( ~dimension);
  
-ggsave(theplot1, file=paste("myplot1 ",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
-ggsave(theplot2, file=paste("myplot2 ",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
-ggsave(theplot3, file=paste("myplot3 ",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+ggsave(theplot1, file=paste("myplot1_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+ggsave(theplot2, file=paste("myplot2_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+ggsave(theplot3, file=paste("myplot3_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
