@@ -77,7 +77,7 @@ theplot1 = ggplot() +
 
 theplot2 = ggplot() +
   theme_bw(base_size=16) +
-   xlab("#kernels") +
+   xlab("#blocksize") +
    ylab("Time (s)") +
    scale_fill_brewer(palette = "Set1") +
    theme (
@@ -103,7 +103,7 @@ ggsave(theplot2, file="plot2.pdf", width=29.7/1.2, height=42/1.2/3, units="cm", 
                        
 theplot3 = ggplot() +
   theme_bw(base_size=16) +
-   xlab("#kernels") +
+   xlab("#blocksize") +
    ylab("Time (s)") +
    scale_fill_brewer(palette = "Set1") +
    theme (
