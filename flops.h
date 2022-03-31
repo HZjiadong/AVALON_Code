@@ -19,6 +19,9 @@
  *
  * All the formula are reported in the LAPACK Lawn 41:
  *     http://www.netlib.org/lapack/lawns/lawn41.ps
+ * 
+ * Jiadong: 
+ *     use this file as a formula cheeting sheet for calculation of Flops
  */
 #ifndef MAGMA_FLOPS_H
 #define MAGMA_FLOPS_H
