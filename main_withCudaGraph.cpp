@@ -9,7 +9,6 @@
 #include <curand.h>
 #include <cublas.h>
 #include <cublas_v2.h>
-#include <flops.h>
 using namespace std;
 
 //Declaration des functions 
