@@ -35,6 +35,7 @@ int dimension;
  }                                                                 \
 }
 
+#define CUBLAS_API_H_
 #ifdef CUBLAS_API_H_
 //cuBLAS API errors
 static const char *_cudaGetErrorEnum(cublasStatus_t error)
@@ -73,7 +74,7 @@ static const char *_cudaGetErrorEnum(cublasStatus_t error)
 //Macro Cublas error check, check error message during a Cublas launch or cuda api call
 #define checkCublasErrors(e) {                                        \
  if(e!=CUBLAS_STATUS_SUCCESS) {                                              \
-   printf("Cuda failure %i:%s:%s:%d \n",e,cudaGetErrorEnum(e),__FILE__,__LINE__);           \
+   printf("Cuda failure %i:%s:%s:%d \n",e,_cudaGetErrorEnum(e),__FILE__,__LINE__);           \
    exit(-1); \
  }                                                               \
 }
@@ -163,7 +164,7 @@ int main(int argc, char *argv[]) {
         
         //high resolution timer
         executionTime = time_to_double(time_diff(start_time, end_time));
-        int index = j;
+        int index = k;
         executionTimeCsv << index << "," << executionTime << "," << call_kernel_number << "," << dimension << "," << BS << endl;
         printf("Elapsed time for execution without CUDA graph:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
     }
