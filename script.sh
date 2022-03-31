@@ -4,8 +4,8 @@ log=log_file.txt
 printf "This is the Log File of date" > $log
 timer_start=`date +"%Y-%m-%d %H:%M:%S"`
 echo "start Time "$timer_start >> $log
-N="7680 15360 23040 30720 38400"
-BS="64 128 192 256 320 384 512 640 768 960 1280 1536 1920 2560 3840 7680"
+N="1280 2560 3840 5120 6400 7680 8960 10240 11520 12800 14080 15360 16640 17920 19200 20480 21760 23040 24320 25600 26880 28160 29440 30720"
+BS="64 128 256 320 640 1280"
 make executable
 for n in $N
 do
