@@ -36,15 +36,6 @@ int dimension;
  }                                                                 \
 }
 
-//Macro Cublas error check, check error message during a Cublas launch or cuda api call
-//CAN BE INPROVED BY "CublasErrorCheck.c"
-#define checkCublasErrors(e) {                                        \
- if(e!=CUBLAS_STATUS_SUCCESS) {                                              \
-   printf("Cuda failure %s:%d \n",__FILE__,__LINE__);           \
-   exit(-1); \
- }                                                               \
-}
-
 #ifdef CUBLAS_API_H_
 //cuBLAS API errors
 static const char *_cudaGetErrorEnum(cublasStatus_t error)
@@ -79,6 +70,15 @@ static const char *_cudaGetErrorEnum(cublasStatus_t error)
     return "<unknown>";
 }
 #endif 
+
+//Macro Cublas error check, check error message during a Cublas launch or cuda api call
+//CAN BE INPROVED BY "CublasErrorCheck.c"
+#define checkCublasErrors(e) {                                        \
+ if(e!=CUBLAS_STATUS_SUCCESS) {                                              \
+   printf("Cuda failure %i:%s:%s:%d \n",e,cudaGetErrorEnum(e),__FILE__,__LINE__);           \
+   exit(-1); \
+ }                                                               \
+}
 
 //Main function
 int main(int argc, char *argv[]) {
