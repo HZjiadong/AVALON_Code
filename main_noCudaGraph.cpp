@@ -156,7 +156,7 @@ int main(int argc, char *argv[]) {
     string operation_type;
 
     //call cublas function loop
-    for (int k=0; k < 20; k ++){
+    for (int k=0; k < 200; k ++){
         clock_gettime(CLOCK_REALTIME, &start_time);
         call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle);
         checkCudaErrors(cudaDeviceSynchronize());
