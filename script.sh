@@ -37,6 +37,12 @@ echo "end Time "$timer_end >> $log
 dir2=$prefix
 mv log_file.txt $dir2
 
+dir3=${prefix}_records
+mv *.csv $dir3
+
+dir4=${prefix}_plots
+mv *.pdf $dir4
+
 rm -f captureTime.csv
 rm -f instantiationTime.csv
 rm -f launchingTime.csv
