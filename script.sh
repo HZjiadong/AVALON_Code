@@ -38,9 +38,11 @@ dir2=$prefix
 mv log_file.txt $dir2
 
 dir3=${prefix}_records
+mkdir $dir3
 mv *.csv $dir3
 
 dir4=${prefix}_plots
+mkdir $dir4
 mv *.pdf $dir4
 
 rm -f captureTime.csv
