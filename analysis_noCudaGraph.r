@@ -13,7 +13,7 @@ readfile <- function (filename)
 
 #Merge several measures of the same point together
 # Return a data frame with columns :
-# - mean = the mean of time values for each group with same (dimension,blocksize,kernel,operation)
+# - mean = the mean of time values for each group with same (dimension,blocksize,kernel)
 # - sd : the standard devision of the time values (of each group)
 # - n : the number of data values in each group
 # - min_time/max_time: the min/max of the time values of each group.
@@ -23,7 +23,7 @@ makestats<- function(dfraw)
 	citol= 0.95
 	df <- dfraw %>% filter(index != 0) %>%
 	      # make group of data with same value for following column:
-	      group_by(dimension,blocksize,kernel,operation) %>% 
+	      group_by(dimension,blocksize,kernel) %>% 
 	      # summarize goup of data by computing time= mean of time of each group, etc
 	      summarize( 
 	          n=length(time),
@@ -65,12 +65,10 @@ theplot1 = ggplot() +
        legend.title =  element_text("Helvetica")
    ) +
    guides(fill = guide_legend(nrow = 1)) +
-   geom_line(data=l, aes(color=operation,
-                         x=kernel,
+   geom_line(data=l, aes(x=kernel,
                          y=mean
                         )) +
-   geom_point(data=l, aes(color=operation,
-                         x=kernel,
+   geom_point(data=l, aes(x=kernel,
                          y=mean
                         )) +
    facet_grid( ~dimension);
@@ -89,12 +87,10 @@ theplot2 = ggplot() +
        legend.title =  element_text("Helvetica")
    ) +
    guides(fill = guide_legend(nrow = 1)) +
-   geom_line(data=l, aes(color=operation,
-                         x=blocksize,
+   geom_line(data=l, aes(x=blocksize,
                          y=mean
                         )) +
-   geom_point(data=l, aes(color=operation,
-                         x=blocksize,
+   geom_point(data=l, aes(x=blocksize,
                          y=mean
                         )) +
    facet_grid( ~dimension);
@@ -115,8 +111,7 @@ theplot3 = ggplot() +
        legend.title =  element_text("Helvetica")
    ) +
    guides(fill = guide_legend(nrow = 1)) +
-   geom_point(data=df, aes(color=operation,
-                         x=blocksize,
+   geom_point(data=df, aes(x=blocksize,
                          y=time
                         )) +
    facet_grid( ~dimension);
