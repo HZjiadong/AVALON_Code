@@ -43,6 +43,4 @@ dir4=${prefix}_plots
 mkdir $dir4
 mv *.pdf $dir4
 
-rm -f captureTime.csv
-rm -f instantiationTime.csv
-rm -f launchingTime.csv
+rm -f executionTime.csv
