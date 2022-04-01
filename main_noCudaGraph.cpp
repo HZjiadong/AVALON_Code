@@ -142,7 +142,7 @@ int main(int argc, char *argv[]) {
 
     //csv file object
     ofstream executionTimeCsv;
-    executionTimeCsv.open("executionTime_noCUDAgraph.csv", ofstream::out | ofstream::app);
+    executionTimeCsv.open("executionTime.csv", ofstream::out | ofstream::app);
     executionTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << endl;
     double executionTime;
 
