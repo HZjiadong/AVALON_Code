@@ -1,6 +1,6 @@
 #!/bin/bash
 
-log=log_file.txt
+log=log_file_noCudaGraph.txt
 printf "This is the Log File of date" > $log
 timer_start=`date +"%Y-%m-%d %H:%M:%S"`
 echo "start Time "$timer_start >> $log
