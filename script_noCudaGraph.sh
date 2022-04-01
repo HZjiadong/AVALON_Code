@@ -18,9 +18,7 @@ do
     prefix=`date +"%Y-%m-%d"`
     dir=$prefix/$n/$bs
     mkdir -p $dir
-    mv captureTime.csv $dir
-    mv instantiationTime.csv $dir
-    mv launchingTime.csv $dir
+    mv executionTime.csv $dir
   done
 done
 
