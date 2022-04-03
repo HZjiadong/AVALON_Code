@@ -33,7 +33,7 @@ timer_end=`date +"%Y-%m-%d %H:%M:%S"`
 echo "end Time "$timer_end >> $log
 
 dir2=$prefix
-mv log_file.txt $dir2
+mv log_file_noCudaGraph.txt $dir2
 
 dir3=${prefix}_records
 mkdir $dir3
