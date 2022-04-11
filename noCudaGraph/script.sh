@@ -26,7 +26,7 @@ for n in $N
 do
   cat $prefix/$n/*/*.csv > ${n}.csv >> $log
   sort -u -n ${n}.csv > ${n}_all.csv >> $log
-  ./analysis_noCudaGraph.r ${n}_all.csv >> $log
+  ./analysis.r ${n}_all.csv >> $log
 done
 
 timer_end=`date +"%Y-%m-%d %H:%M:%S"`
