@@ -47,7 +47,6 @@ df <- readfile(args[1]);
 #df <- readfile(file); 
 l <- makestats(df);
 l$tflops <- (2.0*l$dimension*l$dimension*l$dimension/l$mean)*1e-12;
-l$tflops[which(l$operation!="launch")]=0;
 print(l);
 
 
@@ -127,7 +126,7 @@ theplot3 = ggplot() +
 
 # theplot4: line chart
 # - X: number of kernels
-# - Y: total tera-flops 
+# - Y: total tera-flops for each operation
 theplot4 = ggplot() +
   theme_bw(base_size=16) +
    xlab("#kernels") +
@@ -142,19 +141,17 @@ theplot4 = ggplot() +
        legend.title =  element_text("Helvetica")
    ) +
    guides(fill = guide_legend(nrow = 1)) +
-   geom_line(data=l, aes(color=operation,
-                         x=kernel,
+   geom_line(data=l, aes(x=kernel,
                          y=tflops
                         )) +
-   geom_point(data=l, aes(color=operation,
-                         x=kernel,
+   geom_point(data=l, aes(x=kernel,
                          y=tflops
                         )) +
    facet_grid( ~dimension);
 
 # theplot5: scatter plot
 # - X: number of kernels
-# - Y: total tera-flops 
+# - Y: total tera-flops for each operation
 theplot5 = ggplot() +
   theme_bw(base_size=16) +
    xlab("#blocksize") +
@@ -169,12 +166,10 @@ theplot5 = ggplot() +
        legend.title =  element_text("Helvetica")
    ) +
    guides(fill = guide_legend(nrow = 1)) +
-   geom_line(data=l, aes(color=operation,
-                         x=blocksize,
+   geom_line(data=l, aes(x=blocksize,
                          y=tflops
                         )) +
-   geom_point(data=l, aes(color=operation,
-                         x=blocksize,
+   geom_point(data=l, aes(x=blocksize,
                          y=tflops
                         )) +
    facet_grid( ~dimension);
