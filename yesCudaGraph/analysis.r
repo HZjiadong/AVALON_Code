@@ -41,7 +41,8 @@ makestats<- function(dfraw)
 args <- commandArgs(trailingOnly=TRUE)
 df <- readfile(args[1]);
 
-#When using with interactive R, I define file="" to point to my file then I uncomment the next line to read the file.
+#When using with interactive R, 
+#I define file="" to point to my file then I uncomment the next line to read the file.
 #And at the end I source the file analysis.R: source("analysis.R")
 # - flop: number of floating point calculation per second, order of magnitude of "Tera"(10^12)
 #df <- readfile(file); 
