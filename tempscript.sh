@@ -9,7 +9,7 @@ BS="64 128 256 320 640 1280"
 
 for n in $N
 do
-  cat 2022-03-31/$n/*/*.csv > ${n}.csv >> $log
+  cat 2022-04-01/$n/*/*.csv > ${n}.csv >> $log
   sort -u -n ${n}.csv > ${n}_all.csv >> $log
   ./tempanalysis.r ${n}_all.csv >> $log
 done
@@ -17,8 +17,8 @@ done
 timer_end=`date +"%Y-%m-%d %H:%M:%S"`
 echo "end Time "$timer_end >> $log
 
-dir3=2022-03-31_records
+dir3=2022-04-01_records
 mv *.csv $dir3
 
-dir4=2022-03-31_records
+dir4=2022-04-01_records
 mv *.pdf $dir4
