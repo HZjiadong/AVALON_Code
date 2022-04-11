@@ -1,13 +1,15 @@
 # AVALON_Code
 Code that used during PFE AVALON INRIA
 
+noCudaGraph Folder:
+Contain all files needed for experience without CUDA Graph structure
+
+yesCudaGraph Folder:
+Contain all files needed for experience with CUDA Graph structure
+
 Main.cpp: 
 main program of CUDA Graph API used inside.
-code source: https://solarianprogrammer.com/2012/05/31/matrix-multiplication-cuda-cublas-curand-thrust/
-
-with two version:
-1. version without cuda graph structure
-2. version with cuda graph structure
+certains code source: https://solarianprogrammer.com/2012/05/31/matrix-multiplication-cuda-cublas-curand-thrust/
   
 flops.h:
 header file contains all formulas for Flops( floating points operation per second) calculation.
