@@ -117,6 +117,54 @@ theplot3 = ggplot() +
                          y=time
                         )) +
    facet_grid( ~dimension);
+
+theplot4 = ggplot() +
+  theme_bw(base_size=16) +
+   xlab("#kernels") +
+   ylab("TFlop/s") +
+   scale_fill_brewer(palette = "Set1") +
+   theme (
+       legend.spacing = unit(.1, "line"),
+       panel.grid.major = element_blank(),
+       panel.spacing=unit(0, "cm"),
+       panel.grid=element_line(size=0),
+       legend.position = "bottom",
+       legend.title =  element_text("Helvetica")
+   ) +
+   guides(fill = guide_legend(nrow = 1)) +
+   geom_line(data=l, aes(color=operation,
+                         x=kernel,
+                         y=tflops
+                        )) +
+   geom_point(data=l, aes(color=operation,
+                         x=kernel,
+                         y=tflops
+                        )) +
+   facet_grid( ~dimension);
+
+theplot5 = ggplot() +
+  theme_bw(base_size=16) +
+   xlab("#blocksize") +
+   ylab("Tflop/s") +
+   scale_fill_brewer(palette = "Set1") +
+   theme (
+       legend.spacing = unit(.1, "line"),
+       panel.grid.major = element_blank(),
+       panel.spacing=unit(0, "cm"),
+       panel.grid=element_line(size=0),
+       legend.position = "bottom",
+       legend.title =  element_text("Helvetica")
+   ) +
+   guides(fill = guide_legend(nrow = 1)) +
+   geom_line(data=l, aes(color=operation,
+                         x=blocksize,
+                         y=tflops
+                        )) +
+   geom_point(data=l, aes(color=operation,
+                         x=blocksize,
+                         y=tflops
+                        )) +
+   facet_grid( ~dimension);
  
 ggsave(theplot1, file=paste("myplot1_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
 ggsave(theplot2, file=paste("myplot2_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
