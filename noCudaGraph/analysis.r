@@ -17,7 +17,7 @@ readfile <- function (filename)
 # - sd : the standard devision of the time values (of each group)
 # - n : the number of data values in each group
 # - min_time/max_time: the min/max of the time values of each group.
-# All the stats are computed after removing the values with index =1
+# All the stats are computed after removing the values with index =1, in case of avoiding iregular initiation value
 makestats<- function(dfraw)
 {	
 	citol= 0.95
@@ -43,6 +43,7 @@ df <- readfile(args[1]);
 
 #When using with interactive R, I define file="" to point to my file then I uncomment the next line to read the file.
 #And at the end I source the file analysis.R: source("analysis.R")
+# - flop: number of floating point calculation per second, order of magnitude of "Tera"(10^12)
 #df <- readfile(file); 
 l <- makestats(df);
 l$tflops <- (2.0*l$dimension*l$dimension*l$dimension/l$mean)*1e-12;
@@ -50,7 +51,9 @@ l$tflops[which(l$operation!="launch")]=0;
 print(l);
 
 
-# theplot
+#Plots:
+
+# theplot1: line chart
 # - X: number of kernels
 # - Y: the time for each operation
 theplot1 = ggplot() +
@@ -75,6 +78,9 @@ theplot1 = ggplot() +
                         )) +
    facet_grid( ~dimension);
 
+# theplot2: line chart 
+# - X: block size
+# - Y: the time for each operation
 theplot2 = ggplot() +
   theme_bw(base_size=16) +
    xlab("#blocksize") +
@@ -96,9 +102,10 @@ theplot2 = ggplot() +
                          y=mean
                         )) +
    facet_grid( ~dimension);
-ggsave(theplot2, file="plot2.pdf", width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
 
-                       
+# theplot3: scatter plot
+# - X: block size
+# - Y: the time for each operation                       
 theplot3 = ggplot() +
   theme_bw(base_size=16) +
    xlab("#blocksize") +
@@ -118,6 +125,9 @@ theplot3 = ggplot() +
                         )) +
    facet_grid( ~dimension);
 
+# theplot4: line chart
+# - X: number of kernels
+# - Y: total tera-flops 
 theplot4 = ggplot() +
   theme_bw(base_size=16) +
    xlab("#kernels") +
@@ -142,6 +152,9 @@ theplot4 = ggplot() +
                         )) +
    facet_grid( ~dimension);
 
+# theplot5: scatter plot
+# - X: number of kernels
+# - Y: total tera-flops 
 theplot5 = ggplot() +
   theme_bw(base_size=16) +
    xlab("#blocksize") +
@@ -165,7 +178,10 @@ theplot5 = ggplot() +
                          y=tflops
                         )) +
    facet_grid( ~dimension);
- 
-ggsave(theplot1, file=paste("myplot1_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
-ggsave(theplot2, file=paste("myplot2_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
-ggsave(theplot3, file=paste("myplot3_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+
+#Output files:
+ggsave(theplot1, file=paste("time_plot1_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+ggsave(theplot2, file=paste("time_plot2_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+ggsave(theplot3, file=paste("time_plot3_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+ggsave(theplot4, file=paste("tflops_plot1_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
+ggsave(theplot5, file=paste("tflops_plot2_",args[1],".pdf",sep=""), width=29.7/1.2, height=42/1.2/3, units="cm", dpi=300);
