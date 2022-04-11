@@ -4,8 +4,8 @@
 all: executable
 
 # Compilation
-executable: main_noCudaGraph.cpp Makefile
-	g++ -g main_noCudaGraph.cpp -o executable -I${CUDA_HOME}/include -L${CUDA_HOME}/lib64 -lcublas -lcurand -fopenmp -lcudart
+executable: main.cpp Makefile
+	g++ -g main.cpp -o executable -I${CUDA_HOME}/include -L${CUDA_HOME}/lib64 -lcublas -lcurand -fopenmp -lcudart
 
 ################################################################################
 
