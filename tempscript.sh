@@ -11,7 +11,7 @@ for n in $N
 do
   cat 2022-03-31/$n/*/*.csv > ${n}.csv >> $log
   sort -u -n ${n}.csv > ${n}_all.csv >> $log
-  ./analysis.r ${n}_all.csv >> $log
+  ./tempanalysis.r ${n}_all.csv >> $log
 done
 
 timer_end=`date +"%Y-%m-%d %H:%M:%S"`
