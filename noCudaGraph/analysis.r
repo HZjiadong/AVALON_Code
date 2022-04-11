@@ -45,6 +45,8 @@ df <- readfile(args[1]);
 #And at the end I source the file analysis.R: source("analysis.R")
 #df <- readfile(file); 
 l <- makestats(df);
+l$tflops <- (2.0*l$dimension*l$dimension*l$dimension/l$mean)*1e-12;
+l$tflops[which(l$operation!="launch")]=0;
 print(l);
 
 
