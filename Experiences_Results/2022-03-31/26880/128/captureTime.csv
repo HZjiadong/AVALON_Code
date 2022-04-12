@@ -1,0 +1,6 @@
+index,time,kernel,dimension,blocksize,operation
+0,0.372192,44100,26880,128,capture
+1,0.373385,44100,26880,128,capture
+2,0.374888,44100,26880,128,capture
+3,0.372535,44100,26880,128,capture
+4,0.373693,44100,26880,128,capture

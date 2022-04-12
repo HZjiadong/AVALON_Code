@@ -1,0 +1,3 @@
+index,time,kernel,dimension,blocksize,operation
+0,0.705687,57600,30720,128,instantiation
+1,0.723908,57600,30720,128,instantiation
