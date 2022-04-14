@@ -143,10 +143,10 @@ int main(int argc, char *argv[]) {
     //csv file object
     ofstream executionTimeCsv;
     executionTimeCsv.open("executionTime.csv", ofstream::out | ofstream::app);
-    executionTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << endl;
-    double executionTime;
+    executionTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "operation" << "," << "cudagraph" << "," << endl;
 
     // Time Tracker
+    double executionTime;
     timespec start_time, end_time;
 
     // Kernel Number Tracker 
@@ -154,6 +154,9 @@ int main(int argc, char *argv[]) {
 
     // Operation Type Tracker
     string operation_type;
+
+    // CUDA Graph Tracker
+    bool cudagraph;
 
     //call cublas function loop
     for (int k=0; k < 200; k ++){
@@ -165,7 +168,9 @@ int main(int argc, char *argv[]) {
         //high resolution timer
         executionTime = time_to_double(time_diff(start_time, end_time));
         int index = k;
-        executionTimeCsv << index << "," << executionTime << "," << call_kernel_number << "," << dimension << "," << BS << endl;
+        operation_type = "launch";
+        cudagraph = 0;
+        executionTimeCsv << index << "," << executionTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
         printf("Elapsed time for execution without CUDA graph:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
     }
 
