@@ -143,17 +143,17 @@ int main(int argc, char *argv[]) {
     //csv file object
     ofstream captureTimeCsv;
     captureTimeCsv.open("captureTime.csv", ofstream::out | ofstream::app);
-    captureTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << endl;
+    captureTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << "cudagraph" << "," << endl;
     double captureTime;
 
     ofstream instantiationTimeCsv;
     instantiationTimeCsv.open("instantiationTime.csv",ofstream::out | ofstream::app);
-    instantiationTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << endl;
+    instantiationTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << "cudagraph" << "," << endl;
     double instantiationTime;
 
     ofstream launchingTimeCsv;
     launchingTimeCsv.open("launchingTime.csv",ofstream::out | ofstream::app);
-    launchingTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << endl;
+    launchingTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << "cudagraph" << "," << endl;
     double launchingTime;
 
     // Capture & Instantiation loop
@@ -172,6 +172,9 @@ int main(int argc, char *argv[]) {
 
         // Operation Type Tracker
         string operation_type;
+        
+        // CUDA Graph Tracker
+        bool cudagraph;
 
         //Initialization of cuda graph
         bool graphCreated = false;
@@ -187,7 +190,8 @@ int main(int argc, char *argv[]) {
         clock_gettime(CLOCK_REALTIME, &end_time);
         captureTime = time_to_double(time_diff(start_time, end_time));
         operation_type = "capture";
-        captureTimeCsv << j << "," << captureTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << endl;
+        cudagraph = 1;
+        captureTimeCsv << j << "," << captureTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
         printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         //  Instantiate
@@ -196,7 +200,8 @@ int main(int argc, char *argv[]) {
         clock_gettime(CLOCK_REALTIME, &end_time);
         instantiationTime = time_to_double(time_diff(start_time, end_time));
         operation_type = "instantiation";
-        instantiationTimeCsv << j << "," << instantiationTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << endl;
+        cudagraph = 1;
+        instantiationTimeCsv << j << "," << instantiationTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
         printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         // Graph Launch loop 
@@ -210,7 +215,8 @@ int main(int argc, char *argv[]) {
             launchingTime = time_to_double(time_diff(start_time, end_time));
             int index = j * 20 + k;
             operation_type = "launch";
-            launchingTimeCsv << index << "," << launchingTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << endl;
+            cudagraph = 1;
+            launchingTimeCsv << index << "," << launchingTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
             printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
     }
