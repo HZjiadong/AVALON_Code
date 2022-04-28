@@ -291,16 +291,19 @@ return kernal_number;
     }
     for (int i=0; i<m; i+=BS)
       for (int j=0; j<n; j+=BS)
-      {
-        // A,B,C have column major storage. With such storage element (i,j) of the matrix A is A[i+j*lda]
-        // launch a kernel to do Cij += alpha*Ai0*B0j + beta*Cij
-        // Note that: Ai0 = A+i = &A[i]   or B0j = &B[j*ldb]
-        const double* Ai0 = A+i;
-        const double* B0j = B+j*ldb;
-        double* Cij = C+i+j*ldc;
-        checkCublasErrors(cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Ai0, lda, B0j, ldb, beta, Cij, ldc));
-        kernal_number = kernal_number + 1;
-      }
+        for (int k=0; k<n; k+=BS)
+        {
+            // A,B,C have column major storage. 
+            // With such storage element (ik,kj) of the matrix A is A[i+k*lda]
+            // With such storage element (ik,kj) of the matrix B is B[k+j*lda]
+            // launch a kernel to do Cij += alpha*Ai0*B0j + beta*Cij
+            // Note that: Ai0 = A+i = &A[i]   or B0j = &B[j*ldb]
+            const double* Aik = A+i+k*lda;
+            const double* Bkj = B+k+j*ldb;
+            double* Cij = C+i+j*ldc;
+            checkCublasErrors(cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, BS, alpha, Aik, lda, Bkj, ldb, beta, Cij, ldc));
+            kernal_number = kernal_number + 1;
+        }
 return kernal_number;
 #endif
 }
