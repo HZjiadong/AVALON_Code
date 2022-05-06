@@ -1,0 +1,11 @@
+index,time,kernel,dimension,blocksize,operation,cudagraph,
+0,0.00329949,676,33280,1280,instantiation,1
+1,0.00462672,676,33280,1280,instantiation,1
+2,0.00452111,676,33280,1280,instantiation,1
+3,0.00337766,676,33280,1280,instantiation,1
+4,0.00472738,676,33280,1280,instantiation,1
+5,0.00463125,676,33280,1280,instantiation,1
+6,0.00332301,676,33280,1280,instantiation,1
+7,0.00474405,676,33280,1280,instantiation,1
+8,0.0046056,676,33280,1280,instantiation,1
+9,0.00334551,676,33280,1280,instantiation,1
