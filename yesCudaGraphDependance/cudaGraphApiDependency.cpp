@@ -136,96 +136,34 @@ int main(int argc, char *argv[]) {
     cudaMemcpy(d_B,h_B,nr_rows_B * nr_cols_B * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_C,h_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyHostToDevice);
     
-    //Create a handle for CUBLAS
-    cublasHandle_t handle;
-    checkCublasErrors(cublasCreate(&handle));
+    //csv file object for graph explicite api without dependency
+    ofstream cudaGraphDependencyCsv;
+    cudaGraphDependencyCsv.open("cudaGraphDependency.csv", ofstream::out | ofstream::app);
+    cudaGraphDependencyCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
+    double dependencyApiTime;
 
-    //csv file object
-    ofstream captureTimeCsv;
-    captureTimeCsv.open("captureTime.csv", ofstream::out | ofstream::app);
-    captureTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << "cudagraph" << "," << endl;
-    double captureTime;
+    // Trackers
+    timespec start_time, end_time;
+    int call_kernel_number;
+    string operation_type;
+    bool cudagraph;
 
-    ofstream instantiationTimeCsv;
-    instantiationTimeCsv.open("instantiationTime.csv",ofstream::out | ofstream::app);
-    instantiationTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << "cudagraph" << "," << endl;
-    double instantiationTime;
-
-    ofstream launchingTimeCsv;
-    launchingTimeCsv.open("launchingTime.csv",ofstream::out | ofstream::app);
-    launchingTimeCsv << "index" << "," << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << "cudagraph" << "," << endl;
-    double launchingTime;
-
-    // Capture & Instantiation loop
-    for (int j = 0 ; j < 10; j ++)
-    {   
-        // CUDA Stream & Handler 
-        cudaStream_t stream;
-        checkCudaErrors(cudaStreamCreate(&stream));
-        checkCublasErrors(cublasSetStream( handle, stream)); 
-
-        // Time Tracker
-        timespec start_time, end_time;
-
-        // Kernel Number Tracker 
-        int call_kernel_number;
-
-        // Operation Type Tracker
-        string operation_type;
-        
-        // CUDA Graph Tracker
-        bool cudagraph;
-
-        //Initialization of cuda graph
-        bool graphCreated = false;
-        clock_gettime(CLOCK_REALTIME, &start_time);
-        cudaGraph_t graph;
-        cudaGraphExec_t instance;
-
-        //  Begin Caputure
-        checkCudaErrors(cudaStreamBeginCapture(stream, cudaStreamCaptureModeGlobal));
-        call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
-        //  End Capture
-        checkCudaErrors(cudaStreamEndCapture(stream, &graph));
-        clock_gettime(CLOCK_REALTIME, &end_time);
-        captureTime = time_to_double(time_diff(start_time, end_time));
-        operation_type = "capture";
-        cudagraph = 1;
-        captureTimeCsv << j << "," << captureTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
-        printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
-
-        //  Instantiate
-        clock_gettime(CLOCK_REALTIME, &start_time);
-        checkCudaErrors(cudaGraphInstantiate(&instance, graph, NULL, NULL, 0));
-        clock_gettime(CLOCK_REALTIME, &end_time);
-        instantiationTime = time_to_double(time_diff(start_time, end_time));
-        operation_type = "instantiation";
-        cudagraph = 1;
-        instantiationTimeCsv << j << "," << instantiationTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
-        printf("Elapsed time for graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
-
-        // Graph Launch loop 
-        for (int k=0; k < 20; k ++){
-            clock_gettime(CLOCK_REALTIME, &start_time);
-            //lanch the cuda graph
-            checkCudaErrors(cudaGraphLaunch(instance, stream));
-            checkCudaErrors(cudaStreamSynchronize(stream));
-            clock_gettime(CLOCK_REALTIME, &end_time);
-            //high resolution timer
-            launchingTime = time_to_double(time_diff(start_time, end_time));
-            int index = j * 20 + k;
-            operation_type = "launch";
-            cudagraph = 1;
-            launchingTimeCsv << index << "," << launchingTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
-            printf("Elapsed time for execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
-        }
-    }
-    launchingTimeCsv.close();
-    launchingTimeCsv.clear(); 
-    captureTimeCsv.close();
-    captureTimeCsv.clear();
-    instantiationTimeCsv.close();
-    instantiationTimeCsv.clear();
+    //Create the graph
+    //Call function 
+    //Output data
+    cudaGraph_t graph;
+    checkCublasErrors(cudaGraphCreate(&graph, 0));
+    clock_gettime(CLOCK_REALTIME, &start_time);
+    call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, graph);
+    clock_gettime(CLOCK_REALTIME, &end_time);
+    dependencyApiTime = time_to_double(time_diff(start_time, end_time));
+    operation_type = "graphApiNoDependency";
+    cudagraph = 1;
+    cudaGraphDependencyCsv << dependencyApiTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
+    printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));    
+    cudaGraphDependencyCsv.close();
+    cudaGraphDependencyCsv.clear();
+    
     
     //Copy (and print) the result on host memory
     checkCudaErrors(cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyDeviceToHost));
