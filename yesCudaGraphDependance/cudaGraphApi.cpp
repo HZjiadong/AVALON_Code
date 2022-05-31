@@ -229,16 +229,24 @@ return kernal_number;
     for (int i=0; i<m; i+=BS)
       for (int j=0; j<n; j+=BS)
       { //use Graph Stream Capture API to create a childNode, since we don't have node parameter
-        /// 1st step: Stream Capture API
+        /// 1st step: Stream Capture API --> une graph
         cudaStream_t tempStream;
         cudaGraph_t tempGraph;    
         cublasHandle_t tempHandle;
+
+        //// A,B,C have column major storage. With such storage element (i,j) of the matrix A is A[i+j*lda]
+        //// launch a kernel to do Cij += alpha*Ai0*B0j + beta*Cij
+        //// Note that: Ai0 = A+i = &A[i]   or B0j = &B[j*ldb]
+        const double* Ai0 = A+i;
+        const double* B0j = B+j*ldb;
+        double* Cij = C+i+j*ldc;
     
         checkCublasErrors(cublasCreate(&tempHandle));
         checkCudaErrors(cudaStreamCreate(&tempStream));
         checkCublasErrors(cublasSetStream( tempHandle, tempStream)); 
 
         checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
+        // cublasDgemm is a CPU funcition, which contains no information of operation on GPU( kernel functions/ parameters etc.)
         call_kernel_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Ai0, lda, B0j, ldb, beta, Cij, ldc); //cette function est une stream cuda, not C++ stream!
         checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
 
@@ -246,12 +254,7 @@ return kernal_number;
         std::vector<cudaGraphNode_t> nodeDependencies;
         cudaGraphNode_t graphNode;
         size_t numDependency;
-        //// A,B,C have column major storage. With such storage element (i,j) of the matrix A is A[i+j*lda]
-        //// launch a kernel to do Cij += alpha*Ai0*B0j + beta*Cij
-        //// Note that: Ai0 = A+i = &A[i]   or B0j = &B[j*ldb]
-        const double* Ai0 = A+i;
-        const double* B0j = B+j*ldb;
-        double* Cij = C+i+j*ldc;
+        
         //// cudaGraphAddChildGraphNode ( cudaGraphNode_t* pGraphNode, cudaGraph_t graph, const cudaGraphNode_t* pDependencies, size_t numDependencies, cudaGraph_t childGraph );
         checkCublasErrors(cudaGraphAddChildGraphNode (graphNode, graph, nodeDependencies, 0, tempGraph));
         kernal_number = kernal_number + 1;
