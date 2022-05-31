@@ -251,12 +251,12 @@ return kernal_number;
         checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
 
         /// 2nd step: add this graph by using "cudaGraphAddChildGraphNode", inside loop
-        std::vector<cudaGraphNode_t> nodeDependencies;
-        cudaGraphNode_t graphNode;
-        size_t numDependency;
+        //std::vector<cudaGraphNode_t> nodeDependencies;
+        cudaGraphNode_t* graphNode = new cudaGraphNode_t;
+        size_t numDependency = 0;
         
         //// cudaGraphAddChildGraphNode ( cudaGraphNode_t* pGraphNode, cudaGraph_t graph, const cudaGraphNode_t* pDependencies, size_t numDependencies, cudaGraph_t childGraph );
-        checkCublasErrors(cudaGraphAddChildGraphNode (graphNode, graph, nodeDependencies, 0, tempGraph));
+        checkCublasErrors(cudaGraphAddChildGraphNode (*graphNode, graph, 0, 0, tempGraph));
         kernal_number = kernal_number + 1;
       }
 return kernal_number;
