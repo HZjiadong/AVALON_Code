@@ -235,23 +235,29 @@ return kernal_number;
     cudaGraphNode_t* prev = 0; // previous graph node
 
     for (int i=0; i<m; i+=BS)
-      for (int j=0; j<n; j+=BS)
-        for (int k=0; k<n; k+=BS)
+    {
+        for (int j=0; j<n; j+=BS)
         {
-            // A,B,C have column major storage. 
+            // 1/ At the begin add a kernel for Cij += beta*Cij
+            // add graph node for "Cij += beta*Cij"
+            cudaGraphNode_t* nodeCij = new cudaGraphNode_t;
+
+            for (int k=0; k<n; k+=BS)
+            {
+                // A,B,C have column major storage. 
             // With such storage element (ik,kj) of the matrix A is A[i+k*lda]
             // With such storage element (ik,kj) of the matrix B is B[k+j*lda]
             // Note that: Aik = A+i+k*lda = &A[i]   or Bkj = B+k+j*ldb = &B[j*ldb] 
             // launch a kernel to do Cij += alpha*Aik*Bkj + beta*Cij
-
-            // 1/ At the begin add a kernel for Cij += beta*Cij
-            // 2/ For each k, launch a kernel to do Cij += alpha*Aik*Bkj
-            //   Once kernel and the graph node for k+1 is created, add a dependence between the node at iteration "k+1" with node at iteration k
-            // Note that the graph node for the kernel launched by cublasDgemm should be captured (then added to the graph with cudaGraphAddChildGraphNode)
- 
+            
             const double* Aik = A+i+k*lda;
             const double* Bkj = B+k+j*ldb;
             double* Cij = C+i+j*ldc;
+            
+            // 2/ For each k, launch a kernel to do Cij += alpha*Aik*Bkj
+            //   Once kernel and the graph node for k+1 is created, add a dependence between the node at iteration "k+1" with node at iteration k
+            // Note that the graph node for the kernel launched by cublasDgemm should be captured (then added to the graph with cudaGraphAddChildGraphNode)
+            
             checkCublasErrors(cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, BS, alpha, Aik, lda, Bkj, ldb, beta, Cij, ldc));
             
             // add graph node for "Cij += alpha*Aik*Bkj"
@@ -265,13 +271,19 @@ return kernal_number;
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
             /// Third parameter is const cudaGraphNode_t* pDependencies, what happens here?            
             checkCublasErrors(cudaGraphAddChildGraphNode (*curr, graph, 0, 0, tempGraph));
-            if (prev ==0){
+            if (prev == 0)
+            {
+                cudaGraphAddDependencies ( graph, nodeCij, curr, 1 );
+            }
+            else{
                 cudaGraphAddDependencies ( graph, prev, curr, 1 );
             }
             prev = curr;
             /// Here has a index problem, doesn't link current node with node of last iteration. 
             kernal_number = kernal_number + 1;
+            }
         }
+    }
 return kernal_number;
 #endif
 }
