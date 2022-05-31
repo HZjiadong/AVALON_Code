@@ -200,7 +200,7 @@ cublasStatus_t cublasDgemm(cublasHandle_t handle,
 */
 //Multiply the arrays A and B on GPU and save the result in C
 //C(m,n) = A(m,k) * B(k,n)
-int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle){
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t graph){
     int lda=m, ldb=k, ldc=m;
     const double alf = 1.5;
     const double bet = 0.5;
@@ -227,6 +227,13 @@ return kernal_number;
       cout << "*** error: dimension m,n,k=(" << m << ',' << n << ',' << k << ") must be a multiple of BS=" << BS << endl;
       abort();
     }
+
+    cudaStream_t tempStream;
+    cublasHandle_t tempHandle;
+    checkCublasErrors(cublasCreate(&tempHandle));
+    checkCudaErrors(cudaStreamCreate(&tempStream));
+    cudaGraphNode_t* prev = 0; // previous graph node
+
     for (int i=0; i<m; i+=BS)
       for (int j=0; j<n; j+=BS)
         for (int k=0; k<n; k+=BS)
@@ -234,12 +241,35 @@ return kernal_number;
             // A,B,C have column major storage. 
             // With such storage element (ik,kj) of the matrix A is A[i+k*lda]
             // With such storage element (ik,kj) of the matrix B is B[k+j*lda]
-            // Note that: Aik = A+i+k*lda = &A[i]   or Bkj = B+k+j*ldb = &B[j*ldb] ???
-            // launch a kernel to do Cij += alpha*Aik*Bkj + beta*Cij ??? 
+            // Note that: Aik = A+i+k*lda = &A[i]   or Bkj = B+k+j*ldb = &B[j*ldb] 
+            // launch a kernel to do Cij += alpha*Aik*Bkj + beta*Cij
+
+            // 1/ At the begin add a kernel for Cij += beta*Cij
+            // 2/ For each k, launch a kernel to do Cij += alpha*Aik*Bkj
+            //   Once kernel and the graph node for k+1 is created, add a dependence between the node at iteration "k+1" with node at iteration k
+            // Note that the graph node for the kernel launched by cublasDgemm should be captured (then added to the graph with cudaGraphAddChildGraphNode)
+ 
             const double* Aik = A+i+k*lda;
             const double* Bkj = B+k+j*ldb;
             double* Cij = C+i+j*ldc;
             checkCublasErrors(cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, BS, alpha, Aik, lda, Bkj, ldb, beta, Cij, ldc));
+            
+            // add graph node for "Cij += alpha*Aik*Bkj"
+            cudaGraphNode_t* curr = new cudaGraphNode_t;
+            /* use capture stream API here => cublasDgemm captured in tempGraph */
+            cudaGraph_t tempGraph;    
+            checkCublasErrors(cublasSetStream( tempHandle, tempStream)); 
+
+            checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
+            call_kernel_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Aik, lda, Bkj, ldb, 0, Cij, ldc); //cette function est une stream cuda, not C++ stream!
+            checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
+            /// Third parameter is const cudaGraphNode_t* pDependencies, what happens here?            
+            checkCublasErrors(cudaGraphAddChildGraphNode (*curr, graph, 0, 0, tempGraph));
+            if (prev ==0){
+                cudaGraphAddDependencies ( graph, prev, curr, 1 );
+            }
+            prev = curr;
+            /// Here has a index problem, doesn't link current node with node of last iteration. 
             kernal_number = kernal_number + 1;
         }
 return kernal_number;
