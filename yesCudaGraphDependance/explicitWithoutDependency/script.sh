@@ -18,9 +18,7 @@ do
     #Move .csv file to directory $dirname
     dir=$prefix/$n/$bs
     mkdir -p $dir
-    mv captureTime.csv $dir
-    mv instantiationTime.csv $dir
-    mv launchingTime.csv $dir
+    mv cudaGraphSimple.csv $dir
   done
 done
 
@@ -45,6 +43,4 @@ dir4=${prefix}_plots
 mkdir $dir4
 mv *.pdf $dir4
 
-rm -f captureTime.csv
-rm -f instantiationTime.csv
-rm -f launchingTime.csv
+rm -f cudaGraphSimple.csv
