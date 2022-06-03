@@ -135,39 +135,82 @@ int main(int argc, char *argv[]) {
     cudaMemcpy(d_A,h_A,nr_rows_A * nr_cols_A * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_B,h_B,nr_rows_B * nr_cols_B * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_C,h_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyHostToDevice);
-    
-    //csv file object for graph explicite api without dependency
-    ofstream cudaGraphDependencyCsv;
-    cudaGraphDependencyCsv.open("cudaGraphDependency.csv", ofstream::out | ofstream::app);
-    cudaGraphDependencyCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
-    double dependencyApiTime;
 
-    // Trackers
-    timespec start_time, end_time;
-    int call_kernel_number;
-    string operation_type;
-    bool cudagraph;
-
-    //Create the graph
-    //Call function 
-    //Output data
+//Creation of graph event and output files
     cudaGraph_t graph;
     checkCudaErrors(cudaGraphCreate(&graph, 0));
 
-for (int k=0; k < 200; k ++){
-    clock_gettime(CLOCK_REALTIME, &start_time);
-    call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, graph);
-    clock_gettime(CLOCK_REALTIME, &end_time);
-    dependencyApiTime = time_to_double(time_diff(start_time, end_time));
-    operation_type = "graphApiYesDependency";
-    cudagraph = 1;
-    cudaGraphDependencyCsv << dependencyApiTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
-    printf("Elapsed time for execution with cuda graph explicit API with dependency:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
-}
-    //End of cuda function call    
-    cudaGraphDependencyCsv.close();
-    cudaGraphDependencyCsv.clear();
+    //csv file object 
+    ofstream createCudaGraphExplicitDependencyCsv;
+    createCudaGraphExplicitDependencyCsv.open("createCudaGraphExplicitDependency.csv", ofstream::out | ofstream::app);
+    createCudaGraphExplicitDependencyCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
+    double explicitDependencyCreateTime;
+
+    ofstream instantiateCudaGraphExplicitDependencyCsv;
+    instantiateCudaGraphExplicitDependencyCsv.open("instantiateCudaGraphExplicitDependency.csv", ofstream::out | ofstream::app);
+    instantiateCudaGraphExplicitDependencyCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
+    double explicitDependencyInstantiateTime;
+
+    ofstream executeCudaGraphExplicitDependencyCsv;
+    executeCudaGraphExplicitDependencyCsv.open("executeCudaGraphExplicitDependency.csv", ofstream::out | ofstream::app);
+    executeCudaGraphExplicitDependencyCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
+    double explicitDependencyExecuteTime;
+
+//Capture & instantiation loop 
+    for (int j = 0 ; j < 10; j ++)
+    {
+        // Trackers
+        timespec start_time, end_time;
+        int call_kernel_number;
+        string operation_type;
+        bool cudagraph;
+        cudaGraphExec_t instance;
+        cudaStream_t stream;
+
+        // create/update of graph
+        clock_gettime(CLOCK_REALTIME, &start_time);
+        call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, graph);
+        clock_gettime(CLOCK_REALTIME, &end_time);
+        explicitDependencyCreateTime = time_to_double(time_diff(start_time, end_time));
+        operation_type = "graphApiYesDependency";
+        cudagraph = 1;
+        createCudaGraphExplicitDependencyCsv << j << "," << explicitDependencyCreateTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
+        printf("Elapsed time for explicit graph creation with dependency:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+
+        // instantiate of graph
+        clock_gettime(CLOCK_REALTIME, &start_time);
+        checkCudaErrors(cudaGraphInstantiate(&instance, graph, NULL, NULL, 0));
+        clock_gettime(CLOCK_REALTIME, &end_time);
+        explicitDependencyInstantiateTime = time_to_double(time_diff(start_time, end_time));
+        operation_type = "graphApiYesDependency";
+        cudagraph = 1;
+        instantiateCudaGraphExplicitDependencyCsv << j << "," << explicitDependencyInstantiateTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
+        printf("Elapsed time for explicit graph instantiation with dependency:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+
+        // launch (loop) of graph
+        for (int k=0; k < 20; k ++){
+            clock_gettime(CLOCK_REALTIME, &start_time);
+            //lanch the cuda graph
+            checkCudaErrors(cudaGraphLaunch(instance, stream));
+            checkCudaErrors(cudaStreamSynchronize(stream));
+            clock_gettime(CLOCK_REALTIME, &end_time);
+            //high resolution timer
+            explicitDependencyExecuteTime = time_to_double(time_diff(start_time, end_time));
+            int index = j * 20 + k;
+            operation_type = "launch";
+            cudagraph = 1;
+            executeCudaGraphExplicitDependencyCsv << index << "," << explicitDependencyExecuteTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
+            printf("Elapsed time for explicit graph execution with dependency:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+        }
+    }
     
+    //close and clear csv files used   
+    createCudaGraphExplicitDependencyCsv.close();
+    createCudaGraphExplicitDependencyCsv.clear();
+    instantiateCudaGraphExplicitDependencyCsv.close();
+    instantiateCudaGraphExplicitDependencyCsv.clear();
+    executeCudaGraphExplicitDependencyCsv.close();
+    executeCudaGraphExplicitDependencyCsv.clear();
     
     //Copy (and print) the result on host memory
     checkCudaErrors(cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyDeviceToHost));
@@ -176,7 +219,7 @@ for (int k=0; k < 200; k ++){
         print_matrix(h_C, nr_rows_C, nr_cols_C);
     }    
     
-    //Distroy the handle
+    //Distroy the graph
     checkCudaErrors(cudaGraphDestroy(graph));
 
     //Free GPU memory
@@ -204,7 +247,7 @@ cublasStatus_t cublasDgemm(cublasHandle_t handle,
 */
 //Multiply the arrays A and B on GPU and save the result in C
 //C(m,n) = A(m,k) * B(k,n)
-int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t graph){
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t* graph){
     int lda=m, ldb=k, ldc=m;
     const double alf = 1.5;
     const double bet = 0.5;
@@ -237,14 +280,24 @@ return kernal_number;
     checkCublasErrors(cublasCreate(&tempHandle));
     checkCudaErrors(cudaStreamCreate(&tempStream));
     cudaGraphNode_t* prev = 0; // previous graph node
+    checkCublasErrors(cublasSetStream( tempHandle, tempStream)); 
 
     for (int i=0; i<m; i+=BS)
     {
         for (int j=0; j<n; j+=BS)
-        {
+        {   
             // 1/ At the begin add a kernel for Cij += beta*Cij
             // add graph node for "Cij += beta*Cij"
-            cudaGraphNode_t* nodeCij = new cudaGraphNode_t;
+            double* Cij = C+i+j*ldc;
+            cudaGraphNode_t* nodeC = new cudaGraphNode_t;
+            cudaGraph_t tempGraph;   
+
+            checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
+            //cette function realise "Cij <- beta*Cij"
+            kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, 0, 0, 0, 0, 0, 0, beta, Cij, ldc); 
+            checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
+            checkCudaErrors(cudaGraphAddChildGraphNode (nodeC, *graph, 0, 0, tempGraph));
+            prev = nodeC;
 
             for (int k=0; k<n; k+=BS)
             {
@@ -253,35 +306,23 @@ return kernal_number;
             // With such storage element (ik,kj) of the matrix B is B[k+j*lda]
             // Note that: Aik = A+i+k*lda = &A[i]   or Bkj = B+k+j*ldb = &B[j*ldb] 
             // launch a kernel to do Cij += alpha*Aik*Bkj + beta*Cij
-            
             const double* Aik = A+i+k*lda;
             const double* Bkj = B+k+j*ldb;
-            double* Cij = C+i+j*ldc;
             
             // 2/ For each k, launch a kernel to do Cij += alpha*Aik*Bkj
             //   Once kernel and the graph node for k+1 is created, add a dependence between the node at iteration "k+1" with node at iteration k
             // Note that the graph node for the kernel launched by cublasDgemm should be captured (then added to the graph with cudaGraphAddChildGraphNode)
-            
-            checkCublasErrors(cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, BS, alpha, Aik, lda, Bkj, ldb, beta, Cij, ldc));
-            
             // add graph node for "Cij += alpha*Aik*Bkj"
             cudaGraphNode_t* curr = new cudaGraphNode_t;
-            /* use capture stream API here => cublasDgemm captured in tempGraph */
-            cudaGraph_t tempGraph;    
-            checkCublasErrors(cublasSetStream( tempHandle, tempStream)); 
+            /* use capture stream API here => cublasDgemm captured in tempGraph */ 
 
             checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
+            //cette function realise "Cij <- alpha*Aij*Bkj + Cij "
             kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Aik, lda, Bkj, ldb, 0, Cij, ldc); //cette function est une stream cuda, not C++ stream!
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
             /// Third parameter is const cudaGraphNode_t* pDependencies, what happens here?            
-            checkCudaErrors(cudaGraphAddChildGraphNode (curr, graph, 0, 0, tempGraph));
-            if (prev == 0)
-            {
-                cudaGraphAddDependencies ( graph, nodeCij, curr, 1 );
-            }
-            else{
-                cudaGraphAddDependencies ( graph, prev, curr, 1 );
-            }
+            checkCudaErrors(cudaGraphAddChildGraphNode (curr, *graph, 0, 0, tempGraph));
+            cudaGraphAddDependencies (*graph, prev, curr, 1 );
             prev = curr;
             /// Here has a index problem, doesn't link current node with node of last iteration. 
             kernal_number = kernal_number + 1;
