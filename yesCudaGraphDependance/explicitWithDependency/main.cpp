@@ -12,7 +12,7 @@
 using namespace std;
 
 //Declaration des functions 
-int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle);
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t graph);
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 double time_to_double(timespec time);
@@ -38,9 +38,10 @@ int dimension;
 #define CUBLAS_API_H_
 #ifdef CUBLAS_API_H_
 //cuBLAS API errors
-static const char *_cudaGetErrorEnum(cublasStatus_t error)
-{
-    switch (error)
+static const char *_cudaGetErrorEnum(cudaError_t error)
+{   
+    string e = cudaGetErrorString(error);
+    switch (e)
     {
         case CUBLAS_STATUS_SUCCESS:
             return "CUBLAS_STATUS_SUCCESS";
