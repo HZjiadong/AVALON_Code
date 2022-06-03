@@ -247,7 +247,7 @@ return kernal_number;
 
         checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
         // cublasDgemm is a CPU funcition, which contains no information of operation on GPU( kernel functions/ parameters etc.)
-        call_kernel_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Ai0, lda, B0j, ldb, beta, Cij, ldc); //cette function est une stream cuda, not C++ stream!
+        kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Ai0, lda, B0j, ldb, beta, Cij, ldc); //cette function est une stream cuda, not C++ stream!
         checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
 
         /// 2nd step: add this graph by using "cudaGraphAddChildGraphNode", inside loop
@@ -256,7 +256,7 @@ return kernal_number;
         size_t numDependency = 0;
         
         //// cudaGraphAddChildGraphNode ( cudaGraphNode_t* pGraphNode, cudaGraph_t graph, const cudaGraphNode_t* pDependencies, size_t numDependencies, cudaGraph_t childGraph );
-        checkCudaErrors(cudaGraphAddChildGraphNode (*graphNode, graph, 0, 0, tempGraph));
+        checkCudaErrors(cudaGraphAddChildGraphNode (graphNode, graph, 0, 0, tempGraph));
         kernal_number = kernal_number + 1;
       }
 return kernal_number;
