@@ -12,7 +12,7 @@
 using namespace std;
 
 //Declaration des functions 
-int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cublasHandle_t handle);
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t graph);
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 double time_to_double(timespec time);
@@ -152,7 +152,7 @@ int main(int argc, char *argv[]) {
     //Call function 
     //Output data
     cudaGraph_t graph;
-    checkCublasErrors(cudaGraphCreate(&graph, 0));
+    checkCudaErrors(cudaGraphCreate(&graph, 0));
     clock_gettime(CLOCK_REALTIME, &start_time);
     call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, graph);
     clock_gettime(CLOCK_REALTIME, &end_time);
@@ -171,8 +171,8 @@ int main(int argc, char *argv[]) {
         print_matrix(h_C, nr_rows_C, nr_cols_C);
     }    
     
-    //Distroy the handle
-    checkCublasErrors(cublasDestroy(handle));
+    //Distroy the graph
+    checkCudaErrors(cudaGraphDestroy(graph));
 
     //Free GPU memory
     checkCudaErrors(cudaFree(d_A));
@@ -256,7 +256,7 @@ return kernal_number;
         size_t numDependency = 0;
         
         //// cudaGraphAddChildGraphNode ( cudaGraphNode_t* pGraphNode, cudaGraph_t graph, const cudaGraphNode_t* pDependencies, size_t numDependencies, cudaGraph_t childGraph );
-        checkCublasErrors(cudaGraphAddChildGraphNode (*graphNode, graph, 0, 0, tempGraph));
+        checkCudaErrors(cudaGraphAddChildGraphNode (*graphNode, graph, 0, 0, tempGraph));
         kernal_number = kernal_number + 1;
       }
 return kernal_number;
