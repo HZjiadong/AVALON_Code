@@ -173,7 +173,7 @@ int main(int argc, char *argv[]) {
     }    
     
     //Distroy the handle
-    checkCublasErrors(cublasDestroy(handle));
+    checkCudaErrors(cudaGraphDestroy(graph));
 
     //Free GPU memory
     checkCudaErrors(cudaFree(d_A));
@@ -258,7 +258,7 @@ return kernal_number;
             //   Once kernel and the graph node for k+1 is created, add a dependence between the node at iteration "k+1" with node at iteration k
             // Note that the graph node for the kernel launched by cublasDgemm should be captured (then added to the graph with cudaGraphAddChildGraphNode)
             
-            checkCublasErrors(cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, BS, alpha, Aik, lda, Bkj, ldb, beta, Cij, ldc));
+            checkCublasErrors(cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, BS, alpha, Aik, lda, Bkj, ldb, beta, Cij, ldc));
             
             // add graph node for "Cij += alpha*Aik*Bkj"
             cudaGraphNode_t* curr = new cudaGraphNode_t;
