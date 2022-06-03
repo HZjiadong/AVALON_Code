@@ -38,10 +38,9 @@ int dimension;
 #define CUBLAS_API_H_
 #ifdef CUBLAS_API_H_
 //cuBLAS API errors
-static const char *_cudaGetErrorEnum(cudaError_t error)
-{   
-    string e = cudaGetErrorString(error);
-    switch (e)
+static const char *_cudaGetErrorEnum(cublasStatus_t error)
+{
+    switch (error)
     {
         case CUBLAS_STATUS_SUCCESS:
             return "CUBLAS_STATUS_SUCCESS";
@@ -153,7 +152,7 @@ int main(int argc, char *argv[]) {
     //Call function 
     //Output data
     cudaGraph_t graph;
-    checkCublasErrors(cudaGraphCreate(&graph, 0));
+    checkCudaErrors(cudaGraphCreate(&graph, 0));
     clock_gettime(CLOCK_REALTIME, &start_time);
     call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, graph);
     clock_gettime(CLOCK_REALTIME, &end_time);
