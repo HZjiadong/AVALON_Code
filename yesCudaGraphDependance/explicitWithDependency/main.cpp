@@ -162,7 +162,7 @@ for (int k=0; k < 200; k ++){
     operation_type = "graphApiYesDependency";
     cudagraph = 1;
     cudaGraphDependencyCsv << dependencyApiTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
-    printf("Elapsed time for graph capture:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+    printf("Elapsed time for execution with cuda graph explicit API with dependency:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 }
     //End of cuda function call    
     cudaGraphDependencyCsv.close();
