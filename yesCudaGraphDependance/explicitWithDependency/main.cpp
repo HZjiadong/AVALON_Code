@@ -270,7 +270,7 @@ return kernal_number;
             kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Aik, lda, Bkj, ldb, 0, Cij, ldc); //cette function est une stream cuda, not C++ stream!
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
             /// Third parameter is const cudaGraphNode_t* pDependencies, what happens here?            
-            checkCublasErrors(cudaGraphAddChildGraphNode (curr, graph, 0, 0, tempGraph));
+            checkCudaErrors(cudaGraphAddChildGraphNode (curr, graph, 0, 0, tempGraph));
             if (prev == 0)
             {
                 cudaGraphAddDependencies ( graph, nodeCij, curr, 1 );
