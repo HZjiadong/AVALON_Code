@@ -1,3 +1,0 @@
-index,time,kernel,dimension,blocksize,operation,cudagraph,
-0,0.133647,16384,40960,320,capture,1
-1,0.13528,16384,40960,320,capture,1
