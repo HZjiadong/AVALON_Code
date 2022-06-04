@@ -247,7 +247,7 @@ cublasStatus_t cublasDgemm(cublasHandle_t handle,
 */
 //Multiply the arrays A and B on GPU and save the result in C
 //C(m,n) = A(m,k) * B(k,n)
-int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t* graph){
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t graph){
     int lda=m, ldb=k, ldc=m;
     const double alf = 1.5;
     const double bet = 0.5;
@@ -296,7 +296,7 @@ return kernal_number;
             //cette function realise "Cij <- beta*Cij"
             kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, 0, 0, 0, 0, 0, 0, beta, Cij, ldc); 
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
-            checkCudaErrors(cudaGraphAddChildGraphNode (nodeC, *graph, 0, 0, tempGraph));
+            checkCudaErrors(cudaGraphAddChildGraphNode (nodeC, graph, 0, 0, tempGraph));
             prev = nodeC;
 
             for (int k=0; k<n; k+=BS)
@@ -321,8 +321,8 @@ return kernal_number;
             kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Aik, lda, Bkj, ldb, 0, Cij, ldc); //cette function est une stream cuda, not C++ stream!
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
             /// Third parameter is const cudaGraphNode_t* pDependencies, what happens here?            
-            checkCudaErrors(cudaGraphAddChildGraphNode (curr, *graph, 0, 0, tempGraph));
-            cudaGraphAddDependencies (*graph, prev, curr, 1 );
+            checkCudaErrors(cudaGraphAddChildGraphNode (curr, graph, 0, 0, tempGraph));
+            cudaGraphAddDependencies (graph, prev, curr, 1 );
             prev = curr;
             /// Here has a index problem, doesn't link current node with node of last iteration. 
             kernal_number = kernal_number + 1;
