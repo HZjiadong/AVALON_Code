@@ -18,7 +18,9 @@ do
     #Move .csv file to directory $dirname
     dir=$prefix/$n/$bs
     mkdir -p $dir
-    mv cudaGraphSimple.csv $dir
+    mv createCudaGraphExplicitDependency.csv $dir
+    mv instantiateCudaGraphExplicitDependency.csv $dir
+    mv executeCudaGraphExplicitDependency.csv $dir
   done
 done
 
@@ -43,4 +45,6 @@ dir4=${prefix}_plots
 mkdir $dir4
 mv *.pdf $dir4
 
-rm -f cudaGraphSimple.csv
+rm -f createCudaGraphExplicitDependency.csv
+rm -f instantiateCudaGraphExplicitDependency.csv
+rm -f executeCudaGraphExplicitDependency.csv.csv
