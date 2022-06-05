@@ -293,12 +293,13 @@ return kernal_number;
             cudaGraph_t tempGraph;   
 
             checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
-            //cette function realise "Cij <- beta*Cij"
-            printf("Is cublasDgemm the error source?:(s)\n");
-            kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, 0, 0, 0, 0, 0, 0, beta, Cij, ldc); 
+            //cette function realise "Cij <- beta*Cij", 
+            //En fait DGEMM ne doit pas accepter de k==0. Dans ce cas l’opération C<-beta*C doit être vu pour comme une addition.
+            checkCublasErrors(cublasDaxpy(tempHandle, beta, BS*BS, Cij, 1, Cij, 1);); 
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
             checkCudaErrors(cudaGraphAddChildGraphNode (nodeC, graph, 0, 0, tempGraph));
             prev = nodeC;
+            kernal_number = kernal_number + 1;
 
             for (int k=0; k<n; k+=BS)
             {
@@ -319,7 +320,7 @@ return kernal_number;
 
             checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
             //cette function realise "Cij <- alpha*Aij*Bkj + Cij "
-            kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Aik, lda, Bkj, ldb, 0, Cij, ldc); //cette function est une stream cuda, not C++ stream!
+            checkCublasErrors(cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Aik, lda, Bkj, ldb, 0, Cij, ldc)); //cette function est une stream cuda, not C++ stream!
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
             /// Third parameter is const cudaGraphNode_t* pDependencies, what happens here?            
             checkCudaErrors(cudaGraphAddChildGraphNode (curr, graph, 0, 0, tempGraph));
