@@ -294,7 +294,7 @@ return kernal_number;
         double* Cij = C+i+j*ldc;
 
         // cublasDgemm is a CPU funcition, which contains no information of operation on GPU( kernel functions/ parameters etc.)
-        kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Ai0, lda, B0j, ldb, beta, Cij, ldc); //cette function est une stream cuda, not C++ stream!
+        checkCublasErrors(cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Ai0, lda, B0j, ldb, beta, Cij, ldc)); //cette function est une stream cuda, not C++ stream!
         cudaGraph_t tempGraph;
         checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
 
