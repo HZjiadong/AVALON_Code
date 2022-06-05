@@ -295,7 +295,7 @@ return kernal_number;
             checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
             //cette function realise "Cij <- beta*Cij", 
             //En fait DGEMM ne doit pas accepter de k==0. Dans ce cas l’opération C<-beta*C doit être vu pour comme une addition.
-            checkCublasErrors(cublasDaxpy(tempHandle, beta, BS*BS, Cij, 1, Cij, 1);); 
+            checkCublasErrors(cublasDaxpy(tempHandle, BS*BS, beta, Cij, 1, Cij, 1)); 
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
             checkCudaErrors(cudaGraphAddChildGraphNode (nodeC, graph, 0, 0, tempGraph));
             prev = nodeC;
