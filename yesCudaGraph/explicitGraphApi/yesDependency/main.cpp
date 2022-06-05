@@ -294,7 +294,7 @@ return kernal_number;
 
             checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
             //cette function realise "Cij <- beta*Cij"
-            kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, 0, 0.0, 0.0, 0.0, 0.0, 0.0, beta, Cij, ldc); 
+            kernal_number = cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, 0, 0, 0, 0, 0, 0, beta, Cij, ldc); 
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
             checkCudaErrors(cudaGraphAddChildGraphNode (nodeC, graph, 0, 0, tempGraph));
             prev = nodeC;
