@@ -12,7 +12,7 @@
 using namespace std;
 
 //Declaration des functions 
-int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t graph);
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int M, const int K, const int N, cudaGraph_t graph);
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 double time_to_double(timespec time);
@@ -247,7 +247,7 @@ cublasStatus_t cublasDgemm(cublasHandle_t handle,
 */
 //Multiply the arrays A and B on GPU and save the result in C
 //C(m,n) = A(m,k) * B(k,n)
-int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t graph){
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int M, const int K, const int N, cudaGraph_t graph){
     int lda=m, ldb=k, ldc=m;
     const double alf = 1.5;
     const double bet = 0.5;
@@ -282,9 +282,9 @@ return kernal_number;
     cudaGraphNode_t* prev = 0; // previous graph node
     checkCublasErrors(cublasSetStream( tempHandle, tempStream)); 
 
-    for (int i=0; i<m; i+=BS)
+    for (int i=0; i<M; i+=BS)
     {
-        for (int j=0; j<n; j+=BS)
+        for (int j=0; j<N; j+=BS)
         {   
             // 1/ At the begin add a kernel for Cij += beta*Cij
             // add graph node for "Cij += beta*Cij"
@@ -301,7 +301,7 @@ return kernal_number;
             prev = nodeC;
             kernal_number = kernal_number + 1;
 
-            for (int k=0; k<n; k+=BS)
+            for (int k=0; k<K; k+=BS)
             {
             // A,B,C have column major storage. 
             // With such storage element (ik,kj) of the matrix A is A[i+k*lda]
@@ -320,7 +320,7 @@ return kernal_number;
 
             checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
             //cette function realise "Cij <- alpha*Aij*Bkj + Cij "
-            checkCublasErrors(cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, k, alpha, Aik, lda, Bkj, ldb, 0, Cij, ldc)); //cette function est une stream cuda, not C++ stream!
+            checkCublasErrors(cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, BS, alpha, Aik, lda, Bkj, ldb, 1, Cij, ldc)); //cette function est une stream cuda, not C++ stream!
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
             /// Third parameter is const cudaGraphNode_t* pDependencies, what happens here?            
             checkCudaErrors(cudaGraphAddChildGraphNode (curr, graph, 0, 0, tempGraph));
