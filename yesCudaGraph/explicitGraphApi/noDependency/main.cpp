@@ -12,7 +12,7 @@
 using namespace std;
 
 //Declaration des functions 
-int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t graph);
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int M, const int K, const int N, cudaGraph_t graph);
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
 double time_to_double(timespec time);
@@ -136,10 +136,7 @@ int main(int argc, char *argv[]) {
     cudaMemcpy(d_B,h_B,nr_rows_B * nr_cols_B * sizeof(double),cudaMemcpyHostToDevice);
     cudaMemcpy(d_C,h_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyHostToDevice);
 
-//Creation of graph event and output files
-    cudaGraph_t graph;
-    checkCudaErrors(cudaGraphCreate(&graph, 0));
-
+//Creation of output files
     //csv file object 
     ofstream createCudaGraphExplicitDependencyCsv;
     createCudaGraphExplicitDependencyCsv.open("createCudaGraphExplicitDependency.csv", ofstream::out | ofstream::app);
@@ -159,6 +156,9 @@ int main(int argc, char *argv[]) {
 //Capture & instantiation loop 
     for (int j = 0 ; j < 10; j ++)
     {
+
+        cudaGraph_t graph;
+        checkCudaErrors(cudaGraphCreate(&graph, 0));
         // Trackers
         timespec start_time, end_time;
         int call_kernel_number;
@@ -202,6 +202,9 @@ int main(int argc, char *argv[]) {
             executeCudaGraphExplicitDependencyCsv << index << "," << explicitDependencyExecuteTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
             printf("Elapsed time for explicit graph execution with dependency:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
+
+        //Distroy the graph
+        checkCudaErrors(cudaGraphDestroy(graph));
     }
     
     //close and clear csv files used   
@@ -218,9 +221,6 @@ int main(int argc, char *argv[]) {
         cout << "C =" << endl;
         print_matrix(h_C, nr_rows_C, nr_cols_C);
     }    
-    
-    //Distroy the graph
-    checkCudaErrors(cudaGraphDestroy(graph));
 
     //Free GPU memory
     checkCudaErrors(cudaFree(d_A));
@@ -247,8 +247,8 @@ cublasStatus_t cublasDgemm(cublasHandle_t handle,
 */
 //Multiply the arrays A and B on GPU and save the result in C
 //C(m,n) = A(m,k) * B(k,n)
-int gpu_blas_mmul(const double *A, const double *B, double *C, const int m, const int k, const int n, cudaGraph_t graph){
-    int lda=m, ldb=k, ldc=m;
+int gpu_blas_mmul(const double *A, const double *B, double *C, const int M, const int K, const int N, cudaGraph_t graph){
+    int lda=M, ldb=K, ldc=M;
     const double alf = 1.5;
     const double bet = 0.5;
     const double *alpha = &alf;
@@ -269,9 +269,9 @@ return kernal_number;
     {
         exit( -1 );
     }
-    if ( (m % BS) || (k%BS) || (n%BS)) 
+    if ( (M % BS) || (K%BS) || (N%BS)) 
     {
-      cout << "*** error: dimension m,n,k=(" << m << ',' << n << ',' << k << ") must be a multiple of BS=" << BS << endl;
+      cout << "*** error: dimension m,n,k=(" << M << ',' << N << ',' << K << ") must be a multiple of BS=" << BS << endl;
       abort();
     }
 
