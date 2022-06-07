@@ -269,9 +269,9 @@ return kernal_number;
     {
         exit( -1 );
     }
-    if ( (m % BS) || (k%BS) || (n%BS)) 
+    if ( (M % BS) || (K%BS) || (N%BS)) 
     {
-      cout << "*** error: dimension m,n,k=(" << m << ',' << n << ',' << k << ") must be a multiple of BS=" << BS << endl;
+      cout << "*** error: dimension m,n,k=(" << M << ',' << N << ',' << K << ") must be a multiple of BS=" << BS << endl;
       abort();
     }
 
@@ -310,6 +310,7 @@ return kernal_number;
             // launch a kernel to do Cij += alpha*Aik*Bkj + beta*Cij
             const double* Aik = A+i+k*lda;
             const double* Bkj = B+k+j*ldb;
+            const double tempB = 1.0;
             
             // 2/ For each k, launch a kernel to do Cij += alpha*Aik*Bkj
             //   Once kernel and the graph node for k+1 is created, add a dependence between the node at iteration "k+1" with node at iteration k
@@ -320,7 +321,7 @@ return kernal_number;
 
             checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
             //cette function realise "Cij <- alpha*Aij*Bkj + Cij "
-            checkCublasErrors(cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, BS, alpha, Aik, lda, Bkj, ldb, 1, Cij, ldc)); //cette function est une stream cuda, not C++ stream!
+            checkCublasErrors(cublasDgemm(tempHandle, CUBLAS_OP_N, CUBLAS_OP_N, BS, BS, BS, alpha, Aik, lda, Bkj, ldb, &tempB, Cij, ldc)); //cette function est une stream cuda, not C++ stream!
             checkCudaErrors(cudaStreamEndCapture(tempStream, &tempGraph));
             /// Third parameter is const cudaGraphNode_t* pDependencies, what happens here?            
             checkCudaErrors(cudaGraphAddChildGraphNode (curr, graph, 0, 0, tempGraph));
