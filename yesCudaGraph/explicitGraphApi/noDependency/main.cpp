@@ -11,7 +11,7 @@
 #include <cublas_v2.h>
 using namespace std;
 
-//Declaration des functions 
+//Declaration
 int gpu_blas_mmul(const double *A, const double *B, double *C, const int M, const int K, const int N, cudaGraph_t graph);
 void print_matrix(const double *A, int nr_rows_A, int nr_cols_A);
 timespec time_diff(timespec start, timespec end);
@@ -27,7 +27,8 @@ int dimension;
   int BS;
 #endif
 
-//Macro Cuda error check, check error message during a cuda launch or cuda api call
+//  Macro Cuda error check
+//  check error message during a cuda launch or cuda api call
 #define checkCudaErrors(e) {                                        \
  if(e!=cudaSuccess) {                                              \
    printf("Cuda failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(e));           \
@@ -138,54 +139,53 @@ int main(int argc, char *argv[]) {
 
 //Creation of output files
     //csv file object 
-    ofstream createCudaGraphExplicitDependencyCsv;
-    createCudaGraphExplicitDependencyCsv.open("createCudaGraphExplicitDependency.csv", ofstream::out | ofstream::app);
-    createCudaGraphExplicitDependencyCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
-    double explicitDependencyCreateTime;
+    ofstream createCudaGraphExplicitSimpleCsv;
+    createCudaGraphExplicitSimpleCsv.open("createCudaGraphExplicitSimple.csv", ofstream::out | ofstream::app);
+    createCudaGraphExplicitSimpleCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
+    double explicitSimpleCreateTime;
 
-    ofstream instantiateCudaGraphExplicitDependencyCsv;
-    instantiateCudaGraphExplicitDependencyCsv.open("instantiateCudaGraphExplicitDependency.csv", ofstream::out | ofstream::app);
-    instantiateCudaGraphExplicitDependencyCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
-    double explicitDependencyInstantiateTime;
+    ofstream instantiateCudaGraphExplicitSimpleCsv;
+    instantiateCudaGraphExplicitSimpleCsv.open("instantiateCudaGraphExplicitSimple.csv", ofstream::out | ofstream::app);
+    instantiateCudaGraphExplicitSimpleCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
+    double explicitSimpleInstantiateTime;
 
-    ofstream executeCudaGraphExplicitDependencyCsv;
-    executeCudaGraphExplicitDependencyCsv.open("executeCudaGraphExplicitDependency.csv", ofstream::out | ofstream::app);
-    executeCudaGraphExplicitDependencyCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
-    double explicitDependencyExecuteTime;
+    ofstream executeCudaGraphExplicitSimpleCsv;
+    executeCudaGraphExplicitSimpleCsv.open("executeCudaGraphExplicitSimple.csv", ofstream::out | ofstream::app);
+    executeCudaGraphExplicitSimpleCsv << "time" << "," << "kernel" << "," << "dimension" << "," << "blocksize" << "," << "operation" << "," << endl;
+    double explicitSimpleExecuteTime;
 
 //Capture & instantiation loop 
     for (int j = 0 ; j < 10; j ++)
-    {
-
-        cudaGraph_t graph;
-        checkCudaErrors(cudaGraphCreate(&graph, 0));
-        // Trackers
+    {    
+        // Temporary variables' initialization
         timespec start_time, end_time;
         int call_kernel_number;
         string operation_type;
         bool cudagraph;
         cudaGraphExec_t instance;
         cudaStream_t stream;
+        cudaGraph_t graph;
+        checkCudaErrors(cudaGraphCreate(&graph, 0));
 
         // create/update of graph
         clock_gettime(CLOCK_REALTIME, &start_time);
         call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, graph);
         clock_gettime(CLOCK_REALTIME, &end_time);
-        explicitDependencyCreateTime = time_to_double(time_diff(start_time, end_time));
-        operation_type = "graphApiYesDependency";
+        explicitSimpleCreateTime = time_to_double(time_diff(start_time, end_time));
+        operation_type = "graphApiYesSimple";
         cudagraph = 1;
-        createCudaGraphExplicitDependencyCsv << j << "," << explicitDependencyCreateTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
-        printf("Elapsed time for explicit graph creation with dependency:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+        createCudaGraphExplicitSimpleCsv << j << "," << explicitSimpleCreateTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
+        printf("Elapsed time for simple explicit CUDA graph creation with Simple:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         // instantiate of graph
         clock_gettime(CLOCK_REALTIME, &start_time);
         checkCudaErrors(cudaGraphInstantiate(&instance, graph, NULL, NULL, 0));
         clock_gettime(CLOCK_REALTIME, &end_time);
-        explicitDependencyInstantiateTime = time_to_double(time_diff(start_time, end_time));
-        operation_type = "graphApiYesDependency";
+        explicitSimpleInstantiateTime = time_to_double(time_diff(start_time, end_time));
+        operation_type = "graphApiYesSimple";
         cudagraph = 1;
-        instantiateCudaGraphExplicitDependencyCsv << j << "," << explicitDependencyInstantiateTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
-        printf("Elapsed time for explicit graph instantiation with dependency:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+        instantiateCudaGraphExplicitSimpleCsv << j << "," << explicitSimpleInstantiateTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
+        printf("Elapsed time for simple explicit CUDA graph instantiation:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
 
         // launch (loop) of graph
         for (int k=0; k < 20; k ++){
@@ -195,12 +195,12 @@ int main(int argc, char *argv[]) {
             checkCudaErrors(cudaStreamSynchronize(stream));
             clock_gettime(CLOCK_REALTIME, &end_time);
             //high resolution timer
-            explicitDependencyExecuteTime = time_to_double(time_diff(start_time, end_time));
+            explicitSimpleExecuteTime = time_to_double(time_diff(start_time, end_time));
             int index = j * 20 + k;
             operation_type = "launch";
             cudagraph = 1;
-            executeCudaGraphExplicitDependencyCsv << index << "," << explicitDependencyExecuteTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
-            printf("Elapsed time for explicit graph execution with dependency:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
+            executeCudaGraphExplicitSimpleCsv << index << "," << explicitSimpleExecuteTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
+            printf("Elapsed time for simple explicit CUDA graph execution:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
 
         //Distroy the graph
@@ -208,12 +208,12 @@ int main(int argc, char *argv[]) {
     }
     
     //close and clear csv files used   
-    createCudaGraphExplicitDependencyCsv.close();
-    createCudaGraphExplicitDependencyCsv.clear();
-    instantiateCudaGraphExplicitDependencyCsv.close();
-    instantiateCudaGraphExplicitDependencyCsv.clear();
-    executeCudaGraphExplicitDependencyCsv.close();
-    executeCudaGraphExplicitDependencyCsv.clear();
+    createCudaGraphExplicitSimpleCsv.close();
+    createCudaGraphExplicitSimpleCsv.clear();
+    instantiateCudaGraphExplicitSimpleCsv.close();
+    instantiateCudaGraphExplicitSimpleCsv.clear();
+    executeCudaGraphExplicitSimpleCsv.close();
+    executeCudaGraphExplicitSimpleCsv.clear();
     
     //Copy (and print) the result on host memory
     checkCudaErrors(cudaMemcpy(h_C,d_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyDeviceToHost));
@@ -280,7 +280,6 @@ return kernal_number;
     checkCublasErrors(cublasCreate(&tempHandle));
     checkCudaErrors(cudaStreamCreate(&tempStream));
     checkCublasErrors(cublasSetStream( tempHandle, tempStream));   
-    checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
 
     for (int i=0; i<M; i+=BS)
       for (int j=0; j<N; j+=BS)
