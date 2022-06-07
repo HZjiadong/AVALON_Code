@@ -156,14 +156,14 @@ int main(int argc, char *argv[]) {
 //Capture & instantiation loop 
     for (int j = 0 ; j < 10; j ++)
     {
-        // Trackers
+        // Temporary variables' declaration and initialization
         timespec start_time, end_time;
-        int call_kernel_number;
         string operation_type;
-        bool cudagraph;
         cudaGraphExec_t instance;
         cudaStream_t stream;
         cudaGraph_t graph;
+        bool cudagraph;
+        int call_kernel_number;
         checkCudaErrors(cudaGraphCreate(&graph, 0));
 
         // create/update of graph
