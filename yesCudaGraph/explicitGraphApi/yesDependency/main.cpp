@@ -137,9 +137,6 @@ int main(int argc, char *argv[]) {
     cudaMemcpy(d_C,h_C,nr_rows_C * nr_cols_C * sizeof(double),cudaMemcpyHostToDevice);
 
 //Creation of graph event and output files
-    cudaGraph_t graph;
-    checkCudaErrors(cudaGraphCreate(&graph, 0));
-
     //csv file object 
     ofstream createCudaGraphExplicitDependencyCsv;
     createCudaGraphExplicitDependencyCsv.open("createCudaGraphExplicitDependency.csv", ofstream::out | ofstream::app);
@@ -166,6 +163,8 @@ int main(int argc, char *argv[]) {
         bool cudagraph;
         cudaGraphExec_t instance;
         cudaStream_t stream;
+        cudaGraph_t graph;
+        checkCudaErrors(cudaGraphCreate(&graph, 0));
 
         // create/update of graph
         clock_gettime(CLOCK_REALTIME, &start_time);
@@ -202,6 +201,9 @@ int main(int argc, char *argv[]) {
             executeCudaGraphExplicitDependencyCsv << index << "," << explicitDependencyExecuteTime << "," << call_kernel_number << "," << dimension << "," << BS << "," << operation_type << "," << cudagraph << endl;
             printf("Elapsed time for explicit graph execution with dependency:%f (s)\n", time_to_double(time_diff(start_time, end_time)));
         }
+
+        //Destroy the graph
+        checkCudaErrors(cudaGraphDestroy(graph));
     }
     
     //close and clear csv files used   
@@ -219,8 +221,6 @@ int main(int argc, char *argv[]) {
         print_matrix(h_C, nr_rows_C, nr_cols_C);
     }    
     
-    //Distroy the graph
-    checkCudaErrors(cudaGraphDestroy(graph));
 
     //Free GPU memory
     checkCudaErrors(cudaFree(d_A));
