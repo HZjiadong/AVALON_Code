@@ -282,8 +282,8 @@ return kernal_number;
     checkCublasErrors(cublasSetStream( tempHandle, tempStream));   
     checkCudaErrors(cudaStreamBeginCapture(tempStream, cudaStreamCaptureModeGlobal));
 
-    for (int i=0; i<m; i+=BS)
-      for (int j=0; j<n; j+=BS)
+    for (int i=0; i<M; i+=BS)
+      for (int j=0; j<N; j+=BS)
       { //use Graph Stream Capture API to create a childNode, since we don't have node parameter
         /// 1st step: Stream Capture API --> une graph  
         //// A,B,C have column major storage. With such storage element (i,j) of the matrix A is A[i+j*lda]
