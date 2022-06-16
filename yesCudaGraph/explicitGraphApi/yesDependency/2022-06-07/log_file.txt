@@ -1,0 +1,3208 @@
+This is the Log File of datestart Time 2022-06-07 22:20:15
+----- run GEMM 6400 x 6400, BS=640
+Elapsed time for explicit graph creation with dependency:0.659943 (s)
+Elapsed time for explicit graph instantiation with dependency:0.011002 (s)
+Elapsed time for explicit graph execution with dependency:0.054428 (s)
+Elapsed time for explicit graph execution with dependency:0.052715 (s)
+Elapsed time for explicit graph execution with dependency:0.044045 (s)
+Elapsed time for explicit graph execution with dependency:0.044044 (s)
+Elapsed time for explicit graph execution with dependency:0.044033 (s)
+Elapsed time for explicit graph execution with dependency:0.044228 (s)
+Elapsed time for explicit graph execution with dependency:0.039716 (s)
+Elapsed time for explicit graph execution with dependency:0.036292 (s)
+Elapsed time for explicit graph execution with dependency:0.036387 (s)
+Elapsed time for explicit graph execution with dependency:0.036250 (s)
+Elapsed time for explicit graph execution with dependency:0.036286 (s)
+Elapsed time for explicit graph execution with dependency:0.036495 (s)
+Elapsed time for explicit graph execution with dependency:0.035926 (s)
+Elapsed time for explicit graph execution with dependency:0.035834 (s)
+Elapsed time for explicit graph execution with dependency:0.036045 (s)
+Elapsed time for explicit graph execution with dependency:0.035877 (s)
+Elapsed time for explicit graph execution with dependency:0.035884 (s)
+Elapsed time for explicit graph execution with dependency:0.035898 (s)
+Elapsed time for explicit graph execution with dependency:0.035900 (s)
+Elapsed time for explicit graph execution with dependency:0.035877 (s)
+Elapsed time for explicit graph creation with dependency:0.193772 (s)
+Elapsed time for explicit graph instantiation with dependency:0.012672 (s)
+Elapsed time for explicit graph execution with dependency:0.031065 (s)
+Elapsed time for explicit graph execution with dependency:0.034962 (s)
+Elapsed time for explicit graph execution with dependency:0.036354 (s)
+Elapsed time for explicit graph execution with dependency:0.036324 (s)
+Elapsed time for explicit graph execution with dependency:0.036352 (s)
+Elapsed time for explicit graph execution with dependency:0.035776 (s)
+Elapsed time for explicit graph execution with dependency:0.035800 (s)
+Elapsed time for explicit graph execution with dependency:0.036271 (s)
+Elapsed time for explicit graph execution with dependency:0.036231 (s)
+Elapsed time for explicit graph execution with dependency:0.036229 (s)
+Elapsed time for explicit graph execution with dependency:0.035897 (s)
+Elapsed time for explicit graph execution with dependency:0.036114 (s)
+Elapsed time for explicit graph execution with dependency:0.035886 (s)
+Elapsed time for explicit graph execution with dependency:0.035884 (s)
+Elapsed time for explicit graph execution with dependency:0.035920 (s)
+Elapsed time for explicit graph execution with dependency:0.035886 (s)
+Elapsed time for explicit graph execution with dependency:0.035884 (s)
+Elapsed time for explicit graph execution with dependency:0.036110 (s)
+Elapsed time for explicit graph execution with dependency:0.035904 (s)
+Elapsed time for explicit graph execution with dependency:0.035899 (s)
+Elapsed time for explicit graph creation with dependency:0.213705 (s)
+Elapsed time for explicit graph instantiation with dependency:0.015078 (s)
+Elapsed time for explicit graph execution with dependency:0.030766 (s)
+Elapsed time for explicit graph execution with dependency:0.034855 (s)
+Elapsed time for explicit graph execution with dependency:0.036678 (s)
+Elapsed time for explicit graph execution with dependency:0.036353 (s)
+Elapsed time for explicit graph execution with dependency:0.036181 (s)
+Elapsed time for explicit graph execution with dependency:0.035891 (s)
+Elapsed time for explicit graph execution with dependency:0.035895 (s)
+Elapsed time for explicit graph execution with dependency:0.036069 (s)
+Elapsed time for explicit graph execution with dependency:0.035919 (s)
+Elapsed time for explicit graph execution with dependency:0.035893 (s)
+Elapsed time for explicit graph execution with dependency:0.036328 (s)
+Elapsed time for explicit graph execution with dependency:0.035892 (s)
+Elapsed time for explicit graph execution with dependency:0.035899 (s)
+Elapsed time for explicit graph execution with dependency:0.036211 (s)
+Elapsed time for explicit graph execution with dependency:0.035929 (s)
+Elapsed time for explicit graph execution with dependency:0.035893 (s)
+Elapsed time for explicit graph execution with dependency:0.036118 (s)
+Elapsed time for explicit graph execution with dependency:0.035891 (s)
+Elapsed time for explicit graph execution with dependency:0.035876 (s)
+Elapsed time for explicit graph execution with dependency:0.036094 (s)
+Elapsed time for explicit graph creation with dependency:0.232946 (s)
+Elapsed time for explicit graph instantiation with dependency:0.014389 (s)
+Elapsed time for explicit graph execution with dependency:0.030686 (s)
+Elapsed time for explicit graph execution with dependency:0.035220 (s)
+Elapsed time for explicit graph execution with dependency:0.036750 (s)
+Elapsed time for explicit graph execution with dependency:0.036432 (s)
+Elapsed time for explicit graph execution with dependency:0.036293 (s)
+Elapsed time for explicit graph execution with dependency:0.036238 (s)
+Elapsed time for explicit graph execution with dependency:0.036251 (s)
+Elapsed time for explicit graph execution with dependency:0.036038 (s)
+Elapsed time for explicit graph execution with dependency:0.035897 (s)
+Elapsed time for explicit graph execution with dependency:0.035901 (s)
+Elapsed time for explicit graph execution with dependency:0.035884 (s)
+Elapsed time for explicit graph execution with dependency:0.035898 (s)
+Elapsed time for explicit graph execution with dependency:0.035894 (s)
+Elapsed time for explicit graph execution with dependency:0.035885 (s)
+Elapsed time for explicit graph execution with dependency:0.035911 (s)
+Elapsed time for explicit graph execution with dependency:0.035904 (s)
+Elapsed time for explicit graph execution with dependency:0.035906 (s)
+Elapsed time for explicit graph execution with dependency:0.035889 (s)
+Elapsed time for explicit graph execution with dependency:0.035869 (s)
+Elapsed time for explicit graph execution with dependency:0.036312 (s)
+Elapsed time for explicit graph creation with dependency:0.253843 (s)
+Elapsed time for explicit graph instantiation with dependency:0.016261 (s)
+Elapsed time for explicit graph execution with dependency:0.030504 (s)
+Elapsed time for explicit graph execution with dependency:0.035153 (s)
+Elapsed time for explicit graph execution with dependency:0.036670 (s)
+Elapsed time for explicit graph execution with dependency:0.036332 (s)
+Elapsed time for explicit graph execution with dependency:0.036136 (s)
+Elapsed time for explicit graph execution with dependency:0.035916 (s)
+Elapsed time for explicit graph execution with dependency:0.035908 (s)
+Elapsed time for explicit graph execution with dependency:0.035876 (s)
+Elapsed time for explicit graph execution with dependency:0.035905 (s)
+Elapsed time for explicit graph execution with dependency:0.035853 (s)
+Elapsed time for explicit graph execution with dependency:0.036061 (s)
+Elapsed time for explicit graph execution with dependency:0.035878 (s)
+Elapsed time for explicit graph execution with dependency:0.035884 (s)
+Elapsed time for explicit graph execution with dependency:0.035879 (s)
+Elapsed time for explicit graph execution with dependency:0.035895 (s)
+Elapsed time for explicit graph execution with dependency:0.035883 (s)
+Elapsed time for explicit graph execution with dependency:0.035900 (s)
+Elapsed time for explicit graph execution with dependency:0.035882 (s)
+Elapsed time for explicit graph execution with dependency:0.035891 (s)
+Elapsed time for explicit graph execution with dependency:0.036059 (s)
+Elapsed time for explicit graph creation with dependency:0.273244 (s)
+Elapsed time for explicit graph instantiation with dependency:0.015980 (s)
+Elapsed time for explicit graph execution with dependency:0.030884 (s)
+Elapsed time for explicit graph execution with dependency:0.035113 (s)
+Elapsed time for explicit graph execution with dependency:0.036676 (s)
+Elapsed time for explicit graph execution with dependency:0.036323 (s)
+Elapsed time for explicit graph execution with dependency:0.036004 (s)
+Elapsed time for explicit graph execution with dependency:0.035877 (s)
+Elapsed time for explicit graph execution with dependency:0.035896 (s)
+Elapsed time for explicit graph execution with dependency:0.036061 (s)
+Elapsed time for explicit graph execution with dependency:0.035899 (s)
+Elapsed time for explicit graph execution with dependency:0.035908 (s)
+Elapsed time for explicit graph execution with dependency:0.035906 (s)
+Elapsed time for explicit graph execution with dependency:0.035886 (s)
+Elapsed time for explicit graph execution with dependency:0.035907 (s)
+Elapsed time for explicit graph execution with dependency:0.036089 (s)
+Elapsed time for explicit graph execution with dependency:0.035887 (s)
+Elapsed time for explicit graph execution with dependency:0.035900 (s)
+Elapsed time for explicit graph execution with dependency:0.035938 (s)
+Elapsed time for explicit graph execution with dependency:0.035883 (s)
+Elapsed time for explicit graph execution with dependency:0.035882 (s)
+Elapsed time for explicit graph execution with dependency:0.035944 (s)
+Elapsed time for explicit graph creation with dependency:0.294703 (s)
+Elapsed time for explicit graph instantiation with dependency:0.018838 (s)
+Elapsed time for explicit graph execution with dependency:0.030533 (s)
+Elapsed time for explicit graph execution with dependency:0.030066 (s)
+Elapsed time for explicit graph execution with dependency:0.034752 (s)
+Elapsed time for explicit graph execution with dependency:0.037844 (s)
+Elapsed time for explicit graph execution with dependency:0.037286 (s)
+Elapsed time for explicit graph execution with dependency:0.036311 (s)
+Elapsed time for explicit graph execution with dependency:0.036347 (s)
+Elapsed time for explicit graph execution with dependency:0.036308 (s)
+Elapsed time for explicit graph execution with dependency:0.035891 (s)
+Elapsed time for explicit graph execution with dependency:0.035884 (s)
+Elapsed time for explicit graph execution with dependency:0.036444 (s)
+Elapsed time for explicit graph execution with dependency:0.035897 (s)
+Elapsed time for explicit graph execution with dependency:0.035874 (s)
+Elapsed time for explicit graph execution with dependency:0.036169 (s)
+Elapsed time for explicit graph execution with dependency:0.035903 (s)
+Elapsed time for explicit graph execution with dependency:0.035888 (s)
+Elapsed time for explicit graph execution with dependency:0.035894 (s)
+Elapsed time for explicit graph execution with dependency:0.035884 (s)
+Elapsed time for explicit graph execution with dependency:0.035896 (s)
+Elapsed time for explicit graph execution with dependency:0.035976 (s)
+Elapsed time for explicit graph creation with dependency:0.314246 (s)
+Elapsed time for explicit graph instantiation with dependency:0.014381 (s)
+Elapsed time for explicit graph execution with dependency:0.030407 (s)
+Elapsed time for explicit graph execution with dependency:0.034937 (s)
+Elapsed time for explicit graph execution with dependency:0.036697 (s)
+Elapsed time for explicit graph execution with dependency:0.036457 (s)
+Elapsed time for explicit graph execution with dependency:0.036844 (s)
+Elapsed time for explicit graph execution with dependency:0.036252 (s)
+Elapsed time for explicit graph execution with dependency:0.036101 (s)
+Elapsed time for explicit graph execution with dependency:0.036186 (s)
+Elapsed time for explicit graph execution with dependency:0.035902 (s)
+Elapsed time for explicit graph execution with dependency:0.035905 (s)
+Elapsed time for explicit graph execution with dependency:0.035978 (s)
+Elapsed time for explicit graph execution with dependency:0.035912 (s)
+Elapsed time for explicit graph execution with dependency:0.035902 (s)
+Elapsed time for explicit graph execution with dependency:0.036056 (s)
+Elapsed time for explicit graph execution with dependency:0.035889 (s)
+Elapsed time for explicit graph execution with dependency:0.035897 (s)
+Elapsed time for explicit graph execution with dependency:0.036488 (s)
+Elapsed time for explicit graph execution with dependency:0.035897 (s)
+Elapsed time for explicit graph execution with dependency:0.035897 (s)
+Elapsed time for explicit graph execution with dependency:0.036178 (s)
+Elapsed time for explicit graph creation with dependency:0.335264 (s)
+Elapsed time for explicit graph instantiation with dependency:0.019919 (s)
+Elapsed time for explicit graph execution with dependency:0.030322 (s)
+Elapsed time for explicit graph execution with dependency:0.034953 (s)
+Elapsed time for explicit graph execution with dependency:0.036689 (s)
+Elapsed time for explicit graph execution with dependency:0.036421 (s)
+Elapsed time for explicit graph execution with dependency:0.036668 (s)
+Elapsed time for explicit graph execution with dependency:0.036047 (s)
+Elapsed time for explicit graph execution with dependency:0.035790 (s)
+Elapsed time for explicit graph execution with dependency:0.036044 (s)
+Elapsed time for explicit graph execution with dependency:0.036339 (s)
+Elapsed time for explicit graph execution with dependency:0.036343 (s)
+Elapsed time for explicit graph execution with dependency:0.036598 (s)
+Elapsed time for explicit graph execution with dependency:0.036335 (s)
+Elapsed time for explicit graph execution with dependency:0.035996 (s)
+Elapsed time for explicit graph execution with dependency:0.035965 (s)
+Elapsed time for explicit graph execution with dependency:0.035790 (s)
+Elapsed time for explicit graph execution with dependency:0.035815 (s)
+Elapsed time for explicit graph execution with dependency:0.036228 (s)
+Elapsed time for explicit graph execution with dependency:0.035903 (s)
+Elapsed time for explicit graph execution with dependency:0.035890 (s)
+Elapsed time for explicit graph execution with dependency:0.036068 (s)
+Elapsed time for explicit graph creation with dependency:0.354638 (s)
+Elapsed time for explicit graph instantiation with dependency:0.019144 (s)
+Elapsed time for explicit graph execution with dependency:0.030289 (s)
+Elapsed time for explicit graph execution with dependency:0.035279 (s)
+Elapsed time for explicit graph execution with dependency:0.036670 (s)
+Elapsed time for explicit graph execution with dependency:0.036329 (s)
+Elapsed time for explicit graph execution with dependency:0.036372 (s)
+Elapsed time for explicit graph execution with dependency:0.035870 (s)
+Elapsed time for explicit graph execution with dependency:0.035905 (s)
+Elapsed time for explicit graph execution with dependency:0.036020 (s)
+Elapsed time for explicit graph execution with dependency:0.035912 (s)
+Elapsed time for explicit graph execution with dependency:0.035901 (s)
+Elapsed time for explicit graph execution with dependency:0.035965 (s)
+Elapsed time for explicit graph execution with dependency:0.035877 (s)
+Elapsed time for explicit graph execution with dependency:0.035876 (s)
+Elapsed time for explicit graph execution with dependency:0.035904 (s)
+Elapsed time for explicit graph execution with dependency:0.035880 (s)
+Elapsed time for explicit graph execution with dependency:0.035874 (s)
+Elapsed time for explicit graph execution with dependency:0.036036 (s)
+Elapsed time for explicit graph execution with dependency:0.035875 (s)
+Elapsed time for explicit graph execution with dependency:0.035887 (s)
+Elapsed time for explicit graph execution with dependency:0.036041 (s)
+----- run GEMM 6400 x 6400, BS=3200
+Elapsed time for explicit graph creation with dependency:0.486651 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000214 (s)
+Elapsed time for explicit graph execution with dependency:0.037591 (s)
+Elapsed time for explicit graph execution with dependency:0.038752 (s)
+Elapsed time for explicit graph execution with dependency:0.038749 (s)
+Elapsed time for explicit graph execution with dependency:0.038748 (s)
+Elapsed time for explicit graph execution with dependency:0.038749 (s)
+Elapsed time for explicit graph execution with dependency:0.037411 (s)
+Elapsed time for explicit graph execution with dependency:0.033197 (s)
+Elapsed time for explicit graph execution with dependency:0.032956 (s)
+Elapsed time for explicit graph execution with dependency:0.032957 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032957 (s)
+Elapsed time for explicit graph execution with dependency:0.032958 (s)
+Elapsed time for explicit graph execution with dependency:0.032958 (s)
+Elapsed time for explicit graph execution with dependency:0.032958 (s)
+Elapsed time for explicit graph execution with dependency:0.032956 (s)
+Elapsed time for explicit graph execution with dependency:0.032955 (s)
+Elapsed time for explicit graph execution with dependency:0.032958 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph creation with dependency:0.000265 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000052 (s)
+Elapsed time for explicit graph execution with dependency:0.032970 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032958 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032962 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.033127 (s)
+Elapsed time for explicit graph execution with dependency:0.033793 (s)
+Elapsed time for explicit graph execution with dependency:0.034237 (s)
+Elapsed time for explicit graph execution with dependency:0.034237 (s)
+Elapsed time for explicit graph execution with dependency:0.034225 (s)
+Elapsed time for explicit graph execution with dependency:0.033934 (s)
+Elapsed time for explicit graph execution with dependency:0.033793 (s)
+Elapsed time for explicit graph execution with dependency:0.033807 (s)
+Elapsed time for explicit graph execution with dependency:0.033515 (s)
+Elapsed time for explicit graph creation with dependency:0.000274 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000160 (s)
+Elapsed time for explicit graph execution with dependency:0.033182 (s)
+Elapsed time for explicit graph execution with dependency:0.032948 (s)
+Elapsed time for explicit graph execution with dependency:0.032946 (s)
+Elapsed time for explicit graph execution with dependency:0.033132 (s)
+Elapsed time for explicit graph execution with dependency:0.033381 (s)
+Elapsed time for explicit graph execution with dependency:0.033382 (s)
+Elapsed time for explicit graph execution with dependency:0.033204 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032962 (s)
+Elapsed time for explicit graph execution with dependency:0.032963 (s)
+Elapsed time for explicit graph execution with dependency:0.032963 (s)
+Elapsed time for explicit graph execution with dependency:0.032962 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032964 (s)
+Elapsed time for explicit graph execution with dependency:0.033051 (s)
+Elapsed time for explicit graph execution with dependency:0.033378 (s)
+Elapsed time for explicit graph creation with dependency:0.000374 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000046 (s)
+Elapsed time for explicit graph execution with dependency:0.033387 (s)
+Elapsed time for explicit graph execution with dependency:0.033464 (s)
+Elapsed time for explicit graph execution with dependency:0.033800 (s)
+Elapsed time for explicit graph execution with dependency:0.033798 (s)
+Elapsed time for explicit graph execution with dependency:0.033801 (s)
+Elapsed time for explicit graph execution with dependency:0.033802 (s)
+Elapsed time for explicit graph execution with dependency:0.033802 (s)
+Elapsed time for explicit graph execution with dependency:0.033800 (s)
+Elapsed time for explicit graph execution with dependency:0.033524 (s)
+Elapsed time for explicit graph execution with dependency:0.033378 (s)
+Elapsed time for explicit graph execution with dependency:0.033276 (s)
+Elapsed time for explicit graph execution with dependency:0.032962 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph creation with dependency:0.000275 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000043 (s)
+Elapsed time for explicit graph execution with dependency:0.032971 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032962 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032962 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.033374 (s)
+Elapsed time for explicit graph execution with dependency:0.033380 (s)
+Elapsed time for explicit graph execution with dependency:0.033381 (s)
+Elapsed time for explicit graph execution with dependency:0.033379 (s)
+Elapsed time for explicit graph execution with dependency:0.033456 (s)
+Elapsed time for explicit graph execution with dependency:0.033804 (s)
+Elapsed time for explicit graph execution with dependency:0.033806 (s)
+Elapsed time for explicit graph execution with dependency:0.033807 (s)
+Elapsed time for explicit graph execution with dependency:0.033807 (s)
+Elapsed time for explicit graph execution with dependency:0.033808 (s)
+Elapsed time for explicit graph execution with dependency:0.033804 (s)
+Elapsed time for explicit graph execution with dependency:0.033532 (s)
+Elapsed time for explicit graph execution with dependency:0.033380 (s)
+Elapsed time for explicit graph execution with dependency:0.033287 (s)
+Elapsed time for explicit graph creation with dependency:0.000270 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000170 (s)
+Elapsed time for explicit graph execution with dependency:0.032975 (s)
+Elapsed time for explicit graph execution with dependency:0.032952 (s)
+Elapsed time for explicit graph execution with dependency:0.032947 (s)
+Elapsed time for explicit graph execution with dependency:0.032947 (s)
+Elapsed time for explicit graph execution with dependency:0.033369 (s)
+Elapsed time for explicit graph execution with dependency:0.033381 (s)
+Elapsed time for explicit graph execution with dependency:0.033380 (s)
+Elapsed time for explicit graph execution with dependency:0.032976 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.033066 (s)
+Elapsed time for explicit graph execution with dependency:0.033381 (s)
+Elapsed time for explicit graph execution with dependency:0.033383 (s)
+Elapsed time for explicit graph execution with dependency:0.033382 (s)
+Elapsed time for explicit graph execution with dependency:0.033381 (s)
+Elapsed time for explicit graph execution with dependency:0.033383 (s)
+Elapsed time for explicit graph execution with dependency:0.033383 (s)
+Elapsed time for explicit graph creation with dependency:0.000271 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000046 (s)
+Elapsed time for explicit graph execution with dependency:0.033399 (s)
+Elapsed time for explicit graph execution with dependency:0.033804 (s)
+Elapsed time for explicit graph execution with dependency:0.033794 (s)
+Elapsed time for explicit graph execution with dependency:0.033790 (s)
+Elapsed time for explicit graph execution with dependency:0.033788 (s)
+Elapsed time for explicit graph execution with dependency:0.033801 (s)
+Elapsed time for explicit graph execution with dependency:0.033806 (s)
+Elapsed time for explicit graph execution with dependency:0.033808 (s)
+Elapsed time for explicit graph execution with dependency:0.033682 (s)
+Elapsed time for explicit graph execution with dependency:0.033383 (s)
+Elapsed time for explicit graph execution with dependency:0.033380 (s)
+Elapsed time for explicit graph execution with dependency:0.033249 (s)
+Elapsed time for explicit graph execution with dependency:0.033313 (s)
+Elapsed time for explicit graph execution with dependency:0.033303 (s)
+Elapsed time for explicit graph execution with dependency:0.033046 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph creation with dependency:0.000284 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000049 (s)
+Elapsed time for explicit graph execution with dependency:0.032970 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.032959 (s)
+Elapsed time for explicit graph execution with dependency:0.032983 (s)
+Elapsed time for explicit graph execution with dependency:0.033380 (s)
+Elapsed time for explicit graph execution with dependency:0.033379 (s)
+Elapsed time for explicit graph execution with dependency:0.033371 (s)
+Elapsed time for explicit graph execution with dependency:0.033364 (s)
+Elapsed time for explicit graph execution with dependency:0.033362 (s)
+Elapsed time for explicit graph execution with dependency:0.033383 (s)
+Elapsed time for explicit graph execution with dependency:0.033808 (s)
+Elapsed time for explicit graph execution with dependency:0.033809 (s)
+Elapsed time for explicit graph execution with dependency:0.033806 (s)
+Elapsed time for explicit graph execution with dependency:0.033386 (s)
+Elapsed time for explicit graph execution with dependency:0.033453 (s)
+Elapsed time for explicit graph execution with dependency:0.033802 (s)
+Elapsed time for explicit graph execution with dependency:0.033809 (s)
+Elapsed time for explicit graph execution with dependency:0.033806 (s)
+Elapsed time for explicit graph execution with dependency:0.033813 (s)
+Elapsed time for explicit graph execution with dependency:0.033383 (s)
+Elapsed time for explicit graph creation with dependency:0.000268 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000277 (s)
+Elapsed time for explicit graph execution with dependency:0.033054 (s)
+Elapsed time for explicit graph execution with dependency:0.032958 (s)
+Elapsed time for explicit graph execution with dependency:0.033353 (s)
+Elapsed time for explicit graph execution with dependency:0.033363 (s)
+Elapsed time for explicit graph execution with dependency:0.033375 (s)
+Elapsed time for explicit graph execution with dependency:0.033386 (s)
+Elapsed time for explicit graph execution with dependency:0.033380 (s)
+Elapsed time for explicit graph execution with dependency:0.033149 (s)
+Elapsed time for explicit graph execution with dependency:0.032960 (s)
+Elapsed time for explicit graph execution with dependency:0.032963 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.033075 (s)
+Elapsed time for explicit graph execution with dependency:0.033386 (s)
+Elapsed time for explicit graph execution with dependency:0.033385 (s)
+Elapsed time for explicit graph execution with dependency:0.033384 (s)
+Elapsed time for explicit graph execution with dependency:0.033119 (s)
+Elapsed time for explicit graph execution with dependency:0.033383 (s)
+Elapsed time for explicit graph execution with dependency:0.033378 (s)
+Elapsed time for explicit graph execution with dependency:0.033384 (s)
+Elapsed time for explicit graph execution with dependency:0.033382 (s)
+Elapsed time for explicit graph creation with dependency:0.000263 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000055 (s)
+Elapsed time for explicit graph execution with dependency:0.033393 (s)
+Elapsed time for explicit graph execution with dependency:0.033382 (s)
+Elapsed time for explicit graph execution with dependency:0.033384 (s)
+Elapsed time for explicit graph execution with dependency:0.033382 (s)
+Elapsed time for explicit graph execution with dependency:0.033642 (s)
+Elapsed time for explicit graph execution with dependency:0.033803 (s)
+Elapsed time for explicit graph execution with dependency:0.033788 (s)
+Elapsed time for explicit graph execution with dependency:0.033789 (s)
+Elapsed time for explicit graph execution with dependency:0.033797 (s)
+Elapsed time for explicit graph execution with dependency:0.033446 (s)
+Elapsed time for explicit graph execution with dependency:0.033383 (s)
+Elapsed time for explicit graph execution with dependency:0.033383 (s)
+Elapsed time for explicit graph execution with dependency:0.033121 (s)
+Elapsed time for explicit graph execution with dependency:0.033380 (s)
+Elapsed time for explicit graph execution with dependency:0.033382 (s)
+Elapsed time for explicit graph execution with dependency:0.033305 (s)
+Elapsed time for explicit graph execution with dependency:0.033189 (s)
+Elapsed time for explicit graph execution with dependency:0.033379 (s)
+Elapsed time for explicit graph execution with dependency:0.033320 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+----- run GEMM 6400 x 6400, BS=6400
+Elapsed time for explicit graph creation with dependency:0.485643 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000195 (s)
+Elapsed time for explicit graph execution with dependency:0.046108 (s)
+Elapsed time for explicit graph execution with dependency:0.046749 (s)
+Elapsed time for explicit graph execution with dependency:0.046908 (s)
+Elapsed time for explicit graph execution with dependency:0.046907 (s)
+Elapsed time for explicit graph execution with dependency:0.046906 (s)
+Elapsed time for explicit graph execution with dependency:0.039384 (s)
+Elapsed time for explicit graph execution with dependency:0.033017 (s)
+Elapsed time for explicit graph execution with dependency:0.032810 (s)
+Elapsed time for explicit graph execution with dependency:0.032803 (s)
+Elapsed time for explicit graph execution with dependency:0.032803 (s)
+Elapsed time for explicit graph execution with dependency:0.032813 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032815 (s)
+Elapsed time for explicit graph execution with dependency:0.032815 (s)
+Elapsed time for explicit graph execution with dependency:0.032817 (s)
+Elapsed time for explicit graph execution with dependency:0.032821 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032817 (s)
+Elapsed time for explicit graph creation with dependency:0.000216 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000013 (s)
+Elapsed time for explicit graph execution with dependency:0.032821 (s)
+Elapsed time for explicit graph execution with dependency:0.032822 (s)
+Elapsed time for explicit graph execution with dependency:0.032814 (s)
+Elapsed time for explicit graph execution with dependency:0.032815 (s)
+Elapsed time for explicit graph execution with dependency:0.032820 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032821 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032961 (s)
+Elapsed time for explicit graph execution with dependency:0.033596 (s)
+Elapsed time for explicit graph execution with dependency:0.034096 (s)
+Elapsed time for explicit graph execution with dependency:0.033953 (s)
+Elapsed time for explicit graph execution with dependency:0.033667 (s)
+Elapsed time for explicit graph execution with dependency:0.033446 (s)
+Elapsed time for explicit graph execution with dependency:0.033252 (s)
+Elapsed time for explicit graph execution with dependency:0.033170 (s)
+Elapsed time for explicit graph execution with dependency:0.032804 (s)
+Elapsed time for explicit graph creation with dependency:0.000205 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000012 (s)
+Elapsed time for explicit graph execution with dependency:0.032813 (s)
+Elapsed time for explicit graph execution with dependency:0.032813 (s)
+Elapsed time for explicit graph execution with dependency:0.032815 (s)
+Elapsed time for explicit graph execution with dependency:0.032814 (s)
+Elapsed time for explicit graph execution with dependency:0.032817 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032815 (s)
+Elapsed time for explicit graph execution with dependency:0.032863 (s)
+Elapsed time for explicit graph execution with dependency:0.033267 (s)
+Elapsed time for explicit graph execution with dependency:0.033260 (s)
+Elapsed time for explicit graph execution with dependency:0.032952 (s)
+Elapsed time for explicit graph execution with dependency:0.032806 (s)
+Elapsed time for explicit graph execution with dependency:0.032805 (s)
+Elapsed time for explicit graph execution with dependency:0.032802 (s)
+Elapsed time for explicit graph execution with dependency:0.033251 (s)
+Elapsed time for explicit graph execution with dependency:0.033252 (s)
+Elapsed time for explicit graph execution with dependency:0.033246 (s)
+Elapsed time for explicit graph execution with dependency:0.032978 (s)
+Elapsed time for explicit graph creation with dependency:0.000210 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000012 (s)
+Elapsed time for explicit graph execution with dependency:0.033260 (s)
+Elapsed time for explicit graph execution with dependency:0.033254 (s)
+Elapsed time for explicit graph execution with dependency:0.033640 (s)
+Elapsed time for explicit graph execution with dependency:0.033668 (s)
+Elapsed time for explicit graph execution with dependency:0.033666 (s)
+Elapsed time for explicit graph execution with dependency:0.033279 (s)
+Elapsed time for explicit graph execution with dependency:0.033261 (s)
+Elapsed time for explicit graph execution with dependency:0.033263 (s)
+Elapsed time for explicit graph execution with dependency:0.032850 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032815 (s)
+Elapsed time for explicit graph execution with dependency:0.032821 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032813 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032817 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032940 (s)
+Elapsed time for explicit graph creation with dependency:0.000222 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000015 (s)
+Elapsed time for explicit graph execution with dependency:0.033240 (s)
+Elapsed time for explicit graph execution with dependency:0.033220 (s)
+Elapsed time for explicit graph execution with dependency:0.032859 (s)
+Elapsed time for explicit graph execution with dependency:0.032812 (s)
+Elapsed time for explicit graph execution with dependency:0.033259 (s)
+Elapsed time for explicit graph execution with dependency:0.033250 (s)
+Elapsed time for explicit graph execution with dependency:0.033257 (s)
+Elapsed time for explicit graph execution with dependency:0.032821 (s)
+Elapsed time for explicit graph execution with dependency:0.032880 (s)
+Elapsed time for explicit graph execution with dependency:0.033242 (s)
+Elapsed time for explicit graph execution with dependency:0.033616 (s)
+Elapsed time for explicit graph execution with dependency:0.033646 (s)
+Elapsed time for explicit graph execution with dependency:0.033653 (s)
+Elapsed time for explicit graph execution with dependency:0.033663 (s)
+Elapsed time for explicit graph execution with dependency:0.033662 (s)
+Elapsed time for explicit graph execution with dependency:0.033445 (s)
+Elapsed time for explicit graph execution with dependency:0.033261 (s)
+Elapsed time for explicit graph execution with dependency:0.033217 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032817 (s)
+Elapsed time for explicit graph creation with dependency:0.000209 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000012 (s)
+Elapsed time for explicit graph execution with dependency:0.032821 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032817 (s)
+Elapsed time for explicit graph execution with dependency:0.032828 (s)
+Elapsed time for explicit graph execution with dependency:0.033271 (s)
+Elapsed time for explicit graph execution with dependency:0.033251 (s)
+Elapsed time for explicit graph execution with dependency:0.033221 (s)
+Elapsed time for explicit graph execution with dependency:0.033219 (s)
+Elapsed time for explicit graph execution with dependency:0.033223 (s)
+Elapsed time for explicit graph execution with dependency:0.033272 (s)
+Elapsed time for explicit graph execution with dependency:0.033265 (s)
+Elapsed time for explicit graph execution with dependency:0.033252 (s)
+Elapsed time for explicit graph creation with dependency:0.000334 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000015 (s)
+Elapsed time for explicit graph execution with dependency:0.033259 (s)
+Elapsed time for explicit graph execution with dependency:0.033252 (s)
+Elapsed time for explicit graph execution with dependency:0.033252 (s)
+Elapsed time for explicit graph execution with dependency:0.033250 (s)
+Elapsed time for explicit graph execution with dependency:0.033248 (s)
+Elapsed time for explicit graph execution with dependency:0.033251 (s)
+Elapsed time for explicit graph execution with dependency:0.033249 (s)
+Elapsed time for explicit graph execution with dependency:0.033250 (s)
+Elapsed time for explicit graph execution with dependency:0.033253 (s)
+Elapsed time for explicit graph execution with dependency:0.033247 (s)
+Elapsed time for explicit graph execution with dependency:0.032851 (s)
+Elapsed time for explicit graph execution with dependency:0.032814 (s)
+Elapsed time for explicit graph execution with dependency:0.032815 (s)
+Elapsed time for explicit graph execution with dependency:0.032814 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032815 (s)
+Elapsed time for explicit graph execution with dependency:0.032813 (s)
+Elapsed time for explicit graph execution with dependency:0.032815 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032867 (s)
+Elapsed time for explicit graph creation with dependency:0.000221 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000014 (s)
+Elapsed time for explicit graph execution with dependency:0.033263 (s)
+Elapsed time for explicit graph execution with dependency:0.033224 (s)
+Elapsed time for explicit graph execution with dependency:0.033218 (s)
+Elapsed time for explicit graph execution with dependency:0.033218 (s)
+Elapsed time for explicit graph execution with dependency:0.033250 (s)
+Elapsed time for explicit graph execution with dependency:0.033249 (s)
+Elapsed time for explicit graph execution with dependency:0.033246 (s)
+Elapsed time for explicit graph execution with dependency:0.033247 (s)
+Elapsed time for explicit graph execution with dependency:0.033246 (s)
+Elapsed time for explicit graph execution with dependency:0.033248 (s)
+Elapsed time for explicit graph execution with dependency:0.033249 (s)
+Elapsed time for explicit graph execution with dependency:0.033247 (s)
+Elapsed time for explicit graph execution with dependency:0.033248 (s)
+Elapsed time for explicit graph execution with dependency:0.033245 (s)
+Elapsed time for explicit graph execution with dependency:0.033249 (s)
+Elapsed time for explicit graph execution with dependency:0.033251 (s)
+Elapsed time for explicit graph execution with dependency:0.033248 (s)
+Elapsed time for explicit graph execution with dependency:0.033253 (s)
+Elapsed time for explicit graph execution with dependency:0.033253 (s)
+Elapsed time for explicit graph execution with dependency:0.033188 (s)
+Elapsed time for explicit graph creation with dependency:0.000212 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000016 (s)
+Elapsed time for explicit graph execution with dependency:0.032824 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032854 (s)
+Elapsed time for explicit graph execution with dependency:0.033218 (s)
+Elapsed time for explicit graph execution with dependency:0.033218 (s)
+Elapsed time for explicit graph execution with dependency:0.032944 (s)
+Elapsed time for explicit graph execution with dependency:0.032817 (s)
+Elapsed time for explicit graph execution with dependency:0.032817 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032819 (s)
+Elapsed time for explicit graph execution with dependency:0.032890 (s)
+Elapsed time for explicit graph execution with dependency:0.033240 (s)
+Elapsed time for explicit graph execution with dependency:0.033217 (s)
+Elapsed time for explicit graph execution with dependency:0.033222 (s)
+Elapsed time for explicit graph execution with dependency:0.033242 (s)
+Elapsed time for explicit graph execution with dependency:0.033631 (s)
+Elapsed time for explicit graph execution with dependency:0.033671 (s)
+Elapsed time for explicit graph execution with dependency:0.033475 (s)
+Elapsed time for explicit graph execution with dependency:0.033266 (s)
+Elapsed time for explicit graph execution with dependency:0.033256 (s)
+Elapsed time for explicit graph creation with dependency:0.000213 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000013 (s)
+Elapsed time for explicit graph execution with dependency:0.033261 (s)
+Elapsed time for explicit graph execution with dependency:0.033252 (s)
+Elapsed time for explicit graph execution with dependency:0.033247 (s)
+Elapsed time for explicit graph execution with dependency:0.033249 (s)
+Elapsed time for explicit graph execution with dependency:0.033247 (s)
+Elapsed time for explicit graph execution with dependency:0.033248 (s)
+Elapsed time for explicit graph execution with dependency:0.033250 (s)
+Elapsed time for explicit graph execution with dependency:0.033244 (s)
+Elapsed time for explicit graph execution with dependency:0.033249 (s)
+Elapsed time for explicit graph execution with dependency:0.033244 (s)
+Elapsed time for explicit graph execution with dependency:0.032894 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032817 (s)
+Elapsed time for explicit graph execution with dependency:0.032817 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032816 (s)
+Elapsed time for explicit graph execution with dependency:0.032815 (s)
+Elapsed time for explicit graph execution with dependency:0.032821 (s)
+Elapsed time for explicit graph execution with dependency:0.032818 (s)
+Elapsed time for explicit graph execution with dependency:0.032813 (s)
+----- run GEMM 12800 x 12800, BS=640
+Elapsed time for explicit graph creation with dependency:2.653706 (s)
+Elapsed time for explicit graph instantiation with dependency:0.132663 (s)
+Elapsed time for explicit graph execution with dependency:0.358968 (s)
+Elapsed time for explicit graph execution with dependency:0.285214 (s)
+Elapsed time for explicit graph execution with dependency:0.285399 (s)
+Elapsed time for explicit graph execution with dependency:0.293406 (s)
+Elapsed time for explicit graph execution with dependency:0.289738 (s)
+Elapsed time for explicit graph execution with dependency:0.287499 (s)
+Elapsed time for explicit graph execution with dependency:0.287979 (s)
+Elapsed time for explicit graph execution with dependency:0.291980 (s)
+Elapsed time for explicit graph execution with dependency:0.288707 (s)
+Elapsed time for explicit graph execution with dependency:0.287958 (s)
+Elapsed time for explicit graph execution with dependency:0.290392 (s)
+Elapsed time for explicit graph execution with dependency:0.290670 (s)
+Elapsed time for explicit graph execution with dependency:0.288190 (s)
+Elapsed time for explicit graph execution with dependency:0.288984 (s)
+Elapsed time for explicit graph execution with dependency:0.290995 (s)
+Elapsed time for explicit graph execution with dependency:0.288696 (s)
+Elapsed time for explicit graph execution with dependency:0.288800 (s)
+Elapsed time for explicit graph execution with dependency:0.291270 (s)
+Elapsed time for explicit graph execution with dependency:0.288893 (s)
+Elapsed time for explicit graph execution with dependency:0.289025 (s)
+Elapsed time for explicit graph creation with dependency:3.463234 (s)
+Elapsed time for explicit graph instantiation with dependency:0.161021 (s)
+Elapsed time for explicit graph execution with dependency:0.353329 (s)
+Elapsed time for explicit graph execution with dependency:0.287261 (s)
+Elapsed time for explicit graph execution with dependency:0.288577 (s)
+Elapsed time for explicit graph execution with dependency:0.292356 (s)
+Elapsed time for explicit graph execution with dependency:0.288983 (s)
+Elapsed time for explicit graph execution with dependency:0.288098 (s)
+Elapsed time for explicit graph execution with dependency:0.289494 (s)
+Elapsed time for explicit graph execution with dependency:0.292654 (s)
+Elapsed time for explicit graph execution with dependency:0.288858 (s)
+Elapsed time for explicit graph execution with dependency:0.288525 (s)
+Elapsed time for explicit graph execution with dependency:0.291610 (s)
+Elapsed time for explicit graph execution with dependency:0.289063 (s)
+Elapsed time for explicit graph execution with dependency:0.288976 (s)
+Elapsed time for explicit graph execution with dependency:0.290685 (s)
+Elapsed time for explicit graph execution with dependency:0.290936 (s)
+Elapsed time for explicit graph execution with dependency:0.288814 (s)
+Elapsed time for explicit graph execution with dependency:0.290085 (s)
+Elapsed time for explicit graph execution with dependency:0.291251 (s)
+Elapsed time for explicit graph execution with dependency:0.290318 (s)
+Elapsed time for explicit graph execution with dependency:0.288534 (s)
+Cuda failure 14:CUBLAS_STATUS_INTERNAL_ERROR:main.cpp:324 
+----- run GEMM 12800 x 12800, BS=3200
+Elapsed time for explicit graph creation with dependency:0.488807 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000416 (s)
+Elapsed time for explicit graph execution with dependency:0.258075 (s)
+Elapsed time for explicit graph execution with dependency:0.262757 (s)
+Elapsed time for explicit graph execution with dependency:0.263521 (s)
+Elapsed time for explicit graph execution with dependency:0.271285 (s)
+Elapsed time for explicit graph execution with dependency:0.264137 (s)
+Elapsed time for explicit graph execution with dependency:0.263612 (s)
+Elapsed time for explicit graph execution with dependency:0.265112 (s)
+Elapsed time for explicit graph execution with dependency:0.267484 (s)
+Elapsed time for explicit graph execution with dependency:0.265198 (s)
+Elapsed time for explicit graph execution with dependency:0.264160 (s)
+Elapsed time for explicit graph execution with dependency:0.266271 (s)
+Elapsed time for explicit graph execution with dependency:0.266154 (s)
+Elapsed time for explicit graph execution with dependency:0.265426 (s)
+Elapsed time for explicit graph execution with dependency:0.265457 (s)
+Elapsed time for explicit graph execution with dependency:0.266750 (s)
+Elapsed time for explicit graph execution with dependency:0.265427 (s)
+Elapsed time for explicit graph execution with dependency:0.265769 (s)
+Elapsed time for explicit graph execution with dependency:0.266981 (s)
+Elapsed time for explicit graph execution with dependency:0.266882 (s)
+Elapsed time for explicit graph execution with dependency:0.266241 (s)
+Elapsed time for explicit graph creation with dependency:0.000893 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000402 (s)
+Elapsed time for explicit graph execution with dependency:0.265195 (s)
+Elapsed time for explicit graph execution with dependency:0.267140 (s)
+Elapsed time for explicit graph execution with dependency:0.266315 (s)
+Elapsed time for explicit graph execution with dependency:0.266871 (s)
+Elapsed time for explicit graph execution with dependency:0.265457 (s)
+Elapsed time for explicit graph execution with dependency:0.266484 (s)
+Elapsed time for explicit graph execution with dependency:0.267025 (s)
+Elapsed time for explicit graph execution with dependency:0.265805 (s)
+Elapsed time for explicit graph execution with dependency:0.267232 (s)
+Elapsed time for explicit graph execution with dependency:0.267418 (s)
+Elapsed time for explicit graph execution with dependency:0.266987 (s)
+Elapsed time for explicit graph execution with dependency:0.266239 (s)
+Elapsed time for explicit graph execution with dependency:0.266985 (s)
+Elapsed time for explicit graph execution with dependency:0.266767 (s)
+Elapsed time for explicit graph execution with dependency:0.267277 (s)
+Elapsed time for explicit graph execution with dependency:0.265704 (s)
+Elapsed time for explicit graph execution with dependency:0.266527 (s)
+Elapsed time for explicit graph execution with dependency:0.267544 (s)
+Elapsed time for explicit graph execution with dependency:0.266658 (s)
+Elapsed time for explicit graph execution with dependency:0.266942 (s)
+Elapsed time for explicit graph creation with dependency:0.000757 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000510 (s)
+Elapsed time for explicit graph execution with dependency:0.266775 (s)
+Elapsed time for explicit graph execution with dependency:0.267533 (s)
+Elapsed time for explicit graph execution with dependency:0.266763 (s)
+Elapsed time for explicit graph execution with dependency:0.267009 (s)
+Elapsed time for explicit graph execution with dependency:0.267048 (s)
+Elapsed time for explicit graph execution with dependency:0.267570 (s)
+Elapsed time for explicit graph execution with dependency:0.267008 (s)
+Elapsed time for explicit graph execution with dependency:0.266787 (s)
+Elapsed time for explicit graph execution with dependency:0.267561 (s)
+Elapsed time for explicit graph execution with dependency:0.266631 (s)
+Elapsed time for explicit graph execution with dependency:0.266468 (s)
+Elapsed time for explicit graph execution with dependency:0.267013 (s)
+Elapsed time for explicit graph execution with dependency:0.267571 (s)
+Elapsed time for explicit graph execution with dependency:0.267131 (s)
+Elapsed time for explicit graph execution with dependency:0.266225 (s)
+Elapsed time for explicit graph execution with dependency:0.268497 (s)
+Elapsed time for explicit graph execution with dependency:0.267581 (s)
+Elapsed time for explicit graph execution with dependency:0.267085 (s)
+Elapsed time for explicit graph execution with dependency:0.266957 (s)
+Elapsed time for explicit graph execution with dependency:0.269095 (s)
+Elapsed time for explicit graph creation with dependency:0.000759 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000414 (s)
+Elapsed time for explicit graph execution with dependency:0.267806 (s)
+Elapsed time for explicit graph execution with dependency:0.267284 (s)
+Elapsed time for explicit graph execution with dependency:0.267049 (s)
+Elapsed time for explicit graph execution with dependency:0.268836 (s)
+Elapsed time for explicit graph execution with dependency:0.267035 (s)
+Elapsed time for explicit graph execution with dependency:0.266753 (s)
+Elapsed time for explicit graph execution with dependency:0.267893 (s)
+Elapsed time for explicit graph execution with dependency:0.269018 (s)
+Elapsed time for explicit graph execution with dependency:0.267552 (s)
+Elapsed time for explicit graph execution with dependency:0.267191 (s)
+Elapsed time for explicit graph execution with dependency:0.267900 (s)
+Elapsed time for explicit graph execution with dependency:0.268587 (s)
+Elapsed time for explicit graph execution with dependency:0.268689 (s)
+Elapsed time for explicit graph execution with dependency:0.267544 (s)
+Elapsed time for explicit graph execution with dependency:0.267115 (s)
+Elapsed time for explicit graph execution with dependency:0.267546 (s)
+Elapsed time for explicit graph execution with dependency:0.269331 (s)
+Elapsed time for explicit graph execution with dependency:0.268940 (s)
+Elapsed time for explicit graph execution with dependency:0.267533 (s)
+Elapsed time for explicit graph execution with dependency:0.267709 (s)
+Elapsed time for explicit graph creation with dependency:0.000747 (s)
+Elapsed time for explicit graph instantiation with dependency:0.001593 (s)
+Elapsed time for explicit graph execution with dependency:0.267707 (s)
+Elapsed time for explicit graph execution with dependency:0.268545 (s)
+Elapsed time for explicit graph execution with dependency:0.267566 (s)
+Elapsed time for explicit graph execution with dependency:0.268293 (s)
+Elapsed time for explicit graph execution with dependency:0.268549 (s)
+Elapsed time for explicit graph execution with dependency:0.267533 (s)
+Elapsed time for explicit graph execution with dependency:0.268836 (s)
+Elapsed time for explicit graph execution with dependency:0.268130 (s)
+Elapsed time for explicit graph execution with dependency:0.268774 (s)
+Elapsed time for explicit graph execution with dependency:0.268838 (s)
+Elapsed time for explicit graph execution with dependency:0.269664 (s)
+Elapsed time for explicit graph execution with dependency:0.267704 (s)
+Elapsed time for explicit graph execution with dependency:0.268709 (s)
+Elapsed time for explicit graph execution with dependency:0.268666 (s)
+Elapsed time for explicit graph execution with dependency:0.267834 (s)
+Elapsed time for explicit graph execution with dependency:0.269371 (s)
+Elapsed time for explicit graph execution with dependency:0.270170 (s)
+Elapsed time for explicit graph execution with dependency:0.267525 (s)
+Elapsed time for explicit graph execution with dependency:0.267191 (s)
+Elapsed time for explicit graph execution with dependency:0.269874 (s)
+Elapsed time for explicit graph creation with dependency:0.000774 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000419 (s)
+Elapsed time for explicit graph execution with dependency:0.268877 (s)
+Elapsed time for explicit graph execution with dependency:0.267486 (s)
+Elapsed time for explicit graph execution with dependency:0.268448 (s)
+Elapsed time for explicit graph execution with dependency:0.270144 (s)
+Elapsed time for explicit graph execution with dependency:0.269128 (s)
+Elapsed time for explicit graph execution with dependency:0.267567 (s)
+Elapsed time for explicit graph execution with dependency:0.268845 (s)
+Elapsed time for explicit graph execution with dependency:0.270318 (s)
+Elapsed time for explicit graph execution with dependency:0.268807 (s)
+Elapsed time for explicit graph execution with dependency:0.268036 (s)
+Elapsed time for explicit graph execution with dependency:0.270099 (s)
+Elapsed time for explicit graph execution with dependency:0.269737 (s)
+Elapsed time for explicit graph execution with dependency:0.267530 (s)
+Elapsed time for explicit graph execution with dependency:0.268586 (s)
+Elapsed time for explicit graph execution with dependency:0.270131 (s)
+Elapsed time for explicit graph execution with dependency:0.269096 (s)
+Elapsed time for explicit graph execution with dependency:0.267519 (s)
+Elapsed time for explicit graph execution with dependency:0.269057 (s)
+Elapsed time for explicit graph execution with dependency:0.270324 (s)
+Elapsed time for explicit graph execution with dependency:0.269721 (s)
+Elapsed time for explicit graph creation with dependency:0.000756 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000532 (s)
+Elapsed time for explicit graph execution with dependency:0.267595 (s)
+Elapsed time for explicit graph execution with dependency:0.271032 (s)
+Elapsed time for explicit graph execution with dependency:0.268387 (s)
+Elapsed time for explicit graph execution with dependency:0.269634 (s)
+Elapsed time for explicit graph execution with dependency:0.268586 (s)
+Elapsed time for explicit graph execution with dependency:0.269424 (s)
+Elapsed time for explicit graph execution with dependency:0.269356 (s)
+Elapsed time for explicit graph execution with dependency:0.269290 (s)
+Elapsed time for explicit graph execution with dependency:0.269793 (s)
+Elapsed time for explicit graph execution with dependency:0.269253 (s)
+Elapsed time for explicit graph execution with dependency:0.269444 (s)
+Elapsed time for explicit graph execution with dependency:0.269241 (s)
+Elapsed time for explicit graph execution with dependency:0.270300 (s)
+Elapsed time for explicit graph execution with dependency:0.268826 (s)
+Elapsed time for explicit graph execution with dependency:0.269630 (s)
+Elapsed time for explicit graph execution with dependency:0.269016 (s)
+Elapsed time for explicit graph execution with dependency:0.270323 (s)
+Elapsed time for explicit graph execution with dependency:0.268700 (s)
+Elapsed time for explicit graph execution with dependency:0.270347 (s)
+Elapsed time for explicit graph execution with dependency:0.270241 (s)
+Elapsed time for explicit graph creation with dependency:0.000764 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000394 (s)
+Elapsed time for explicit graph execution with dependency:0.268984 (s)
+Elapsed time for explicit graph execution with dependency:0.268850 (s)
+Elapsed time for explicit graph execution with dependency:0.270166 (s)
+Elapsed time for explicit graph execution with dependency:0.270267 (s)
+Elapsed time for explicit graph execution with dependency:0.269794 (s)
+Elapsed time for explicit graph execution with dependency:0.268996 (s)
+Elapsed time for explicit graph execution with dependency:0.270212 (s)
+Elapsed time for explicit graph execution with dependency:0.269806 (s)
+Elapsed time for explicit graph execution with dependency:0.269565 (s)
+Elapsed time for explicit graph execution with dependency:0.269901 (s)
+Elapsed time for explicit graph execution with dependency:0.269939 (s)
+Elapsed time for explicit graph execution with dependency:0.269396 (s)
+Elapsed time for explicit graph execution with dependency:0.270317 (s)
+Elapsed time for explicit graph execution with dependency:0.269992 (s)
+Elapsed time for explicit graph execution with dependency:0.270240 (s)
+Elapsed time for explicit graph execution with dependency:0.267926 (s)
+Elapsed time for explicit graph execution with dependency:0.270295 (s)
+Elapsed time for explicit graph execution with dependency:0.270460 (s)
+Elapsed time for explicit graph execution with dependency:0.270263 (s)
+Elapsed time for explicit graph execution with dependency:0.269299 (s)
+Elapsed time for explicit graph creation with dependency:0.000744 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000554 (s)
+Elapsed time for explicit graph execution with dependency:0.269661 (s)
+Elapsed time for explicit graph execution with dependency:0.270770 (s)
+Elapsed time for explicit graph execution with dependency:0.268577 (s)
+Elapsed time for explicit graph execution with dependency:0.270171 (s)
+Elapsed time for explicit graph execution with dependency:0.271027 (s)
+Elapsed time for explicit graph execution with dependency:0.270463 (s)
+Elapsed time for explicit graph execution with dependency:0.268352 (s)
+Elapsed time for explicit graph execution with dependency:0.270746 (s)
+Elapsed time for explicit graph execution with dependency:0.270234 (s)
+Elapsed time for explicit graph execution with dependency:0.270286 (s)
+Elapsed time for explicit graph execution with dependency:0.268861 (s)
+Elapsed time for explicit graph execution with dependency:0.267545 (s)
+Elapsed time for explicit graph execution with dependency:0.269097 (s)
+Elapsed time for explicit graph execution with dependency:0.268237 (s)
+Elapsed time for explicit graph execution with dependency:0.267549 (s)
+Elapsed time for explicit graph execution with dependency:0.267508 (s)
+Elapsed time for explicit graph execution with dependency:0.268639 (s)
+Elapsed time for explicit graph execution with dependency:0.268799 (s)
+Elapsed time for explicit graph execution with dependency:0.267520 (s)
+Elapsed time for explicit graph execution with dependency:0.267507 (s)
+Elapsed time for explicit graph creation with dependency:0.000858 (s)
+Elapsed time for explicit graph instantiation with dependency:0.001833 (s)
+Elapsed time for explicit graph execution with dependency:0.267499 (s)
+Elapsed time for explicit graph execution with dependency:0.268794 (s)
+Elapsed time for explicit graph execution with dependency:0.267527 (s)
+Elapsed time for explicit graph execution with dependency:0.267547 (s)
+Elapsed time for explicit graph execution with dependency:0.268921 (s)
+Elapsed time for explicit graph execution with dependency:0.267540 (s)
+Elapsed time for explicit graph execution with dependency:0.267536 (s)
+Elapsed time for explicit graph execution with dependency:0.268868 (s)
+Elapsed time for explicit graph execution with dependency:0.269239 (s)
+Elapsed time for explicit graph execution with dependency:0.267524 (s)
+Elapsed time for explicit graph execution with dependency:0.268024 (s)
+Elapsed time for explicit graph execution with dependency:0.268787 (s)
+Elapsed time for explicit graph execution with dependency:0.268095 (s)
+Elapsed time for explicit graph execution with dependency:0.268359 (s)
+Elapsed time for explicit graph execution with dependency:0.268659 (s)
+Elapsed time for explicit graph execution with dependency:0.269172 (s)
+Elapsed time for explicit graph execution with dependency:0.267555 (s)
+Elapsed time for explicit graph execution with dependency:0.267501 (s)
+Elapsed time for explicit graph execution with dependency:0.270076 (s)
+Elapsed time for explicit graph execution with dependency:0.267732 (s)
+----- run GEMM 12800 x 12800, BS=6400
+Elapsed time for explicit graph creation with dependency:0.491415 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000227 (s)
+Elapsed time for explicit graph execution with dependency:0.259880 (s)
+Elapsed time for explicit graph execution with dependency:0.265442 (s)
+Elapsed time for explicit graph execution with dependency:0.266856 (s)
+Elapsed time for explicit graph execution with dependency:0.273990 (s)
+Elapsed time for explicit graph execution with dependency:0.265988 (s)
+Elapsed time for explicit graph execution with dependency:0.266431 (s)
+Elapsed time for explicit graph execution with dependency:0.267447 (s)
+Elapsed time for explicit graph execution with dependency:0.269196 (s)
+Elapsed time for explicit graph execution with dependency:0.265984 (s)
+Elapsed time for explicit graph execution with dependency:0.266513 (s)
+Elapsed time for explicit graph execution with dependency:0.269691 (s)
+Elapsed time for explicit graph execution with dependency:0.268763 (s)
+Elapsed time for explicit graph execution with dependency:0.268342 (s)
+Elapsed time for explicit graph execution with dependency:0.267305 (s)
+Elapsed time for explicit graph execution with dependency:0.268557 (s)
+Elapsed time for explicit graph execution with dependency:0.268318 (s)
+Elapsed time for explicit graph execution with dependency:0.267830 (s)
+Elapsed time for explicit graph execution with dependency:0.267253 (s)
+Elapsed time for explicit graph execution with dependency:0.268585 (s)
+Elapsed time for explicit graph execution with dependency:0.268068 (s)
+Elapsed time for explicit graph creation with dependency:0.000351 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000055 (s)
+Elapsed time for explicit graph execution with dependency:0.267293 (s)
+Elapsed time for explicit graph execution with dependency:0.269346 (s)
+Elapsed time for explicit graph execution with dependency:0.271063 (s)
+Elapsed time for explicit graph execution with dependency:0.269085 (s)
+Elapsed time for explicit graph execution with dependency:0.266444 (s)
+Elapsed time for explicit graph execution with dependency:0.270158 (s)
+Elapsed time for explicit graph execution with dependency:0.267815 (s)
+Elapsed time for explicit graph execution with dependency:0.266380 (s)
+Elapsed time for explicit graph execution with dependency:0.267748 (s)
+Elapsed time for explicit graph execution with dependency:0.269983 (s)
+Elapsed time for explicit graph execution with dependency:0.268832 (s)
+Elapsed time for explicit graph execution with dependency:0.267959 (s)
+Elapsed time for explicit graph execution with dependency:0.268597 (s)
+Elapsed time for explicit graph execution with dependency:0.267980 (s)
+Elapsed time for explicit graph execution with dependency:0.267122 (s)
+Elapsed time for explicit graph execution with dependency:0.269792 (s)
+Elapsed time for explicit graph execution with dependency:0.267679 (s)
+Elapsed time for explicit graph execution with dependency:0.269072 (s)
+Elapsed time for explicit graph execution with dependency:0.267086 (s)
+Elapsed time for explicit graph execution with dependency:0.268655 (s)
+Elapsed time for explicit graph creation with dependency:0.000318 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000209 (s)
+Elapsed time for explicit graph execution with dependency:0.268892 (s)
+Elapsed time for explicit graph execution with dependency:0.268983 (s)
+Elapsed time for explicit graph execution with dependency:0.269133 (s)
+Elapsed time for explicit graph execution with dependency:0.268903 (s)
+Elapsed time for explicit graph execution with dependency:0.269821 (s)
+Elapsed time for explicit graph execution with dependency:0.267941 (s)
+Elapsed time for explicit graph execution with dependency:0.271409 (s)
+Elapsed time for explicit graph execution with dependency:0.266643 (s)
+Elapsed time for explicit graph execution with dependency:0.269902 (s)
+Elapsed time for explicit graph execution with dependency:0.267431 (s)
+Elapsed time for explicit graph execution with dependency:0.268950 (s)
+Elapsed time for explicit graph execution with dependency:0.267518 (s)
+Elapsed time for explicit graph execution with dependency:0.266516 (s)
+Elapsed time for explicit graph execution with dependency:0.267050 (s)
+Elapsed time for explicit graph execution with dependency:0.267946 (s)
+Elapsed time for explicit graph execution with dependency:0.267170 (s)
+Elapsed time for explicit graph execution with dependency:0.266520 (s)
+Elapsed time for explicit graph execution with dependency:0.266251 (s)
+Elapsed time for explicit graph execution with dependency:0.268184 (s)
+Elapsed time for explicit graph execution with dependency:0.267949 (s)
+Elapsed time for explicit graph creation with dependency:0.000461 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000052 (s)
+Elapsed time for explicit graph execution with dependency:0.266646 (s)
+Elapsed time for explicit graph execution with dependency:0.267309 (s)
+Elapsed time for explicit graph execution with dependency:0.268564 (s)
+Elapsed time for explicit graph execution with dependency:0.266508 (s)
+Elapsed time for explicit graph execution with dependency:0.267146 (s)
+Elapsed time for explicit graph execution with dependency:0.266508 (s)
+Elapsed time for explicit graph execution with dependency:0.268774 (s)
+Elapsed time for explicit graph execution with dependency:0.267519 (s)
+Elapsed time for explicit graph execution with dependency:0.269206 (s)
+Elapsed time for explicit graph execution with dependency:0.266710 (s)
+Elapsed time for explicit graph execution with dependency:0.268041 (s)
+Elapsed time for explicit graph execution with dependency:0.268182 (s)
+Elapsed time for explicit graph execution with dependency:0.266734 (s)
+Elapsed time for explicit graph execution with dependency:0.266521 (s)
+Elapsed time for explicit graph execution with dependency:0.266515 (s)
+Elapsed time for explicit graph execution with dependency:0.268257 (s)
+Elapsed time for explicit graph execution with dependency:0.268077 (s)
+Elapsed time for explicit graph execution with dependency:0.269235 (s)
+Elapsed time for explicit graph execution with dependency:0.267557 (s)
+Elapsed time for explicit graph execution with dependency:0.266511 (s)
+Elapsed time for explicit graph creation with dependency:0.000329 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000049 (s)
+Elapsed time for explicit graph execution with dependency:0.268284 (s)
+Elapsed time for explicit graph execution with dependency:0.266392 (s)
+Elapsed time for explicit graph execution with dependency:0.268291 (s)
+Elapsed time for explicit graph execution with dependency:0.266505 (s)
+Elapsed time for explicit graph execution with dependency:0.270574 (s)
+Elapsed time for explicit graph execution with dependency:0.266543 (s)
+Elapsed time for explicit graph execution with dependency:0.266500 (s)
+Elapsed time for explicit graph execution with dependency:0.266507 (s)
+Elapsed time for explicit graph execution with dependency:0.269170 (s)
+Elapsed time for explicit graph execution with dependency:0.269752 (s)
+Elapsed time for explicit graph execution with dependency:0.266430 (s)
+Elapsed time for explicit graph execution with dependency:0.266508 (s)
+Elapsed time for explicit graph execution with dependency:0.266512 (s)
+Elapsed time for explicit graph execution with dependency:0.268912 (s)
+Elapsed time for explicit graph execution with dependency:0.267008 (s)
+Elapsed time for explicit graph execution with dependency:0.266506 (s)
+Elapsed time for explicit graph execution with dependency:0.266504 (s)
+Elapsed time for explicit graph execution with dependency:0.268680 (s)
+Elapsed time for explicit graph execution with dependency:0.267028 (s)
+Elapsed time for explicit graph execution with dependency:0.269949 (s)
+Elapsed time for explicit graph creation with dependency:0.000417 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000219 (s)
+Elapsed time for explicit graph execution with dependency:0.268257 (s)
+Elapsed time for explicit graph execution with dependency:0.268814 (s)
+Elapsed time for explicit graph execution with dependency:0.266665 (s)
+Elapsed time for explicit graph execution with dependency:0.267797 (s)
+Elapsed time for explicit graph execution with dependency:0.266507 (s)
+Elapsed time for explicit graph execution with dependency:0.268736 (s)
+Elapsed time for explicit graph execution with dependency:0.266504 (s)
+Elapsed time for explicit graph execution with dependency:0.268032 (s)
+Elapsed time for explicit graph execution with dependency:0.268312 (s)
+Elapsed time for explicit graph execution with dependency:0.267378 (s)
+Elapsed time for explicit graph execution with dependency:0.267782 (s)
+Elapsed time for explicit graph execution with dependency:0.268236 (s)
+Elapsed time for explicit graph execution with dependency:0.267820 (s)
+Elapsed time for explicit graph execution with dependency:0.266568 (s)
+Elapsed time for explicit graph execution with dependency:0.268785 (s)
+Elapsed time for explicit graph execution with dependency:0.267446 (s)
+Elapsed time for explicit graph execution with dependency:0.268245 (s)
+Elapsed time for explicit graph execution with dependency:0.269003 (s)
+Elapsed time for explicit graph execution with dependency:0.268404 (s)
+Elapsed time for explicit graph execution with dependency:0.266578 (s)
+Elapsed time for explicit graph creation with dependency:0.000321 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000052 (s)
+Elapsed time for explicit graph execution with dependency:0.268779 (s)
+Elapsed time for explicit graph execution with dependency:0.267412 (s)
+Elapsed time for explicit graph execution with dependency:0.268961 (s)
+Elapsed time for explicit graph execution with dependency:0.266325 (s)
+Elapsed time for explicit graph execution with dependency:0.268652 (s)
+Elapsed time for explicit graph execution with dependency:0.267755 (s)
+Elapsed time for explicit graph execution with dependency:0.267756 (s)
+Elapsed time for explicit graph execution with dependency:0.267382 (s)
+Elapsed time for explicit graph execution with dependency:0.268670 (s)
+Elapsed time for explicit graph execution with dependency:0.267993 (s)
+Elapsed time for explicit graph execution with dependency:0.266442 (s)
+Elapsed time for explicit graph execution with dependency:0.268162 (s)
+Elapsed time for explicit graph execution with dependency:0.268513 (s)
+Elapsed time for explicit graph execution with dependency:0.266439 (s)
+Elapsed time for explicit graph execution with dependency:0.269679 (s)
+Elapsed time for explicit graph execution with dependency:0.268038 (s)
+Elapsed time for explicit graph execution with dependency:0.266527 (s)
+Elapsed time for explicit graph execution with dependency:0.268250 (s)
+Elapsed time for explicit graph execution with dependency:0.268675 (s)
+Elapsed time for explicit graph execution with dependency:0.270288 (s)
+Elapsed time for explicit graph creation with dependency:0.000435 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000052 (s)
+Elapsed time for explicit graph execution with dependency:0.266679 (s)
+Elapsed time for explicit graph execution with dependency:0.267898 (s)
+Elapsed time for explicit graph execution with dependency:0.270262 (s)
+Elapsed time for explicit graph execution with dependency:0.269078 (s)
+Elapsed time for explicit graph execution with dependency:0.268479 (s)
+Elapsed time for explicit graph execution with dependency:0.268472 (s)
+Elapsed time for explicit graph execution with dependency:0.267254 (s)
+Elapsed time for explicit graph execution with dependency:0.269770 (s)
+Elapsed time for explicit graph execution with dependency:0.268195 (s)
+Elapsed time for explicit graph execution with dependency:0.267106 (s)
+Elapsed time for explicit graph execution with dependency:0.270000 (s)
+Elapsed time for explicit graph execution with dependency:0.267488 (s)
+Elapsed time for explicit graph execution with dependency:0.268258 (s)
+Elapsed time for explicit graph execution with dependency:0.266585 (s)
+Elapsed time for explicit graph execution with dependency:0.268763 (s)
+Elapsed time for explicit graph execution with dependency:0.269438 (s)
+Elapsed time for explicit graph execution with dependency:0.267436 (s)
+Elapsed time for explicit graph execution with dependency:0.268525 (s)
+Elapsed time for explicit graph execution with dependency:0.267750 (s)
+Elapsed time for explicit graph execution with dependency:0.269568 (s)
+Elapsed time for explicit graph creation with dependency:0.000314 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000361 (s)
+Elapsed time for explicit graph execution with dependency:0.268792 (s)
+Elapsed time for explicit graph execution with dependency:0.269262 (s)
+Elapsed time for explicit graph execution with dependency:0.271059 (s)
+Elapsed time for explicit graph execution with dependency:0.271094 (s)
+Elapsed time for explicit graph execution with dependency:0.266805 (s)
+Elapsed time for explicit graph execution with dependency:0.269798 (s)
+Elapsed time for explicit graph execution with dependency:0.269080 (s)
+Elapsed time for explicit graph execution with dependency:0.269077 (s)
+Elapsed time for explicit graph execution with dependency:0.267187 (s)
+Elapsed time for explicit graph execution with dependency:0.270771 (s)
+Elapsed time for explicit graph execution with dependency:0.268542 (s)
+Elapsed time for explicit graph execution with dependency:0.268818 (s)
+Elapsed time for explicit graph execution with dependency:0.268223 (s)
+Elapsed time for explicit graph execution with dependency:0.270275 (s)
+Elapsed time for explicit graph execution with dependency:0.268554 (s)
+Elapsed time for explicit graph execution with dependency:0.269213 (s)
+Elapsed time for explicit graph execution with dependency:0.267143 (s)
+Elapsed time for explicit graph execution with dependency:0.269049 (s)
+Elapsed time for explicit graph execution with dependency:0.269553 (s)
+Elapsed time for explicit graph execution with dependency:0.267639 (s)
+Elapsed time for explicit graph creation with dependency:0.000464 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000056 (s)
+Elapsed time for explicit graph execution with dependency:0.270366 (s)
+Elapsed time for explicit graph execution with dependency:0.272680 (s)
+Elapsed time for explicit graph execution with dependency:0.268156 (s)
+Elapsed time for explicit graph execution with dependency:0.268015 (s)
+Elapsed time for explicit graph execution with dependency:0.268370 (s)
+Elapsed time for explicit graph execution with dependency:0.268891 (s)
+Elapsed time for explicit graph execution with dependency:0.268539 (s)
+Elapsed time for explicit graph execution with dependency:0.268641 (s)
+Elapsed time for explicit graph execution with dependency:0.268500 (s)
+Elapsed time for explicit graph execution with dependency:0.268957 (s)
+Elapsed time for explicit graph execution with dependency:0.271347 (s)
+Elapsed time for explicit graph execution with dependency:0.268167 (s)
+Elapsed time for explicit graph execution with dependency:0.271415 (s)
+Elapsed time for explicit graph execution with dependency:0.268630 (s)
+Elapsed time for explicit graph execution with dependency:0.268532 (s)
+Elapsed time for explicit graph execution with dependency:0.267503 (s)
+Elapsed time for explicit graph execution with dependency:0.271279 (s)
+Elapsed time for explicit graph execution with dependency:0.269030 (s)
+Elapsed time for explicit graph execution with dependency:0.269508 (s)
+Elapsed time for explicit graph execution with dependency:0.268195 (s)
+----- run GEMM 25600 x 25600, BS=640
+Cuda failure 14:CUBLAS_STATUS_INTERNAL_ERROR:main.cpp:324 
+----- run GEMM 25600 x 25600, BS=3200
+Elapsed time for explicit graph creation with dependency:0.501422 (s)
+Elapsed time for explicit graph instantiation with dependency:0.004375 (s)
+Elapsed time for explicit graph execution with dependency:2.099533 (s)
+Elapsed time for explicit graph execution with dependency:2.109374 (s)
+Elapsed time for explicit graph execution with dependency:2.113207 (s)
+Elapsed time for explicit graph execution with dependency:2.114486 (s)
+Elapsed time for explicit graph execution with dependency:2.120996 (s)
+Elapsed time for explicit graph execution with dependency:2.120066 (s)
+Elapsed time for explicit graph execution with dependency:2.124175 (s)
+Elapsed time for explicit graph execution with dependency:2.124125 (s)
+Elapsed time for explicit graph execution with dependency:2.126048 (s)
+Elapsed time for explicit graph execution with dependency:2.131305 (s)
+Elapsed time for explicit graph execution with dependency:2.130160 (s)
+Elapsed time for explicit graph execution with dependency:2.131239 (s)
+Elapsed time for explicit graph execution with dependency:2.135009 (s)
+Elapsed time for explicit graph execution with dependency:2.136106 (s)
+Elapsed time for explicit graph execution with dependency:2.136138 (s)
+Elapsed time for explicit graph execution with dependency:2.138694 (s)
+Elapsed time for explicit graph execution with dependency:2.139804 (s)
+Elapsed time for explicit graph execution with dependency:2.142330 (s)
+Elapsed time for explicit graph execution with dependency:2.143608 (s)
+Elapsed time for explicit graph execution with dependency:2.145722 (s)
+Elapsed time for explicit graph creation with dependency:0.004713 (s)
+Elapsed time for explicit graph instantiation with dependency:0.005401 (s)
+Elapsed time for explicit graph execution with dependency:2.142018 (s)
+Elapsed time for explicit graph execution with dependency:2.147807 (s)
+Elapsed time for explicit graph execution with dependency:2.144693 (s)
+Elapsed time for explicit graph execution with dependency:2.146715 (s)
+Elapsed time for explicit graph execution with dependency:2.149240 (s)
+Elapsed time for explicit graph execution with dependency:2.145836 (s)
+Elapsed time for explicit graph execution with dependency:2.132972 (s)
+Elapsed time for explicit graph execution with dependency:2.133512 (s)
+Elapsed time for explicit graph execution with dependency:2.134338 (s)
+Elapsed time for explicit graph execution with dependency:2.133625 (s)
+Elapsed time for explicit graph execution with dependency:2.136249 (s)
+Elapsed time for explicit graph execution with dependency:2.139203 (s)
+Elapsed time for explicit graph execution with dependency:2.137507 (s)
+Elapsed time for explicit graph execution with dependency:2.139619 (s)
+Elapsed time for explicit graph execution with dependency:2.139103 (s)
+Elapsed time for explicit graph execution with dependency:2.137309 (s)
+Elapsed time for explicit graph execution with dependency:2.140787 (s)
+Elapsed time for explicit graph execution with dependency:2.138858 (s)
+Elapsed time for explicit graph execution with dependency:2.144019 (s)
+Elapsed time for explicit graph execution with dependency:2.141781 (s)
+Elapsed time for explicit graph creation with dependency:0.004695 (s)
+Elapsed time for explicit graph instantiation with dependency:0.005478 (s)
+Elapsed time for explicit graph execution with dependency:2.139929 (s)
+Elapsed time for explicit graph execution with dependency:2.140258 (s)
+Elapsed time for explicit graph execution with dependency:2.141011 (s)
+Elapsed time for explicit graph execution with dependency:2.142648 (s)
+Elapsed time for explicit graph execution with dependency:2.142795 (s)
+Elapsed time for explicit graph execution with dependency:2.144126 (s)
+Elapsed time for explicit graph execution with dependency:2.142432 (s)
+Elapsed time for explicit graph execution with dependency:2.144036 (s)
+Elapsed time for explicit graph execution with dependency:2.144706 (s)
+Elapsed time for explicit graph execution with dependency:2.144971 (s)
+Elapsed time for explicit graph execution with dependency:2.143900 (s)
+Elapsed time for explicit graph execution with dependency:2.142979 (s)
+Elapsed time for explicit graph execution with dependency:2.144132 (s)
+Elapsed time for explicit graph execution with dependency:2.145892 (s)
+Elapsed time for explicit graph execution with dependency:2.146347 (s)
+Elapsed time for explicit graph execution with dependency:2.150005 (s)
+Elapsed time for explicit graph execution with dependency:2.144129 (s)
+Elapsed time for explicit graph execution with dependency:2.146797 (s)
+Elapsed time for explicit graph execution with dependency:2.145765 (s)
+Elapsed time for explicit graph execution with dependency:2.146150 (s)
+Elapsed time for explicit graph creation with dependency:0.004748 (s)
+Elapsed time for explicit graph instantiation with dependency:0.005362 (s)
+Elapsed time for explicit graph execution with dependency:2.149329 (s)
+Elapsed time for explicit graph execution with dependency:2.146735 (s)
+Elapsed time for explicit graph execution with dependency:2.144220 (s)
+Elapsed time for explicit graph execution with dependency:2.147432 (s)
+Elapsed time for explicit graph execution with dependency:2.144475 (s)
+Elapsed time for explicit graph execution with dependency:2.143878 (s)
+Elapsed time for explicit graph execution with dependency:2.145651 (s)
+Elapsed time for explicit graph execution with dependency:2.146732 (s)
+Elapsed time for explicit graph execution with dependency:2.147761 (s)
+Elapsed time for explicit graph execution with dependency:2.149533 (s)
+Elapsed time for explicit graph execution with dependency:2.146006 (s)
+Elapsed time for explicit graph execution with dependency:2.148556 (s)
+Elapsed time for explicit graph execution with dependency:2.148522 (s)
+Elapsed time for explicit graph execution with dependency:2.145858 (s)
+Elapsed time for explicit graph execution with dependency:2.147337 (s)
+Elapsed time for explicit graph execution with dependency:2.144204 (s)
+Elapsed time for explicit graph execution with dependency:2.149940 (s)
+Elapsed time for explicit graph execution with dependency:2.144822 (s)
+Elapsed time for explicit graph execution with dependency:2.146878 (s)
+Elapsed time for explicit graph execution with dependency:2.148858 (s)
+Elapsed time for explicit graph creation with dependency:0.004737 (s)
+Elapsed time for explicit graph instantiation with dependency:0.005409 (s)
+Elapsed time for explicit graph execution with dependency:2.148053 (s)
+Elapsed time for explicit graph execution with dependency:2.146965 (s)
+Elapsed time for explicit graph execution with dependency:2.146958 (s)
+Elapsed time for explicit graph execution with dependency:2.142590 (s)
+Elapsed time for explicit graph execution with dependency:2.147960 (s)
+Elapsed time for explicit graph execution with dependency:2.145619 (s)
+Elapsed time for explicit graph execution with dependency:2.147885 (s)
+Elapsed time for explicit graph execution with dependency:2.147723 (s)
+Elapsed time for explicit graph execution with dependency:2.148395 (s)
+Elapsed time for explicit graph execution with dependency:2.147655 (s)
+Elapsed time for explicit graph execution with dependency:2.146197 (s)
+Elapsed time for explicit graph execution with dependency:2.147216 (s)
+Elapsed time for explicit graph execution with dependency:2.144751 (s)
+Elapsed time for explicit graph execution with dependency:2.148558 (s)
+Elapsed time for explicit graph execution with dependency:2.144021 (s)
+Elapsed time for explicit graph execution with dependency:2.146450 (s)
+Elapsed time for explicit graph execution with dependency:2.143490 (s)
+Elapsed time for explicit graph execution with dependency:2.148737 (s)
+Elapsed time for explicit graph execution with dependency:2.145480 (s)
+Elapsed time for explicit graph execution with dependency:2.148178 (s)
+Elapsed time for explicit graph creation with dependency:0.004858 (s)
+Elapsed time for explicit graph instantiation with dependency:0.005395 (s)
+Elapsed time for explicit graph execution with dependency:2.141141 (s)
+Elapsed time for explicit graph execution with dependency:2.145762 (s)
+Elapsed time for explicit graph execution with dependency:2.145703 (s)
+Elapsed time for explicit graph execution with dependency:2.144577 (s)
+Elapsed time for explicit graph execution with dependency:2.147117 (s)
+Elapsed time for explicit graph execution with dependency:2.142835 (s)
+Elapsed time for explicit graph execution with dependency:2.143149 (s)
+Elapsed time for explicit graph execution with dependency:2.148512 (s)
+Elapsed time for explicit graph execution with dependency:2.145240 (s)
+Elapsed time for explicit graph execution with dependency:2.144492 (s)
+Elapsed time for explicit graph execution with dependency:2.145232 (s)
+Elapsed time for explicit graph execution with dependency:2.145862 (s)
+Elapsed time for explicit graph execution with dependency:2.145349 (s)
+Elapsed time for explicit graph execution with dependency:2.145836 (s)
+Elapsed time for explicit graph execution with dependency:2.142352 (s)
+Elapsed time for explicit graph execution with dependency:2.144323 (s)
+Elapsed time for explicit graph execution with dependency:2.144296 (s)
+Elapsed time for explicit graph execution with dependency:2.144181 (s)
+Elapsed time for explicit graph execution with dependency:2.143495 (s)
+Elapsed time for explicit graph execution with dependency:2.145207 (s)
+Elapsed time for explicit graph creation with dependency:0.004733 (s)
+Elapsed time for explicit graph instantiation with dependency:0.005232 (s)
+Elapsed time for explicit graph execution with dependency:2.140925 (s)
+Elapsed time for explicit graph execution with dependency:2.141813 (s)
+Elapsed time for explicit graph execution with dependency:2.145292 (s)
+Elapsed time for explicit graph execution with dependency:2.144116 (s)
+Elapsed time for explicit graph execution with dependency:2.142968 (s)
+Elapsed time for explicit graph execution with dependency:2.142701 (s)
+Elapsed time for explicit graph execution with dependency:2.148274 (s)
+Elapsed time for explicit graph execution with dependency:2.142386 (s)
+Elapsed time for explicit graph execution with dependency:2.141312 (s)
+Elapsed time for explicit graph execution with dependency:2.144335 (s)
+Elapsed time for explicit graph execution with dependency:2.143961 (s)
+Elapsed time for explicit graph execution with dependency:2.144853 (s)
+Elapsed time for explicit graph execution with dependency:2.143960 (s)
+Elapsed time for explicit graph execution with dependency:2.142049 (s)
+Elapsed time for explicit graph execution with dependency:2.143191 (s)
+Elapsed time for explicit graph execution with dependency:2.141080 (s)
+Elapsed time for explicit graph execution with dependency:2.142397 (s)
+Elapsed time for explicit graph execution with dependency:2.143163 (s)
+Elapsed time for explicit graph execution with dependency:2.142593 (s)
+Elapsed time for explicit graph execution with dependency:2.142708 (s)
+Elapsed time for explicit graph creation with dependency:0.004731 (s)
+Elapsed time for explicit graph instantiation with dependency:0.005392 (s)
+Elapsed time for explicit graph execution with dependency:2.141840 (s)
+Elapsed time for explicit graph execution with dependency:2.145536 (s)
+Elapsed time for explicit graph execution with dependency:2.142581 (s)
+Elapsed time for explicit graph execution with dependency:2.144212 (s)
+Elapsed time for explicit graph execution with dependency:2.143203 (s)
+Elapsed time for explicit graph execution with dependency:2.143130 (s)
+Elapsed time for explicit graph execution with dependency:2.141012 (s)
+Elapsed time for explicit graph execution with dependency:2.143693 (s)
+Elapsed time for explicit graph execution with dependency:2.143136 (s)
+Elapsed time for explicit graph execution with dependency:2.142589 (s)
+Elapsed time for explicit graph execution with dependency:2.142806 (s)
+Elapsed time for explicit graph execution with dependency:2.143759 (s)
+Elapsed time for explicit graph execution with dependency:2.142352 (s)
+Elapsed time for explicit graph execution with dependency:2.142846 (s)
+Elapsed time for explicit graph execution with dependency:2.144888 (s)
+Elapsed time for explicit graph execution with dependency:2.142644 (s)
+Elapsed time for explicit graph execution with dependency:2.142673 (s)
+Elapsed time for explicit graph execution with dependency:2.143935 (s)
+Elapsed time for explicit graph execution with dependency:2.141867 (s)
+Elapsed time for explicit graph execution with dependency:2.141714 (s)
+Elapsed time for explicit graph creation with dependency:0.004827 (s)
+Elapsed time for explicit graph instantiation with dependency:0.005558 (s)
+Elapsed time for explicit graph execution with dependency:2.143159 (s)
+Elapsed time for explicit graph execution with dependency:2.142314 (s)
+Elapsed time for explicit graph execution with dependency:2.142688 (s)
+Elapsed time for explicit graph execution with dependency:2.142957 (s)
+Elapsed time for explicit graph execution with dependency:2.144057 (s)
+Elapsed time for explicit graph execution with dependency:2.143557 (s)
+Elapsed time for explicit graph execution with dependency:2.142999 (s)
+Elapsed time for explicit graph execution with dependency:2.144295 (s)
+Elapsed time for explicit graph execution with dependency:2.143559 (s)
+Elapsed time for explicit graph execution with dependency:2.143072 (s)
+Elapsed time for explicit graph execution with dependency:2.142362 (s)
+Elapsed time for explicit graph execution with dependency:2.141417 (s)
+Elapsed time for explicit graph execution with dependency:2.140825 (s)
+Elapsed time for explicit graph execution with dependency:2.140454 (s)
+Elapsed time for explicit graph execution with dependency:2.142053 (s)
+Elapsed time for explicit graph execution with dependency:2.143071 (s)
+Elapsed time for explicit graph execution with dependency:2.143180 (s)
+Elapsed time for explicit graph execution with dependency:2.143003 (s)
+Elapsed time for explicit graph execution with dependency:2.144663 (s)
+Elapsed time for explicit graph execution with dependency:2.141718 (s)
+Elapsed time for explicit graph creation with dependency:0.004977 (s)
+Elapsed time for explicit graph instantiation with dependency:0.005558 (s)
+Elapsed time for explicit graph execution with dependency:2.141592 (s)
+Elapsed time for explicit graph execution with dependency:2.141775 (s)
+Elapsed time for explicit graph execution with dependency:2.143183 (s)
+Elapsed time for explicit graph execution with dependency:2.142463 (s)
+Elapsed time for explicit graph execution with dependency:2.141935 (s)
+Elapsed time for explicit graph execution with dependency:2.145547 (s)
+Elapsed time for explicit graph execution with dependency:2.142796 (s)
+Elapsed time for explicit graph execution with dependency:2.141139 (s)
+Elapsed time for explicit graph execution with dependency:2.145163 (s)
+Elapsed time for explicit graph execution with dependency:2.143032 (s)
+Elapsed time for explicit graph execution with dependency:2.142603 (s)
+Elapsed time for explicit graph execution with dependency:2.146783 (s)
+Elapsed time for explicit graph execution with dependency:2.142624 (s)
+Elapsed time for explicit graph execution with dependency:2.141333 (s)
+Elapsed time for explicit graph execution with dependency:2.145152 (s)
+Elapsed time for explicit graph execution with dependency:2.141992 (s)
+Elapsed time for explicit graph execution with dependency:2.143806 (s)
+Elapsed time for explicit graph execution with dependency:2.141877 (s)
+Elapsed time for explicit graph execution with dependency:2.143419 (s)
+Elapsed time for explicit graph execution with dependency:2.143930 (s)
+----- run GEMM 25600 x 25600, BS=6400
+Elapsed time for explicit graph creation with dependency:0.486324 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000409 (s)
+Elapsed time for explicit graph execution with dependency:2.123668 (s)
+Elapsed time for explicit graph execution with dependency:2.130117 (s)
+Elapsed time for explicit graph execution with dependency:2.134495 (s)
+Elapsed time for explicit graph execution with dependency:2.150424 (s)
+Elapsed time for explicit graph execution with dependency:2.147409 (s)
+Elapsed time for explicit graph execution with dependency:2.136413 (s)
+Elapsed time for explicit graph execution with dependency:2.129426 (s)
+Elapsed time for explicit graph execution with dependency:2.131755 (s)
+Elapsed time for explicit graph execution with dependency:2.136200 (s)
+Elapsed time for explicit graph execution with dependency:2.151434 (s)
+Elapsed time for explicit graph execution with dependency:2.150743 (s)
+Elapsed time for explicit graph execution with dependency:2.146391 (s)
+Elapsed time for explicit graph execution with dependency:2.159002 (s)
+Elapsed time for explicit graph execution with dependency:2.153685 (s)
+Elapsed time for explicit graph execution with dependency:2.152475 (s)
+Elapsed time for explicit graph execution with dependency:2.148409 (s)
+Elapsed time for explicit graph execution with dependency:2.148114 (s)
+Elapsed time for explicit graph execution with dependency:2.158742 (s)
+Elapsed time for explicit graph execution with dependency:2.157755 (s)
+Elapsed time for explicit graph execution with dependency:2.147770 (s)
+Elapsed time for explicit graph creation with dependency:0.000840 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000375 (s)
+Elapsed time for explicit graph execution with dependency:2.157365 (s)
+Elapsed time for explicit graph execution with dependency:2.146844 (s)
+Elapsed time for explicit graph execution with dependency:2.141215 (s)
+Elapsed time for explicit graph execution with dependency:2.134281 (s)
+Elapsed time for explicit graph execution with dependency:2.142210 (s)
+Elapsed time for explicit graph execution with dependency:2.147354 (s)
+Elapsed time for explicit graph execution with dependency:2.147801 (s)
+Elapsed time for explicit graph execution with dependency:2.152179 (s)
+Elapsed time for explicit graph execution with dependency:2.142340 (s)
+Elapsed time for explicit graph execution with dependency:2.142169 (s)
+Elapsed time for explicit graph execution with dependency:2.154883 (s)
+Elapsed time for explicit graph execution with dependency:2.146563 (s)
+Elapsed time for explicit graph execution with dependency:2.145562 (s)
+Elapsed time for explicit graph execution with dependency:2.160963 (s)
+Elapsed time for explicit graph execution with dependency:2.155118 (s)
+Elapsed time for explicit graph execution with dependency:2.147043 (s)
+Elapsed time for explicit graph execution with dependency:2.142703 (s)
+Elapsed time for explicit graph execution with dependency:2.147502 (s)
+Elapsed time for explicit graph execution with dependency:2.156868 (s)
+Elapsed time for explicit graph execution with dependency:2.146089 (s)
+Elapsed time for explicit graph creation with dependency:0.000731 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000637 (s)
+Elapsed time for explicit graph execution with dependency:2.145000 (s)
+Elapsed time for explicit graph execution with dependency:2.162712 (s)
+Elapsed time for explicit graph execution with dependency:2.146231 (s)
+Elapsed time for explicit graph execution with dependency:2.155889 (s)
+Elapsed time for explicit graph execution with dependency:2.156313 (s)
+Elapsed time for explicit graph execution with dependency:2.154665 (s)
+Elapsed time for explicit graph execution with dependency:2.157619 (s)
+Elapsed time for explicit graph execution with dependency:2.155821 (s)
+Elapsed time for explicit graph execution with dependency:2.148943 (s)
+Elapsed time for explicit graph execution with dependency:2.158257 (s)
+Elapsed time for explicit graph execution with dependency:2.154891 (s)
+Elapsed time for explicit graph execution with dependency:2.159179 (s)
+Elapsed time for explicit graph execution with dependency:2.157986 (s)
+Elapsed time for explicit graph execution with dependency:2.170813 (s)
+Elapsed time for explicit graph execution with dependency:2.163522 (s)
+Elapsed time for explicit graph execution with dependency:2.158962 (s)
+Elapsed time for explicit graph execution with dependency:2.159871 (s)
+Elapsed time for explicit graph execution with dependency:2.176950 (s)
+Elapsed time for explicit graph execution with dependency:2.160014 (s)
+Elapsed time for explicit graph execution with dependency:2.161234 (s)
+Elapsed time for explicit graph creation with dependency:0.000787 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000679 (s)
+Elapsed time for explicit graph execution with dependency:2.162429 (s)
+Elapsed time for explicit graph execution with dependency:2.163392 (s)
+Elapsed time for explicit graph execution with dependency:2.156502 (s)
+Elapsed time for explicit graph execution with dependency:2.152367 (s)
+Elapsed time for explicit graph execution with dependency:2.159178 (s)
+Elapsed time for explicit graph execution with dependency:2.143791 (s)
+Elapsed time for explicit graph execution with dependency:2.156398 (s)
+Elapsed time for explicit graph execution with dependency:2.150705 (s)
+Elapsed time for explicit graph execution with dependency:2.162970 (s)
+Elapsed time for explicit graph execution with dependency:2.149439 (s)
+Elapsed time for explicit graph execution with dependency:2.153641 (s)
+Elapsed time for explicit graph execution with dependency:2.160715 (s)
+Elapsed time for explicit graph execution with dependency:2.159302 (s)
+Elapsed time for explicit graph execution with dependency:2.154469 (s)
+Elapsed time for explicit graph execution with dependency:2.165714 (s)
+Elapsed time for explicit graph execution with dependency:2.168187 (s)
+Elapsed time for explicit graph execution with dependency:2.157492 (s)
+Elapsed time for explicit graph execution with dependency:2.143417 (s)
+Elapsed time for explicit graph execution with dependency:2.157547 (s)
+Elapsed time for explicit graph execution with dependency:2.148232 (s)
+Elapsed time for explicit graph creation with dependency:0.000813 (s)
+Elapsed time for explicit graph instantiation with dependency:0.002000 (s)
+Elapsed time for explicit graph execution with dependency:2.138438 (s)
+Elapsed time for explicit graph execution with dependency:2.161214 (s)
+Elapsed time for explicit graph execution with dependency:2.156334 (s)
+Elapsed time for explicit graph execution with dependency:2.159228 (s)
+Elapsed time for explicit graph execution with dependency:2.154699 (s)
+Elapsed time for explicit graph execution with dependency:2.160515 (s)
+Elapsed time for explicit graph execution with dependency:2.155072 (s)
+Elapsed time for explicit graph execution with dependency:2.164461 (s)
+Elapsed time for explicit graph execution with dependency:2.156427 (s)
+Elapsed time for explicit graph execution with dependency:2.150184 (s)
+Elapsed time for explicit graph execution with dependency:2.137198 (s)
+Elapsed time for explicit graph execution with dependency:2.141893 (s)
+Elapsed time for explicit graph execution with dependency:2.135715 (s)
+Elapsed time for explicit graph execution with dependency:2.149092 (s)
+Elapsed time for explicit graph execution with dependency:2.153091 (s)
+Elapsed time for explicit graph execution with dependency:2.160384 (s)
+Elapsed time for explicit graph execution with dependency:2.149644 (s)
+Elapsed time for explicit graph execution with dependency:2.168646 (s)
+Elapsed time for explicit graph execution with dependency:2.145934 (s)
+Elapsed time for explicit graph execution with dependency:2.136660 (s)
+Elapsed time for explicit graph creation with dependency:0.000837 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000653 (s)
+Elapsed time for explicit graph execution with dependency:2.150333 (s)
+Elapsed time for explicit graph execution with dependency:2.143537 (s)
+Elapsed time for explicit graph execution with dependency:2.151705 (s)
+Elapsed time for explicit graph execution with dependency:2.150401 (s)
+Elapsed time for explicit graph execution with dependency:2.166640 (s)
+Elapsed time for explicit graph execution with dependency:2.152487 (s)
+Elapsed time for explicit graph execution with dependency:2.135576 (s)
+Elapsed time for explicit graph execution with dependency:2.136640 (s)
+Elapsed time for explicit graph execution with dependency:2.161999 (s)
+Elapsed time for explicit graph execution with dependency:2.157448 (s)
+Elapsed time for explicit graph execution with dependency:2.146401 (s)
+Elapsed time for explicit graph execution with dependency:2.147189 (s)
+Elapsed time for explicit graph execution with dependency:2.152296 (s)
+Elapsed time for explicit graph execution with dependency:2.157782 (s)
+Elapsed time for explicit graph execution with dependency:2.153265 (s)
+Elapsed time for explicit graph execution with dependency:2.153425 (s)
+Elapsed time for explicit graph execution with dependency:2.160207 (s)
+Elapsed time for explicit graph execution with dependency:2.147103 (s)
+Elapsed time for explicit graph execution with dependency:2.156754 (s)
+Elapsed time for explicit graph execution with dependency:2.151553 (s)
+Elapsed time for explicit graph creation with dependency:0.000815 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000799 (s)
+Elapsed time for explicit graph execution with dependency:2.141658 (s)
+Elapsed time for explicit graph execution with dependency:2.162824 (s)
+Elapsed time for explicit graph execution with dependency:2.158780 (s)
+Elapsed time for explicit graph execution with dependency:2.153181 (s)
+Elapsed time for explicit graph execution with dependency:2.157011 (s)
+Elapsed time for explicit graph execution with dependency:2.150267 (s)
+Elapsed time for explicit graph execution with dependency:2.136476 (s)
+Elapsed time for explicit graph execution with dependency:2.142054 (s)
+Elapsed time for explicit graph execution with dependency:2.178584 (s)
+Elapsed time for explicit graph execution with dependency:2.141214 (s)
+Elapsed time for explicit graph execution with dependency:2.150981 (s)
+Elapsed time for explicit graph execution with dependency:2.135193 (s)
+Elapsed time for explicit graph execution with dependency:2.143659 (s)
+Elapsed time for explicit graph execution with dependency:2.140030 (s)
+Elapsed time for explicit graph execution with dependency:2.134443 (s)
+Elapsed time for explicit graph execution with dependency:2.151972 (s)
+Elapsed time for explicit graph execution with dependency:2.148338 (s)
+Elapsed time for explicit graph execution with dependency:2.138002 (s)
+Elapsed time for explicit graph execution with dependency:2.141841 (s)
+Elapsed time for explicit graph execution with dependency:2.138915 (s)
+Elapsed time for explicit graph creation with dependency:0.000807 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000805 (s)
+Elapsed time for explicit graph execution with dependency:2.144229 (s)
+Elapsed time for explicit graph execution with dependency:2.145720 (s)
+Elapsed time for explicit graph execution with dependency:2.162928 (s)
+Elapsed time for explicit graph execution with dependency:2.135393 (s)
+Elapsed time for explicit graph execution with dependency:2.138285 (s)
+Elapsed time for explicit graph execution with dependency:2.138712 (s)
+Elapsed time for explicit graph execution with dependency:2.141353 (s)
+Elapsed time for explicit graph execution with dependency:2.142890 (s)
+Elapsed time for explicit graph execution with dependency:2.135088 (s)
+Elapsed time for explicit graph execution with dependency:2.172684 (s)
+Elapsed time for explicit graph execution with dependency:2.156625 (s)
+Elapsed time for explicit graph execution with dependency:2.133516 (s)
+Elapsed time for explicit graph execution with dependency:2.153396 (s)
+Elapsed time for explicit graph execution with dependency:2.149622 (s)
+Elapsed time for explicit graph execution with dependency:2.158747 (s)
+Elapsed time for explicit graph execution with dependency:2.169179 (s)
+Elapsed time for explicit graph execution with dependency:2.169361 (s)
+Elapsed time for explicit graph execution with dependency:2.135157 (s)
+Elapsed time for explicit graph execution with dependency:2.147463 (s)
+Elapsed time for explicit graph execution with dependency:2.160655 (s)
+Elapsed time for explicit graph creation with dependency:0.000805 (s)
+Elapsed time for explicit graph instantiation with dependency:0.000773 (s)
+Elapsed time for explicit graph execution with dependency:2.146703 (s)
+Elapsed time for explicit graph execution with dependency:2.157821 (s)
+Elapsed time for explicit graph execution with dependency:2.173049 (s)
+Elapsed time for explicit graph execution with dependency:2.174148 (s)
+Elapsed time for explicit graph execution with dependency:2.157618 (s)
+Elapsed time for explicit graph execution with dependency:2.147480 (s)
+Elapsed time for explicit graph execution with dependency:2.136947 (s)
+Elapsed time for explicit graph execution with dependency:2.144354 (s)
+Elapsed time for explicit graph execution with dependency:2.152557 (s)
+Elapsed time for explicit graph execution with dependency:2.157115 (s)
+Elapsed time for explicit graph execution with dependency:2.166511 (s)
+Elapsed time for explicit graph execution with dependency:2.148652 (s)
+Elapsed time for explicit graph execution with dependency:2.149814 (s)
+Elapsed time for explicit graph execution with dependency:2.158960 (s)
+Elapsed time for explicit graph execution with dependency:2.157650 (s)
+Elapsed time for explicit graph execution with dependency:2.153094 (s)
+Elapsed time for explicit graph execution with dependency:2.149346 (s)
+Elapsed time for explicit graph execution with dependency:2.159686 (s)
+Elapsed time for explicit graph execution with dependency:2.159424 (s)
+Elapsed time for explicit graph execution with dependency:2.144278 (s)
+Elapsed time for explicit graph creation with dependency:0.000791 (s)
+Elapsed time for explicit graph instantiation with dependency:0.001953 (s)
+Elapsed time for explicit graph execution with dependency:2.153180 (s)
+Elapsed time for explicit graph execution with dependency:2.163218 (s)
+Elapsed time for explicit graph execution with dependency:2.164611 (s)
+Elapsed time for explicit graph execution with dependency:2.157732 (s)
+Elapsed time for explicit graph execution with dependency:2.175731 (s)
+Elapsed time for explicit graph execution with dependency:2.142565 (s)
+Elapsed time for explicit graph execution with dependency:2.149298 (s)
+Elapsed time for explicit graph execution with dependency:2.160297 (s)
+Elapsed time for explicit graph execution with dependency:2.146833 (s)
+Elapsed time for explicit graph execution with dependency:2.137757 (s)
+Elapsed time for explicit graph execution with dependency:2.148976 (s)
+Elapsed time for explicit graph execution with dependency:2.145212 (s)
+Elapsed time for explicit graph execution with dependency:2.150790 (s)
+Elapsed time for explicit graph execution with dependency:2.138849 (s)
+Elapsed time for explicit graph execution with dependency:2.164436 (s)
+Elapsed time for explicit graph execution with dependency:2.141071 (s)
+Elapsed time for explicit graph execution with dependency:2.157363 (s)
+Elapsed time for explicit graph execution with dependency:2.170027 (s)
+Elapsed time for explicit graph execution with dependency:2.154153 (s)
+Elapsed time for explicit graph execution with dependency:2.152159 (s)
+time,kernel,dimension,blocksize,operation,
+0,0.486651,12,6400,3200,graphApiYesDependency,1
+1,0.000265241,12,6400,3200,graphApiYesDependency,1
+2,0.000273627,12,6400,3200,graphApiYesDependency,1
+3,0.000373886,12,6400,3200,graphApiYesDependency,1
+4,0.00027526,12,6400,3200,graphApiYesDependency,1
+5,0.000269769,12,6400,3200,graphApiYesDependency,1
+6,0.000271312,12,6400,3200,graphApiYesDependency,1
+7,0.000284347,12,6400,3200,graphApiYesDependency,1
+8,0.000268227,12,6400,3200,graphApiYesDependency,1
+9,0.000263467,12,6400,3200,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.0375911,12,6400,3200,launch,1
+1,0.038752,12,6400,3200,launch,1
+2,0.0387489,12,6400,3200,launch,1
+3,0.0387483,12,6400,3200,launch,1
+4,0.0387491,12,6400,3200,launch,1
+5,0.0374106,12,6400,3200,launch,1
+6,0.0331972,12,6400,3200,launch,1
+7,0.032956,12,6400,3200,launch,1
+8,0.0329566,12,6400,3200,launch,1
+9,0.0329595,12,6400,3200,launch,1
+10,0.032957,12,6400,3200,launch,1
+11,0.0329583,12,6400,3200,launch,1
+12,0.0329583,12,6400,3200,launch,1
+13,0.0329585,12,6400,3200,launch,1
+14,0.0329559,12,6400,3200,launch,1
+15,0.0329552,12,6400,3200,launch,1
+16,0.0329577,12,6400,3200,launch,1
+17,0.0329613,12,6400,3200,launch,1
+18,0.0329591,12,6400,3200,launch,1
+19,0.0329592,12,6400,3200,launch,1
+20,0.03297,12,6400,3200,launch,1
+21,0.0329592,12,6400,3200,launch,1
+22,0.0329599,12,6400,3200,launch,1
+23,0.0329588,12,6400,3200,launch,1
+24,0.0329585,12,6400,3200,launch,1
+25,0.032959,12,6400,3200,launch,1
+26,0.0329597,12,6400,3200,launch,1
+27,0.0329601,12,6400,3200,launch,1
+28,0.0329607,12,6400,3200,launch,1
+29,0.0329617,12,6400,3200,launch,1
+30,0.0329587,12,6400,3200,launch,1
+31,0.0331268,12,6400,3200,launch,1
+32,0.0337932,12,6400,3200,launch,1
+33,0.0342369,12,6400,3200,launch,1
+34,0.0342368,12,6400,3200,launch,1
+35,0.0342253,12,6400,3200,launch,1
+36,0.0339337,12,6400,3200,launch,1
+37,0.0337925,12,6400,3200,launch,1
+38,0.0338071,12,6400,3200,launch,1
+39,0.0335147,12,6400,3200,launch,1
+40,0.0331821,12,6400,3200,launch,1
+41,0.0329477,12,6400,3200,launch,1
+42,0.0329461,12,6400,3200,launch,1
+43,0.0331317,12,6400,3200,launch,1
+44,0.033381,12,6400,3200,launch,1
+45,0.0333824,12,6400,3200,launch,1
+46,0.0332036,12,6400,3200,launch,1
+47,0.0329605,12,6400,3200,launch,1
+48,0.0329612,12,6400,3200,launch,1
+49,0.0329609,12,6400,3200,launch,1
+50,0.0329612,12,6400,3200,launch,1
+51,0.0329618,12,6400,3200,launch,1
+52,0.0329629,12,6400,3200,launch,1
+53,0.0329628,12,6400,3200,launch,1
+54,0.0329617,12,6400,3200,launch,1
+55,0.0329603,12,6400,3200,launch,1
+56,0.0329586,12,6400,3200,launch,1
+57,0.0329638,12,6400,3200,launch,1
+58,0.0330514,12,6400,3200,launch,1
+59,0.0333783,12,6400,3200,launch,1
+60,0.0333875,12,6400,3200,launch,1
+61,0.0334639,12,6400,3200,launch,1
+62,0.0337997,12,6400,3200,launch,1
+63,0.0337979,12,6400,3200,launch,1
+64,0.0338013,12,6400,3200,launch,1
+65,0.0338021,12,6400,3200,launch,1
+66,0.0338021,12,6400,3200,launch,1
+67,0.0338003,12,6400,3200,launch,1
+68,0.0335242,12,6400,3200,launch,1
+69,0.0333779,12,6400,3200,launch,1
+70,0.0332758,12,6400,3200,launch,1
+71,0.0329621,12,6400,3200,launch,1
+72,0.0329585,12,6400,3200,launch,1
+73,0.0329606,12,6400,3200,launch,1
+74,0.0329604,12,6400,3200,launch,1
+75,0.0329609,12,6400,3200,launch,1
+76,0.0329604,12,6400,3200,launch,1
+77,0.0329599,12,6400,3200,launch,1
+78,0.0329604,12,6400,3200,launch,1
+79,0.0329593,12,6400,3200,launch,1
+80,0.0329707,12,6400,3200,launch,1
+81,0.0329607,12,6400,3200,launch,1
+82,0.0329617,12,6400,3200,launch,1
+83,0.0329613,12,6400,3200,launch,1
+84,0.0329619,12,6400,3200,launch,1
+85,0.032961,12,6400,3200,launch,1
+86,0.0333741,12,6400,3200,launch,1
+87,0.0333803,12,6400,3200,launch,1
+88,0.0333806,12,6400,3200,launch,1
+89,0.0333793,12,6400,3200,launch,1
+90,0.0334565,12,6400,3200,launch,1
+91,0.0338043,12,6400,3200,launch,1
+92,0.033806,12,6400,3200,launch,1
+93,0.0338069,12,6400,3200,launch,1
+94,0.0338069,12,6400,3200,launch,1
+95,0.0338075,12,6400,3200,launch,1
+96,0.0338038,12,6400,3200,launch,1
+97,0.0335323,12,6400,3200,launch,1
+98,0.0333803,12,6400,3200,launch,1
+99,0.0332874,12,6400,3200,launch,1
+100,0.0329753,12,6400,3200,launch,1
+101,0.032952,12,6400,3200,launch,1
+102,0.0329467,12,6400,3200,launch,1
+103,0.0329465,12,6400,3200,launch,1
+104,0.0333694,12,6400,3200,launch,1
+105,0.0333811,12,6400,3200,launch,1
+106,0.0333799,12,6400,3200,launch,1
+107,0.0329756,12,6400,3200,launch,1
+108,0.0329598,12,6400,3200,launch,1
+109,0.0329608,12,6400,3200,launch,1
+110,0.0329596,12,6400,3200,launch,1
+111,0.0329592,12,6400,3200,launch,1
+112,0.0329594,12,6400,3200,launch,1
+113,0.0330659,12,6400,3200,launch,1
+114,0.0333813,12,6400,3200,launch,1
+115,0.0333828,12,6400,3200,launch,1
+116,0.0333818,12,6400,3200,launch,1
+117,0.0333812,12,6400,3200,launch,1
+118,0.0333828,12,6400,3200,launch,1
+119,0.0333833,12,6400,3200,launch,1
+120,0.0333994,12,6400,3200,launch,1
+121,0.0338039,12,6400,3200,launch,1
+122,0.033794,12,6400,3200,launch,1
+123,0.0337904,12,6400,3200,launch,1
+124,0.033788,12,6400,3200,launch,1
+125,0.0338007,12,6400,3200,launch,1
+126,0.033806,12,6400,3200,launch,1
+127,0.0338082,12,6400,3200,launch,1
+128,0.0336818,12,6400,3200,launch,1
+129,0.0333831,12,6400,3200,launch,1
+130,0.0333801,12,6400,3200,launch,1
+131,0.0332495,12,6400,3200,launch,1
+132,0.0333134,12,6400,3200,launch,1
+133,0.0333029,12,6400,3200,launch,1
+134,0.0330458,12,6400,3200,launch,1
+135,0.032959,12,6400,3200,launch,1
+136,0.0329603,12,6400,3200,launch,1
+137,0.0329597,12,6400,3200,launch,1
+138,0.0329585,12,6400,3200,launch,1
+139,0.0329593,12,6400,3200,launch,1
+140,0.0329704,12,6400,3200,launch,1
+141,0.032961,12,6400,3200,launch,1
+142,0.0329594,12,6400,3200,launch,1
+143,0.032983,12,6400,3200,launch,1
+144,0.0333798,12,6400,3200,launch,1
+145,0.0333795,12,6400,3200,launch,1
+146,0.0333714,12,6400,3200,launch,1
+147,0.0333636,12,6400,3200,launch,1
+148,0.0333617,12,6400,3200,launch,1
+149,0.0333827,12,6400,3200,launch,1
+150,0.0338083,12,6400,3200,launch,1
+151,0.0338089,12,6400,3200,launch,1
+152,0.0338064,12,6400,3200,launch,1
+153,0.0333859,12,6400,3200,launch,1
+154,0.0334527,12,6400,3200,launch,1
+155,0.0338021,12,6400,3200,launch,1
+156,0.0338093,12,6400,3200,launch,1
+157,0.0338062,12,6400,3200,launch,1
+158,0.0338126,12,6400,3200,launch,1
+159,0.0333827,12,6400,3200,launch,1
+160,0.0330539,12,6400,3200,launch,1
+161,0.0329577,12,6400,3200,launch,1
+162,0.0333534,12,6400,3200,launch,1
+163,0.0333633,12,6400,3200,launch,1
+164,0.0333746,12,6400,3200,launch,1
+165,0.0333857,12,6400,3200,launch,1
+166,0.0333798,12,6400,3200,launch,1
+167,0.0331494,12,6400,3200,launch,1
+168,0.03296,12,6400,3200,launch,1
+169,0.032963,12,6400,3200,launch,1
+170,0.0329614,12,6400,3200,launch,1
+171,0.0330746,12,6400,3200,launch,1
+172,0.0333856,12,6400,3200,launch,1
+173,0.0333848,12,6400,3200,launch,1
+174,0.0333837,12,6400,3200,launch,1
+175,0.0331188,12,6400,3200,launch,1
+176,0.0333831,12,6400,3200,launch,1
+177,0.0333781,12,6400,3200,launch,1
+178,0.0333842,12,6400,3200,launch,1
+179,0.0333824,12,6400,3200,launch,1
+180,0.0333934,12,6400,3200,launch,1
+181,0.0333821,12,6400,3200,launch,1
+182,0.0333843,12,6400,3200,launch,1
+183,0.0333817,12,6400,3200,launch,1
+184,0.0336417,12,6400,3200,launch,1
+185,0.0338029,12,6400,3200,launch,1
+186,0.0337884,12,6400,3200,launch,1
+187,0.0337888,12,6400,3200,launch,1
+188,0.0337969,12,6400,3200,launch,1
+189,0.0334463,12,6400,3200,launch,1
+190,0.0333826,12,6400,3200,launch,1
+191,0.0333832,12,6400,3200,launch,1
+192,0.0331213,12,6400,3200,launch,1
+193,0.0333795,12,6400,3200,launch,1
+194,0.0333824,12,6400,3200,launch,1
+195,0.0333054,12,6400,3200,launch,1
+196,0.0331893,12,6400,3200,launch,1
+197,0.0333795,12,6400,3200,launch,1
+198,0.0333199,12,6400,3200,launch,1
+199,0.032961,12,6400,3200,launch,1
+time,kernel,dimension,blocksize,operation,
+0,0.000214194,12,6400,3200,graphApiYesDependency,1
+1,5.2399e-05,12,6400,3200,graphApiYesDependency,1
+2,0.000159702,12,6400,3200,graphApiYesDependency,1
+3,4.6328e-05,12,6400,3200,graphApiYesDependency,1
+4,4.2761e-05,12,6400,3200,graphApiYesDependency,1
+5,0.00016959,12,6400,3200,graphApiYesDependency,1
+6,4.6458e-05,12,6400,3200,graphApiYesDependency,1
+7,4.9303e-05,12,6400,3200,graphApiYesDependency,1
+8,0.000276592,12,6400,3200,graphApiYesDependency,1
+9,5.5435e-05,12,6400,3200,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.485643,2,6400,6400,graphApiYesDependency,1
+1,0.000215907,2,6400,6400,graphApiYesDependency,1
+2,0.000205258,2,6400,6400,graphApiYesDependency,1
+3,0.000210147,2,6400,6400,graphApiYesDependency,1
+4,0.000221899,2,6400,6400,graphApiYesDependency,1
+5,0.000209416,2,6400,6400,graphApiYesDependency,1
+6,0.000334031,2,6400,6400,graphApiYesDependency,1
+7,0.000220827,2,6400,6400,graphApiYesDependency,1
+8,0.000212171,2,6400,6400,graphApiYesDependency,1
+9,0.000213333,2,6400,6400,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.0461084,2,6400,6400,launch,1
+1,0.0467489,2,6400,6400,launch,1
+2,0.0469078,2,6400,6400,launch,1
+3,0.0469074,2,6400,6400,launch,1
+4,0.046906,2,6400,6400,launch,1
+5,0.0393842,2,6400,6400,launch,1
+6,0.0330167,2,6400,6400,launch,1
+7,0.0328095,2,6400,6400,launch,1
+8,0.0328034,2,6400,6400,launch,1
+9,0.0328027,2,6400,6400,launch,1
+10,0.0328132,2,6400,6400,launch,1
+11,0.0328184,2,6400,6400,launch,1
+12,0.0328149,2,6400,6400,launch,1
+13,0.032815,2,6400,6400,launch,1
+14,0.0328173,2,6400,6400,launch,1
+15,0.032821,2,6400,6400,launch,1
+16,0.0328179,2,6400,6400,launch,1
+17,0.0328161,2,6400,6400,launch,1
+18,0.0328163,2,6400,6400,launch,1
+19,0.0328171,2,6400,6400,launch,1
+20,0.0328207,2,6400,6400,launch,1
+21,0.0328215,2,6400,6400,launch,1
+22,0.0328144,2,6400,6400,launch,1
+23,0.0328151,2,6400,6400,launch,1
+24,0.0328199,2,6400,6400,launch,1
+25,0.0328183,2,6400,6400,launch,1
+26,0.0328183,2,6400,6400,launch,1
+27,0.0328179,2,6400,6400,launch,1
+28,0.0328212,2,6400,6400,launch,1
+29,0.0328186,2,6400,6400,launch,1
+30,0.0328158,2,6400,6400,launch,1
+31,0.0329608,2,6400,6400,launch,1
+32,0.0335958,2,6400,6400,launch,1
+33,0.0340963,2,6400,6400,launch,1
+34,0.0339529,2,6400,6400,launch,1
+35,0.0336666,2,6400,6400,launch,1
+36,0.0334456,2,6400,6400,launch,1
+37,0.033252,2,6400,6400,launch,1
+38,0.0331704,2,6400,6400,launch,1
+39,0.0328037,2,6400,6400,launch,1
+40,0.032813,2,6400,6400,launch,1
+41,0.032813,2,6400,6400,launch,1
+42,0.0328148,2,6400,6400,launch,1
+43,0.032814,2,6400,6400,launch,1
+44,0.0328169,2,6400,6400,launch,1
+45,0.0328194,2,6400,6400,launch,1
+46,0.0328188,2,6400,6400,launch,1
+47,0.0328178,2,6400,6400,launch,1
+48,0.0328154,2,6400,6400,launch,1
+49,0.0328626,2,6400,6400,launch,1
+50,0.0332667,2,6400,6400,launch,1
+51,0.0332596,2,6400,6400,launch,1
+52,0.0329521,2,6400,6400,launch,1
+53,0.0328061,2,6400,6400,launch,1
+54,0.0328053,2,6400,6400,launch,1
+55,0.0328023,2,6400,6400,launch,1
+56,0.0332506,2,6400,6400,launch,1
+57,0.0332516,2,6400,6400,launch,1
+58,0.0332464,2,6400,6400,launch,1
+59,0.032978,2,6400,6400,launch,1
+60,0.0332597,2,6400,6400,launch,1
+61,0.033254,2,6400,6400,launch,1
+62,0.0336401,2,6400,6400,launch,1
+63,0.0336684,2,6400,6400,launch,1
+64,0.0336655,2,6400,6400,launch,1
+65,0.0332794,2,6400,6400,launch,1
+66,0.0332607,2,6400,6400,launch,1
+67,0.0332629,2,6400,6400,launch,1
+68,0.0328503,2,6400,6400,launch,1
+69,0.0328155,2,6400,6400,launch,1
+70,0.0328186,2,6400,6400,launch,1
+71,0.0328155,2,6400,6400,launch,1
+72,0.032821,2,6400,6400,launch,1
+73,0.0328178,2,6400,6400,launch,1
+74,0.0328133,2,6400,6400,launch,1
+75,0.0328158,2,6400,6400,launch,1
+76,0.0328169,2,6400,6400,launch,1
+77,0.0328185,2,6400,6400,launch,1
+78,0.0328161,2,6400,6400,launch,1
+79,0.0329399,2,6400,6400,launch,1
+80,0.0332399,2,6400,6400,launch,1
+81,0.0332202,2,6400,6400,launch,1
+82,0.0328586,2,6400,6400,launch,1
+83,0.0328124,2,6400,6400,launch,1
+84,0.0332585,2,6400,6400,launch,1
+85,0.0332497,2,6400,6400,launch,1
+86,0.0332567,2,6400,6400,launch,1
+87,0.0328211,2,6400,6400,launch,1
+88,0.0328796,2,6400,6400,launch,1
+89,0.0332423,2,6400,6400,launch,1
+90,0.0336158,2,6400,6400,launch,1
+91,0.0336463,2,6400,6400,launch,1
+92,0.0336533,2,6400,6400,launch,1
+93,0.0336627,2,6400,6400,launch,1
+94,0.0336617,2,6400,6400,launch,1
+95,0.0334451,2,6400,6400,launch,1
+96,0.0332613,2,6400,6400,launch,1
+97,0.0332168,2,6400,6400,launch,1
+98,0.0328183,2,6400,6400,launch,1
+99,0.0328169,2,6400,6400,launch,1
+100,0.0328208,2,6400,6400,launch,1
+101,0.0328182,2,6400,6400,launch,1
+102,0.0328164,2,6400,6400,launch,1
+103,0.0328164,2,6400,6400,launch,1
+104,0.0328184,2,6400,6400,launch,1
+105,0.0328193,2,6400,6400,launch,1
+106,0.0328191,2,6400,6400,launch,1
+107,0.0328184,2,6400,6400,launch,1
+108,0.0328175,2,6400,6400,launch,1
+109,0.032819,2,6400,6400,launch,1
+110,0.0328173,2,6400,6400,launch,1
+111,0.0328282,2,6400,6400,launch,1
+112,0.0332705,2,6400,6400,launch,1
+113,0.0332513,2,6400,6400,launch,1
+114,0.0332206,2,6400,6400,launch,1
+115,0.0332188,2,6400,6400,launch,1
+116,0.0332234,2,6400,6400,launch,1
+117,0.0332717,2,6400,6400,launch,1
+118,0.0332645,2,6400,6400,launch,1
+119,0.0332519,2,6400,6400,launch,1
+120,0.0332585,2,6400,6400,launch,1
+121,0.0332518,2,6400,6400,launch,1
+122,0.0332525,2,6400,6400,launch,1
+123,0.0332496,2,6400,6400,launch,1
+124,0.0332482,2,6400,6400,launch,1
+125,0.0332511,2,6400,6400,launch,1
+126,0.0332488,2,6400,6400,launch,1
+127,0.0332495,2,6400,6400,launch,1
+128,0.0332527,2,6400,6400,launch,1
+129,0.0332472,2,6400,6400,launch,1
+130,0.0328511,2,6400,6400,launch,1
+131,0.032814,2,6400,6400,launch,1
+132,0.0328151,2,6400,6400,launch,1
+133,0.0328136,2,6400,6400,launch,1
+134,0.0328164,2,6400,6400,launch,1
+135,0.0328151,2,6400,6400,launch,1
+136,0.0328131,2,6400,6400,launch,1
+137,0.0328153,2,6400,6400,launch,1
+138,0.0328176,2,6400,6400,launch,1
+139,0.0328671,2,6400,6400,launch,1
+140,0.0332633,2,6400,6400,launch,1
+141,0.0332241,2,6400,6400,launch,1
+142,0.0332183,2,6400,6400,launch,1
+143,0.0332176,2,6400,6400,launch,1
+144,0.0332504,2,6400,6400,launch,1
+145,0.0332489,2,6400,6400,launch,1
+146,0.0332456,2,6400,6400,launch,1
+147,0.0332472,2,6400,6400,launch,1
+148,0.0332462,2,6400,6400,launch,1
+149,0.0332484,2,6400,6400,launch,1
+150,0.033249,2,6400,6400,launch,1
+151,0.033247,2,6400,6400,launch,1
+152,0.0332477,2,6400,6400,launch,1
+153,0.0332448,2,6400,6400,launch,1
+154,0.0332495,2,6400,6400,launch,1
+155,0.0332514,2,6400,6400,launch,1
+156,0.0332481,2,6400,6400,launch,1
+157,0.0332535,2,6400,6400,launch,1
+158,0.0332533,2,6400,6400,launch,1
+159,0.0331875,2,6400,6400,launch,1
+160,0.032824,2,6400,6400,launch,1
+161,0.0328188,2,6400,6400,launch,1
+162,0.0328544,2,6400,6400,launch,1
+163,0.0332178,2,6400,6400,launch,1
+164,0.033218,2,6400,6400,launch,1
+165,0.032944,2,6400,6400,launch,1
+166,0.0328169,2,6400,6400,launch,1
+167,0.0328168,2,6400,6400,launch,1
+168,0.0328186,2,6400,6400,launch,1
+169,0.0328188,2,6400,6400,launch,1
+170,0.0328896,2,6400,6400,launch,1
+171,0.0332403,2,6400,6400,launch,1
+172,0.0332173,2,6400,6400,launch,1
+173,0.0332216,2,6400,6400,launch,1
+174,0.0332417,2,6400,6400,launch,1
+175,0.0336312,2,6400,6400,launch,1
+176,0.0336706,2,6400,6400,launch,1
+177,0.0334748,2,6400,6400,launch,1
+178,0.0332655,2,6400,6400,launch,1
+179,0.0332563,2,6400,6400,launch,1
+180,0.033261,2,6400,6400,launch,1
+181,0.0332525,2,6400,6400,launch,1
+182,0.0332473,2,6400,6400,launch,1
+183,0.0332489,2,6400,6400,launch,1
+184,0.0332474,2,6400,6400,launch,1
+185,0.0332482,2,6400,6400,launch,1
+186,0.0332496,2,6400,6400,launch,1
+187,0.0332441,2,6400,6400,launch,1
+188,0.0332487,2,6400,6400,launch,1
+189,0.033244,2,6400,6400,launch,1
+190,0.0328939,2,6400,6400,launch,1
+191,0.0328158,2,6400,6400,launch,1
+192,0.0328174,2,6400,6400,launch,1
+193,0.0328167,2,6400,6400,launch,1
+194,0.0328164,2,6400,6400,launch,1
+195,0.0328163,2,6400,6400,launch,1
+196,0.0328152,2,6400,6400,launch,1
+197,0.0328214,2,6400,6400,launch,1
+198,0.0328176,2,6400,6400,launch,1
+199,0.0328135,2,6400,6400,launch,1
+time,kernel,dimension,blocksize,operation,
+0,0.000194707,2,6400,6400,graphApiYesDependency,1
+1,1.3455e-05,2,6400,6400,graphApiYesDependency,1
+2,1.2453e-05,2,6400,6400,graphApiYesDependency,1
+3,1.2444e-05,2,6400,6400,graphApiYesDependency,1
+4,1.5189e-05,2,6400,6400,graphApiYesDependency,1
+5,1.2273e-05,2,6400,6400,graphApiYesDependency,1
+6,1.4697e-05,2,6400,6400,graphApiYesDependency,1
+7,1.3646e-05,2,6400,6400,graphApiYesDependency,1
+8,1.6061e-05,2,6400,6400,graphApiYesDependency,1
+9,1.3165e-05,2,6400,6400,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.659943,1100,6400,640,graphApiYesDependency,1
+1,0.193772,1100,6400,640,graphApiYesDependency,1
+2,0.213705,1100,6400,640,graphApiYesDependency,1
+3,0.232946,1100,6400,640,graphApiYesDependency,1
+4,0.253843,1100,6400,640,graphApiYesDependency,1
+5,0.273244,1100,6400,640,graphApiYesDependency,1
+6,0.294703,1100,6400,640,graphApiYesDependency,1
+7,0.314246,1100,6400,640,graphApiYesDependency,1
+8,0.335264,1100,6400,640,graphApiYesDependency,1
+9,0.354638,1100,6400,640,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.0544277,1100,6400,640,launch,1
+1,0.0527153,1100,6400,640,launch,1
+2,0.0440454,1100,6400,640,launch,1
+3,0.044044,1100,6400,640,launch,1
+4,0.0440332,1100,6400,640,launch,1
+5,0.0442284,1100,6400,640,launch,1
+6,0.0397157,1100,6400,640,launch,1
+7,0.0362921,1100,6400,640,launch,1
+8,0.0363872,1100,6400,640,launch,1
+9,0.0362496,1100,6400,640,launch,1
+10,0.0362859,1100,6400,640,launch,1
+11,0.0364952,1100,6400,640,launch,1
+12,0.035926,1100,6400,640,launch,1
+13,0.0358339,1100,6400,640,launch,1
+14,0.0360447,1100,6400,640,launch,1
+15,0.0358773,1100,6400,640,launch,1
+16,0.0358841,1100,6400,640,launch,1
+17,0.0358978,1100,6400,640,launch,1
+18,0.0359001,1100,6400,640,launch,1
+19,0.0358767,1100,6400,640,launch,1
+20,0.0310654,1100,6400,640,launch,1
+21,0.0349619,1100,6400,640,launch,1
+22,0.0363539,1100,6400,640,launch,1
+23,0.0363243,1100,6400,640,launch,1
+24,0.0363518,1100,6400,640,launch,1
+25,0.0357759,1100,6400,640,launch,1
+26,0.0358005,1100,6400,640,launch,1
+27,0.0362712,1100,6400,640,launch,1
+28,0.0362311,1100,6400,640,launch,1
+29,0.036229,1100,6400,640,launch,1
+30,0.0358974,1100,6400,640,launch,1
+31,0.0361135,1100,6400,640,launch,1
+32,0.0358863,1100,6400,640,launch,1
+33,0.0358835,1100,6400,640,launch,1
+34,0.0359198,1100,6400,640,launch,1
+35,0.035886,1100,6400,640,launch,1
+36,0.0358839,1100,6400,640,launch,1
+37,0.0361098,1100,6400,640,launch,1
+38,0.0359039,1100,6400,640,launch,1
+39,0.0358986,1100,6400,640,launch,1
+40,0.0307661,1100,6400,640,launch,1
+41,0.0348553,1100,6400,640,launch,1
+42,0.0366776,1100,6400,640,launch,1
+43,0.0363533,1100,6400,640,launch,1
+44,0.0361814,1100,6400,640,launch,1
+45,0.0358911,1100,6400,640,launch,1
+46,0.0358945,1100,6400,640,launch,1
+47,0.0360694,1100,6400,640,launch,1
+48,0.0359185,1100,6400,640,launch,1
+49,0.0358931,1100,6400,640,launch,1
+50,0.0363276,1100,6400,640,launch,1
+51,0.035892,1100,6400,640,launch,1
+52,0.035899,1100,6400,640,launch,1
+53,0.0362109,1100,6400,640,launch,1
+54,0.0359289,1100,6400,640,launch,1
+55,0.035893,1100,6400,640,launch,1
+56,0.0361175,1100,6400,640,launch,1
+57,0.0358909,1100,6400,640,launch,1
+58,0.035876,1100,6400,640,launch,1
+59,0.0360944,1100,6400,640,launch,1
+60,0.0306861,1100,6400,640,launch,1
+61,0.0352204,1100,6400,640,launch,1
+62,0.0367497,1100,6400,640,launch,1
+63,0.036432,1100,6400,640,launch,1
+64,0.0362933,1100,6400,640,launch,1
+65,0.0362382,1100,6400,640,launch,1
+66,0.0362511,1100,6400,640,launch,1
+67,0.0360377,1100,6400,640,launch,1
+68,0.0358972,1100,6400,640,launch,1
+69,0.0359011,1100,6400,640,launch,1
+70,0.0358842,1100,6400,640,launch,1
+71,0.0358981,1100,6400,640,launch,1
+72,0.0358941,1100,6400,640,launch,1
+73,0.0358853,1100,6400,640,launch,1
+74,0.0359108,1100,6400,640,launch,1
+75,0.0359042,1100,6400,640,launch,1
+76,0.0359057,1100,6400,640,launch,1
+77,0.0358892,1100,6400,640,launch,1
+78,0.0358693,1100,6400,640,launch,1
+79,0.0363115,1100,6400,640,launch,1
+80,0.0305044,1100,6400,640,launch,1
+81,0.0351526,1100,6400,640,launch,1
+82,0.0366696,1100,6400,640,launch,1
+83,0.036332,1100,6400,640,launch,1
+84,0.0361361,1100,6400,640,launch,1
+85,0.0359165,1100,6400,640,launch,1
+86,0.0359076,1100,6400,640,launch,1
+87,0.0358764,1100,6400,640,launch,1
+88,0.0359049,1100,6400,640,launch,1
+89,0.0358534,1100,6400,640,launch,1
+90,0.0360606,1100,6400,640,launch,1
+91,0.0358777,1100,6400,640,launch,1
+92,0.0358837,1100,6400,640,launch,1
+93,0.035879,1100,6400,640,launch,1
+94,0.0358946,1100,6400,640,launch,1
+95,0.0358831,1100,6400,640,launch,1
+96,0.0359,1100,6400,640,launch,1
+97,0.0358823,1100,6400,640,launch,1
+98,0.0358908,1100,6400,640,launch,1
+99,0.0360593,1100,6400,640,launch,1
+100,0.0308841,1100,6400,640,launch,1
+101,0.0351133,1100,6400,640,launch,1
+102,0.0366764,1100,6400,640,launch,1
+103,0.036323,1100,6400,640,launch,1
+104,0.0360044,1100,6400,640,launch,1
+105,0.0358768,1100,6400,640,launch,1
+106,0.0358959,1100,6400,640,launch,1
+107,0.0360608,1100,6400,640,launch,1
+108,0.0358993,1100,6400,640,launch,1
+109,0.0359081,1100,6400,640,launch,1
+110,0.0359057,1100,6400,640,launch,1
+111,0.0358864,1100,6400,640,launch,1
+112,0.0359071,1100,6400,640,launch,1
+113,0.0360887,1100,6400,640,launch,1
+114,0.0358874,1100,6400,640,launch,1
+115,0.0358997,1100,6400,640,launch,1
+116,0.0359382,1100,6400,640,launch,1
+117,0.0358825,1100,6400,640,launch,1
+118,0.035882,1100,6400,640,launch,1
+119,0.0359444,1100,6400,640,launch,1
+120,0.0305326,1100,6400,640,launch,1
+121,0.0300656,1100,6400,640,launch,1
+122,0.0347516,1100,6400,640,launch,1
+123,0.0378436,1100,6400,640,launch,1
+124,0.0372862,1100,6400,640,launch,1
+125,0.0363108,1100,6400,640,launch,1
+126,0.0363475,1100,6400,640,launch,1
+127,0.0363078,1100,6400,640,launch,1
+128,0.035891,1100,6400,640,launch,1
+129,0.0358836,1100,6400,640,launch,1
+130,0.0364441,1100,6400,640,launch,1
+131,0.0358973,1100,6400,640,launch,1
+132,0.0358738,1100,6400,640,launch,1
+133,0.0361688,1100,6400,640,launch,1
+134,0.0359031,1100,6400,640,launch,1
+135,0.0358878,1100,6400,640,launch,1
+136,0.0358935,1100,6400,640,launch,1
+137,0.035884,1100,6400,640,launch,1
+138,0.0358964,1100,6400,640,launch,1
+139,0.035976,1100,6400,640,launch,1
+140,0.0304075,1100,6400,640,launch,1
+141,0.0349371,1100,6400,640,launch,1
+142,0.0366975,1100,6400,640,launch,1
+143,0.0364567,1100,6400,640,launch,1
+144,0.0368439,1100,6400,640,launch,1
+145,0.0362516,1100,6400,640,launch,1
+146,0.0361011,1100,6400,640,launch,1
+147,0.0361856,1100,6400,640,launch,1
+148,0.035902,1100,6400,640,launch,1
+149,0.0359054,1100,6400,640,launch,1
+150,0.0359784,1100,6400,640,launch,1
+151,0.0359123,1100,6400,640,launch,1
+152,0.0359021,1100,6400,640,launch,1
+153,0.0360557,1100,6400,640,launch,1
+154,0.0358893,1100,6400,640,launch,1
+155,0.0358973,1100,6400,640,launch,1
+156,0.0364882,1100,6400,640,launch,1
+157,0.035897,1100,6400,640,launch,1
+158,0.0358968,1100,6400,640,launch,1
+159,0.0361782,1100,6400,640,launch,1
+160,0.0303221,1100,6400,640,launch,1
+161,0.0349531,1100,6400,640,launch,1
+162,0.0366894,1100,6400,640,launch,1
+163,0.0364211,1100,6400,640,launch,1
+164,0.0366683,1100,6400,640,launch,1
+165,0.0360471,1100,6400,640,launch,1
+166,0.0357901,1100,6400,640,launch,1
+167,0.0360443,1100,6400,640,launch,1
+168,0.0363392,1100,6400,640,launch,1
+169,0.0363427,1100,6400,640,launch,1
+170,0.036598,1100,6400,640,launch,1
+171,0.0363349,1100,6400,640,launch,1
+172,0.0359955,1100,6400,640,launch,1
+173,0.0359654,1100,6400,640,launch,1
+174,0.0357901,1100,6400,640,launch,1
+175,0.0358146,1100,6400,640,launch,1
+176,0.0362279,1100,6400,640,launch,1
+177,0.0359029,1100,6400,640,launch,1
+178,0.03589,1100,6400,640,launch,1
+179,0.0360678,1100,6400,640,launch,1
+180,0.0302888,1100,6400,640,launch,1
+181,0.0352794,1100,6400,640,launch,1
+182,0.0366698,1100,6400,640,launch,1
+183,0.0363286,1100,6400,640,launch,1
+184,0.0363721,1100,6400,640,launch,1
+185,0.0358697,1100,6400,640,launch,1
+186,0.035905,1100,6400,640,launch,1
+187,0.0360205,1100,6400,640,launch,1
+188,0.0359124,1100,6400,640,launch,1
+189,0.0359008,1100,6400,640,launch,1
+190,0.0359646,1100,6400,640,launch,1
+191,0.0358772,1100,6400,640,launch,1
+192,0.0358759,1100,6400,640,launch,1
+193,0.0359041,1100,6400,640,launch,1
+194,0.0358803,1100,6400,640,launch,1
+195,0.0358739,1100,6400,640,launch,1
+196,0.0360359,1100,6400,640,launch,1
+197,0.0358752,1100,6400,640,launch,1
+198,0.0358873,1100,6400,640,launch,1
+199,0.036041,1100,6400,640,launch,1
+time,kernel,dimension,blocksize,operation,
+0,0.0110016,1100,6400,640,graphApiYesDependency,1
+1,0.0126716,1100,6400,640,graphApiYesDependency,1
+2,0.0150784,1100,6400,640,graphApiYesDependency,1
+3,0.0143894,1100,6400,640,graphApiYesDependency,1
+4,0.0162609,1100,6400,640,graphApiYesDependency,1
+5,0.0159805,1100,6400,640,graphApiYesDependency,1
+6,0.0188385,1100,6400,640,graphApiYesDependency,1
+7,0.014381,1100,6400,640,graphApiYesDependency,1
+8,0.0199188,1100,6400,640,graphApiYesDependency,1
+9,0.0191437,1100,6400,640,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.488807,80,12800,3200,graphApiYesDependency,1
+1,0.000893096,80,12800,3200,graphApiYesDependency,1
+2,0.000756889,80,12800,3200,graphApiYesDependency,1
+3,0.000758803,80,12800,3200,graphApiYesDependency,1
+4,0.000747431,80,12800,3200,graphApiYesDependency,1
+5,0.000774242,80,12800,3200,graphApiYesDependency,1
+6,0.000755507,80,12800,3200,graphApiYesDependency,1
+7,0.000763642,80,12800,3200,graphApiYesDependency,1
+8,0.000743614,80,12800,3200,graphApiYesDependency,1
+9,0.000857769,80,12800,3200,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.258075,80,12800,3200,launch,1
+1,0.262757,80,12800,3200,launch,1
+2,0.263521,80,12800,3200,launch,1
+3,0.271285,80,12800,3200,launch,1
+4,0.264137,80,12800,3200,launch,1
+5,0.263612,80,12800,3200,launch,1
+6,0.265112,80,12800,3200,launch,1
+7,0.267484,80,12800,3200,launch,1
+8,0.265198,80,12800,3200,launch,1
+9,0.26416,80,12800,3200,launch,1
+10,0.266271,80,12800,3200,launch,1
+11,0.266154,80,12800,3200,launch,1
+12,0.265426,80,12800,3200,launch,1
+13,0.265457,80,12800,3200,launch,1
+14,0.26675,80,12800,3200,launch,1
+15,0.265427,80,12800,3200,launch,1
+16,0.265769,80,12800,3200,launch,1
+17,0.266981,80,12800,3200,launch,1
+18,0.266882,80,12800,3200,launch,1
+19,0.266241,80,12800,3200,launch,1
+20,0.265195,80,12800,3200,launch,1
+21,0.26714,80,12800,3200,launch,1
+22,0.266315,80,12800,3200,launch,1
+23,0.266871,80,12800,3200,launch,1
+24,0.265457,80,12800,3200,launch,1
+25,0.266484,80,12800,3200,launch,1
+26,0.267025,80,12800,3200,launch,1
+27,0.265805,80,12800,3200,launch,1
+28,0.267232,80,12800,3200,launch,1
+29,0.267418,80,12800,3200,launch,1
+30,0.266987,80,12800,3200,launch,1
+31,0.266239,80,12800,3200,launch,1
+32,0.266985,80,12800,3200,launch,1
+33,0.266767,80,12800,3200,launch,1
+34,0.267277,80,12800,3200,launch,1
+35,0.265704,80,12800,3200,launch,1
+36,0.266527,80,12800,3200,launch,1
+37,0.267544,80,12800,3200,launch,1
+38,0.266658,80,12800,3200,launch,1
+39,0.266942,80,12800,3200,launch,1
+40,0.266775,80,12800,3200,launch,1
+41,0.267533,80,12800,3200,launch,1
+42,0.266763,80,12800,3200,launch,1
+43,0.267009,80,12800,3200,launch,1
+44,0.267048,80,12800,3200,launch,1
+45,0.26757,80,12800,3200,launch,1
+46,0.267008,80,12800,3200,launch,1
+47,0.266787,80,12800,3200,launch,1
+48,0.267561,80,12800,3200,launch,1
+49,0.266631,80,12800,3200,launch,1
+50,0.266468,80,12800,3200,launch,1
+51,0.267013,80,12800,3200,launch,1
+52,0.267571,80,12800,3200,launch,1
+53,0.267131,80,12800,3200,launch,1
+54,0.266225,80,12800,3200,launch,1
+55,0.268497,80,12800,3200,launch,1
+56,0.267581,80,12800,3200,launch,1
+57,0.267085,80,12800,3200,launch,1
+58,0.266957,80,12800,3200,launch,1
+59,0.269095,80,12800,3200,launch,1
+60,0.267806,80,12800,3200,launch,1
+61,0.267284,80,12800,3200,launch,1
+62,0.267049,80,12800,3200,launch,1
+63,0.268836,80,12800,3200,launch,1
+64,0.267035,80,12800,3200,launch,1
+65,0.266753,80,12800,3200,launch,1
+66,0.267893,80,12800,3200,launch,1
+67,0.269018,80,12800,3200,launch,1
+68,0.267552,80,12800,3200,launch,1
+69,0.267191,80,12800,3200,launch,1
+70,0.2679,80,12800,3200,launch,1
+71,0.268587,80,12800,3200,launch,1
+72,0.268689,80,12800,3200,launch,1
+73,0.267544,80,12800,3200,launch,1
+74,0.267115,80,12800,3200,launch,1
+75,0.267546,80,12800,3200,launch,1
+76,0.269331,80,12800,3200,launch,1
+77,0.26894,80,12800,3200,launch,1
+78,0.267533,80,12800,3200,launch,1
+79,0.267709,80,12800,3200,launch,1
+80,0.267707,80,12800,3200,launch,1
+81,0.268545,80,12800,3200,launch,1
+82,0.267566,80,12800,3200,launch,1
+83,0.268293,80,12800,3200,launch,1
+84,0.268549,80,12800,3200,launch,1
+85,0.267533,80,12800,3200,launch,1
+86,0.268836,80,12800,3200,launch,1
+87,0.26813,80,12800,3200,launch,1
+88,0.268774,80,12800,3200,launch,1
+89,0.268838,80,12800,3200,launch,1
+90,0.269664,80,12800,3200,launch,1
+91,0.267704,80,12800,3200,launch,1
+92,0.268709,80,12800,3200,launch,1
+93,0.268666,80,12800,3200,launch,1
+94,0.267834,80,12800,3200,launch,1
+95,0.269371,80,12800,3200,launch,1
+96,0.27017,80,12800,3200,launch,1
+97,0.267525,80,12800,3200,launch,1
+98,0.267191,80,12800,3200,launch,1
+99,0.269874,80,12800,3200,launch,1
+100,0.268877,80,12800,3200,launch,1
+101,0.267486,80,12800,3200,launch,1
+102,0.268448,80,12800,3200,launch,1
+103,0.270144,80,12800,3200,launch,1
+104,0.269128,80,12800,3200,launch,1
+105,0.267567,80,12800,3200,launch,1
+106,0.268845,80,12800,3200,launch,1
+107,0.270318,80,12800,3200,launch,1
+108,0.268807,80,12800,3200,launch,1
+109,0.268036,80,12800,3200,launch,1
+110,0.270099,80,12800,3200,launch,1
+111,0.269737,80,12800,3200,launch,1
+112,0.26753,80,12800,3200,launch,1
+113,0.268586,80,12800,3200,launch,1
+114,0.270131,80,12800,3200,launch,1
+115,0.269096,80,12800,3200,launch,1
+116,0.267519,80,12800,3200,launch,1
+117,0.269057,80,12800,3200,launch,1
+118,0.270324,80,12800,3200,launch,1
+119,0.269721,80,12800,3200,launch,1
+120,0.267595,80,12800,3200,launch,1
+121,0.271032,80,12800,3200,launch,1
+122,0.268387,80,12800,3200,launch,1
+123,0.269634,80,12800,3200,launch,1
+124,0.268586,80,12800,3200,launch,1
+125,0.269424,80,12800,3200,launch,1
+126,0.269356,80,12800,3200,launch,1
+127,0.26929,80,12800,3200,launch,1
+128,0.269793,80,12800,3200,launch,1
+129,0.269253,80,12800,3200,launch,1
+130,0.269444,80,12800,3200,launch,1
+131,0.269241,80,12800,3200,launch,1
+132,0.2703,80,12800,3200,launch,1
+133,0.268826,80,12800,3200,launch,1
+134,0.26963,80,12800,3200,launch,1
+135,0.269016,80,12800,3200,launch,1
+136,0.270323,80,12800,3200,launch,1
+137,0.2687,80,12800,3200,launch,1
+138,0.270347,80,12800,3200,launch,1
+139,0.270241,80,12800,3200,launch,1
+140,0.268984,80,12800,3200,launch,1
+141,0.26885,80,12800,3200,launch,1
+142,0.270166,80,12800,3200,launch,1
+143,0.270267,80,12800,3200,launch,1
+144,0.269794,80,12800,3200,launch,1
+145,0.268996,80,12800,3200,launch,1
+146,0.270212,80,12800,3200,launch,1
+147,0.269806,80,12800,3200,launch,1
+148,0.269565,80,12800,3200,launch,1
+149,0.269901,80,12800,3200,launch,1
+150,0.269939,80,12800,3200,launch,1
+151,0.269396,80,12800,3200,launch,1
+152,0.270317,80,12800,3200,launch,1
+153,0.269992,80,12800,3200,launch,1
+154,0.27024,80,12800,3200,launch,1
+155,0.267926,80,12800,3200,launch,1
+156,0.270295,80,12800,3200,launch,1
+157,0.27046,80,12800,3200,launch,1
+158,0.270263,80,12800,3200,launch,1
+159,0.269299,80,12800,3200,launch,1
+160,0.269661,80,12800,3200,launch,1
+161,0.27077,80,12800,3200,launch,1
+162,0.268577,80,12800,3200,launch,1
+163,0.270171,80,12800,3200,launch,1
+164,0.271027,80,12800,3200,launch,1
+165,0.270463,80,12800,3200,launch,1
+166,0.268352,80,12800,3200,launch,1
+167,0.270746,80,12800,3200,launch,1
+168,0.270234,80,12800,3200,launch,1
+169,0.270286,80,12800,3200,launch,1
+170,0.268861,80,12800,3200,launch,1
+171,0.267545,80,12800,3200,launch,1
+172,0.269097,80,12800,3200,launch,1
+173,0.268237,80,12800,3200,launch,1
+174,0.267549,80,12800,3200,launch,1
+175,0.267508,80,12800,3200,launch,1
+176,0.268639,80,12800,3200,launch,1
+177,0.268799,80,12800,3200,launch,1
+178,0.26752,80,12800,3200,launch,1
+179,0.267507,80,12800,3200,launch,1
+180,0.267499,80,12800,3200,launch,1
+181,0.268794,80,12800,3200,launch,1
+182,0.267527,80,12800,3200,launch,1
+183,0.267547,80,12800,3200,launch,1
+184,0.268921,80,12800,3200,launch,1
+185,0.26754,80,12800,3200,launch,1
+186,0.267536,80,12800,3200,launch,1
+187,0.268868,80,12800,3200,launch,1
+188,0.269239,80,12800,3200,launch,1
+189,0.267524,80,12800,3200,launch,1
+190,0.268024,80,12800,3200,launch,1
+191,0.268787,80,12800,3200,launch,1
+192,0.268095,80,12800,3200,launch,1
+193,0.268359,80,12800,3200,launch,1
+194,0.268659,80,12800,3200,launch,1
+195,0.269172,80,12800,3200,launch,1
+196,0.267555,80,12800,3200,launch,1
+197,0.267501,80,12800,3200,launch,1
+198,0.270076,80,12800,3200,launch,1
+199,0.267732,80,12800,3200,launch,1
+time,kernel,dimension,blocksize,operation,
+0,0.000416326,80,12800,3200,graphApiYesDependency,1
+1,0.000401728,80,12800,3200,graphApiYesDependency,1
+2,0.000509622,80,12800,3200,graphApiYesDependency,1
+3,0.000414413,80,12800,3200,graphApiYesDependency,1
+4,0.00159251,80,12800,3200,graphApiYesDependency,1
+5,0.000418981,80,12800,3200,graphApiYesDependency,1
+6,0.000531624,80,12800,3200,graphApiYesDependency,1
+7,0.000393593,80,12800,3200,graphApiYesDependency,1
+8,0.000553916,80,12800,3200,graphApiYesDependency,1
+9,0.00183333,80,12800,3200,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.491415,12,12800,6400,graphApiYesDependency,1
+1,0.000350702,12,12800,6400,graphApiYesDependency,1
+2,0.00031797,12,12800,6400,graphApiYesDependency,1
+3,0.000461101,12,12800,6400,graphApiYesDependency,1
+4,0.000328831,12,12800,6400,graphApiYesDependency,1
+5,0.000417258,12,12800,6400,graphApiYesDependency,1
+6,0.000320815,12,12800,6400,graphApiYesDependency,1
+7,0.000435111,12,12800,6400,graphApiYesDependency,1
+8,0.000314133,12,12800,6400,graphApiYesDependency,1
+9,0.000463925,12,12800,6400,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.25988,12,12800,6400,launch,1
+1,0.265442,12,12800,6400,launch,1
+2,0.266856,12,12800,6400,launch,1
+3,0.27399,12,12800,6400,launch,1
+4,0.265988,12,12800,6400,launch,1
+5,0.266431,12,12800,6400,launch,1
+6,0.267447,12,12800,6400,launch,1
+7,0.269196,12,12800,6400,launch,1
+8,0.265984,12,12800,6400,launch,1
+9,0.266513,12,12800,6400,launch,1
+10,0.269691,12,12800,6400,launch,1
+11,0.268763,12,12800,6400,launch,1
+12,0.268342,12,12800,6400,launch,1
+13,0.267305,12,12800,6400,launch,1
+14,0.268557,12,12800,6400,launch,1
+15,0.268318,12,12800,6400,launch,1
+16,0.26783,12,12800,6400,launch,1
+17,0.267253,12,12800,6400,launch,1
+18,0.268585,12,12800,6400,launch,1
+19,0.268068,12,12800,6400,launch,1
+20,0.267293,12,12800,6400,launch,1
+21,0.269346,12,12800,6400,launch,1
+22,0.271063,12,12800,6400,launch,1
+23,0.269085,12,12800,6400,launch,1
+24,0.266444,12,12800,6400,launch,1
+25,0.270158,12,12800,6400,launch,1
+26,0.267815,12,12800,6400,launch,1
+27,0.26638,12,12800,6400,launch,1
+28,0.267748,12,12800,6400,launch,1
+29,0.269983,12,12800,6400,launch,1
+30,0.268832,12,12800,6400,launch,1
+31,0.267959,12,12800,6400,launch,1
+32,0.268597,12,12800,6400,launch,1
+33,0.26798,12,12800,6400,launch,1
+34,0.267122,12,12800,6400,launch,1
+35,0.269792,12,12800,6400,launch,1
+36,0.267679,12,12800,6400,launch,1
+37,0.269072,12,12800,6400,launch,1
+38,0.267086,12,12800,6400,launch,1
+39,0.268655,12,12800,6400,launch,1
+40,0.268892,12,12800,6400,launch,1
+41,0.268983,12,12800,6400,launch,1
+42,0.269133,12,12800,6400,launch,1
+43,0.268903,12,12800,6400,launch,1
+44,0.269821,12,12800,6400,launch,1
+45,0.267941,12,12800,6400,launch,1
+46,0.271409,12,12800,6400,launch,1
+47,0.266643,12,12800,6400,launch,1
+48,0.269902,12,12800,6400,launch,1
+49,0.267431,12,12800,6400,launch,1
+50,0.26895,12,12800,6400,launch,1
+51,0.267518,12,12800,6400,launch,1
+52,0.266516,12,12800,6400,launch,1
+53,0.26705,12,12800,6400,launch,1
+54,0.267946,12,12800,6400,launch,1
+55,0.26717,12,12800,6400,launch,1
+56,0.26652,12,12800,6400,launch,1
+57,0.266251,12,12800,6400,launch,1
+58,0.268184,12,12800,6400,launch,1
+59,0.267949,12,12800,6400,launch,1
+60,0.266646,12,12800,6400,launch,1
+61,0.267309,12,12800,6400,launch,1
+62,0.268564,12,12800,6400,launch,1
+63,0.266508,12,12800,6400,launch,1
+64,0.267146,12,12800,6400,launch,1
+65,0.266508,12,12800,6400,launch,1
+66,0.268774,12,12800,6400,launch,1
+67,0.267519,12,12800,6400,launch,1
+68,0.269206,12,12800,6400,launch,1
+69,0.26671,12,12800,6400,launch,1
+70,0.268041,12,12800,6400,launch,1
+71,0.268182,12,12800,6400,launch,1
+72,0.266734,12,12800,6400,launch,1
+73,0.266521,12,12800,6400,launch,1
+74,0.266515,12,12800,6400,launch,1
+75,0.268257,12,12800,6400,launch,1
+76,0.268077,12,12800,6400,launch,1
+77,0.269235,12,12800,6400,launch,1
+78,0.267557,12,12800,6400,launch,1
+79,0.266511,12,12800,6400,launch,1
+80,0.268284,12,12800,6400,launch,1
+81,0.266392,12,12800,6400,launch,1
+82,0.268291,12,12800,6400,launch,1
+83,0.266505,12,12800,6400,launch,1
+84,0.270574,12,12800,6400,launch,1
+85,0.266543,12,12800,6400,launch,1
+86,0.2665,12,12800,6400,launch,1
+87,0.266507,12,12800,6400,launch,1
+88,0.26917,12,12800,6400,launch,1
+89,0.269752,12,12800,6400,launch,1
+90,0.26643,12,12800,6400,launch,1
+91,0.266508,12,12800,6400,launch,1
+92,0.266512,12,12800,6400,launch,1
+93,0.268912,12,12800,6400,launch,1
+94,0.267008,12,12800,6400,launch,1
+95,0.266506,12,12800,6400,launch,1
+96,0.266504,12,12800,6400,launch,1
+97,0.26868,12,12800,6400,launch,1
+98,0.267028,12,12800,6400,launch,1
+99,0.269949,12,12800,6400,launch,1
+100,0.268257,12,12800,6400,launch,1
+101,0.268814,12,12800,6400,launch,1
+102,0.266665,12,12800,6400,launch,1
+103,0.267797,12,12800,6400,launch,1
+104,0.266507,12,12800,6400,launch,1
+105,0.268736,12,12800,6400,launch,1
+106,0.266504,12,12800,6400,launch,1
+107,0.268032,12,12800,6400,launch,1
+108,0.268312,12,12800,6400,launch,1
+109,0.267378,12,12800,6400,launch,1
+110,0.267782,12,12800,6400,launch,1
+111,0.268236,12,12800,6400,launch,1
+112,0.26782,12,12800,6400,launch,1
+113,0.266568,12,12800,6400,launch,1
+114,0.268785,12,12800,6400,launch,1
+115,0.267446,12,12800,6400,launch,1
+116,0.268245,12,12800,6400,launch,1
+117,0.269003,12,12800,6400,launch,1
+118,0.268404,12,12800,6400,launch,1
+119,0.266578,12,12800,6400,launch,1
+120,0.268779,12,12800,6400,launch,1
+121,0.267412,12,12800,6400,launch,1
+122,0.268961,12,12800,6400,launch,1
+123,0.266325,12,12800,6400,launch,1
+124,0.268652,12,12800,6400,launch,1
+125,0.267755,12,12800,6400,launch,1
+126,0.267756,12,12800,6400,launch,1
+127,0.267382,12,12800,6400,launch,1
+128,0.26867,12,12800,6400,launch,1
+129,0.267993,12,12800,6400,launch,1
+130,0.266442,12,12800,6400,launch,1
+131,0.268162,12,12800,6400,launch,1
+132,0.268513,12,12800,6400,launch,1
+133,0.266439,12,12800,6400,launch,1
+134,0.269679,12,12800,6400,launch,1
+135,0.268038,12,12800,6400,launch,1
+136,0.266527,12,12800,6400,launch,1
+137,0.26825,12,12800,6400,launch,1
+138,0.268675,12,12800,6400,launch,1
+139,0.270288,12,12800,6400,launch,1
+140,0.266679,12,12800,6400,launch,1
+141,0.267898,12,12800,6400,launch,1
+142,0.270262,12,12800,6400,launch,1
+143,0.269078,12,12800,6400,launch,1
+144,0.268479,12,12800,6400,launch,1
+145,0.268472,12,12800,6400,launch,1
+146,0.267254,12,12800,6400,launch,1
+147,0.26977,12,12800,6400,launch,1
+148,0.268195,12,12800,6400,launch,1
+149,0.267106,12,12800,6400,launch,1
+150,0.27,12,12800,6400,launch,1
+151,0.267488,12,12800,6400,launch,1
+152,0.268258,12,12800,6400,launch,1
+153,0.266585,12,12800,6400,launch,1
+154,0.268763,12,12800,6400,launch,1
+155,0.269438,12,12800,6400,launch,1
+156,0.267436,12,12800,6400,launch,1
+157,0.268525,12,12800,6400,launch,1
+158,0.26775,12,12800,6400,launch,1
+159,0.269568,12,12800,6400,launch,1
+160,0.268792,12,12800,6400,launch,1
+161,0.269262,12,12800,6400,launch,1
+162,0.271059,12,12800,6400,launch,1
+163,0.271094,12,12800,6400,launch,1
+164,0.266805,12,12800,6400,launch,1
+165,0.269798,12,12800,6400,launch,1
+166,0.26908,12,12800,6400,launch,1
+167,0.269077,12,12800,6400,launch,1
+168,0.267187,12,12800,6400,launch,1
+169,0.270771,12,12800,6400,launch,1
+170,0.268542,12,12800,6400,launch,1
+171,0.268818,12,12800,6400,launch,1
+172,0.268223,12,12800,6400,launch,1
+173,0.270275,12,12800,6400,launch,1
+174,0.268554,12,12800,6400,launch,1
+175,0.269213,12,12800,6400,launch,1
+176,0.267143,12,12800,6400,launch,1
+177,0.269049,12,12800,6400,launch,1
+178,0.269553,12,12800,6400,launch,1
+179,0.267639,12,12800,6400,launch,1
+180,0.270366,12,12800,6400,launch,1
+181,0.27268,12,12800,6400,launch,1
+182,0.268156,12,12800,6400,launch,1
+183,0.268015,12,12800,6400,launch,1
+184,0.26837,12,12800,6400,launch,1
+185,0.268891,12,12800,6400,launch,1
+186,0.268539,12,12800,6400,launch,1
+187,0.268641,12,12800,6400,launch,1
+188,0.2685,12,12800,6400,launch,1
+189,0.268957,12,12800,6400,launch,1
+190,0.271347,12,12800,6400,launch,1
+191,0.268167,12,12800,6400,launch,1
+192,0.271415,12,12800,6400,launch,1
+193,0.26863,12,12800,6400,launch,1
+194,0.268532,12,12800,6400,launch,1
+195,0.267503,12,12800,6400,launch,1
+196,0.271279,12,12800,6400,launch,1
+197,0.26903,12,12800,6400,launch,1
+198,0.269508,12,12800,6400,launch,1
+199,0.268195,12,12800,6400,launch,1
+time,kernel,dimension,blocksize,operation,
+0,0.000227299,12,12800,6400,graphApiYesDependency,1
+1,5.5195e-05,12,12800,6400,graphApiYesDependency,1
+2,0.000208744,12,12800,6400,graphApiYesDependency,1
+3,5.1968e-05,12,12800,6400,graphApiYesDependency,1
+4,4.9373e-05,12,12800,6400,graphApiYesDependency,1
+5,0.000219043,12,12800,6400,graphApiYesDependency,1
+6,5.1758e-05,12,12800,6400,graphApiYesDependency,1
+7,5.1988e-05,12,12800,6400,graphApiYesDependency,1
+8,0.000361042,12,12800,6400,graphApiYesDependency,1
+9,5.6016e-05,12,12800,6400,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,2.65371,8400,12800,640,graphApiYesDependency,1
+1,3.46323,8400,12800,640,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.358968,8400,12800,640,launch,1
+1,0.285214,8400,12800,640,launch,1
+2,0.285399,8400,12800,640,launch,1
+3,0.293406,8400,12800,640,launch,1
+4,0.289738,8400,12800,640,launch,1
+5,0.287499,8400,12800,640,launch,1
+6,0.287979,8400,12800,640,launch,1
+7,0.29198,8400,12800,640,launch,1
+8,0.288707,8400,12800,640,launch,1
+9,0.287958,8400,12800,640,launch,1
+10,0.290392,8400,12800,640,launch,1
+11,0.29067,8400,12800,640,launch,1
+12,0.28819,8400,12800,640,launch,1
+13,0.288984,8400,12800,640,launch,1
+14,0.290995,8400,12800,640,launch,1
+15,0.288696,8400,12800,640,launch,1
+16,0.2888,8400,12800,640,launch,1
+17,0.29127,8400,12800,640,launch,1
+18,0.288893,8400,12800,640,launch,1
+19,0.289025,8400,12800,640,launch,1
+20,0.353329,8400,12800,640,launch,1
+21,0.287261,8400,12800,640,launch,1
+22,0.288577,8400,12800,640,launch,1
+23,0.292356,8400,12800,640,launch,1
+24,0.288983,8400,12800,640,launch,1
+25,0.288098,8400,12800,640,launch,1
+26,0.289494,8400,12800,640,launch,1
+27,0.292654,8400,12800,640,launch,1
+28,0.288858,8400,12800,640,launch,1
+29,0.288525,8400,12800,640,launch,1
+30,0.29161,8400,12800,640,launch,1
+31,0.289063,8400,12800,640,launch,1
+32,0.288976,8400,12800,640,launch,1
+33,0.290685,8400,12800,640,launch,1
+34,0.290936,8400,12800,640,launch,1
+35,0.288814,8400,12800,640,launch,1
+36,0.290085,8400,12800,640,launch,1
+37,0.291251,8400,12800,640,launch,1
+38,0.290318,8400,12800,640,launch,1
+39,0.288534,8400,12800,640,launch,1
+time,kernel,dimension,blocksize,operation,
+0,0.132663,8400,12800,640,graphApiYesDependency,1
+1,0.161021,8400,12800,640,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.501422,576,25600,3200,graphApiYesDependency,1
+1,0.00471271,576,25600,3200,graphApiYesDependency,1
+2,0.00469503,576,25600,3200,graphApiYesDependency,1
+3,0.00474767,576,25600,3200,graphApiYesDependency,1
+4,0.00473733,576,25600,3200,graphApiYesDependency,1
+5,0.00485832,576,25600,3200,graphApiYesDependency,1
+6,0.00473329,576,25600,3200,graphApiYesDependency,1
+7,0.0047306,576,25600,3200,graphApiYesDependency,1
+8,0.00482674,576,25600,3200,graphApiYesDependency,1
+9,0.00497676,576,25600,3200,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,2.09953,576,25600,3200,launch,1
+1,2.10937,576,25600,3200,launch,1
+2,2.11321,576,25600,3200,launch,1
+3,2.11449,576,25600,3200,launch,1
+4,2.121,576,25600,3200,launch,1
+5,2.12007,576,25600,3200,launch,1
+6,2.12418,576,25600,3200,launch,1
+7,2.12413,576,25600,3200,launch,1
+8,2.12605,576,25600,3200,launch,1
+9,2.1313,576,25600,3200,launch,1
+10,2.13016,576,25600,3200,launch,1
+11,2.13124,576,25600,3200,launch,1
+12,2.13501,576,25600,3200,launch,1
+13,2.13611,576,25600,3200,launch,1
+14,2.13614,576,25600,3200,launch,1
+15,2.13869,576,25600,3200,launch,1
+16,2.1398,576,25600,3200,launch,1
+17,2.14233,576,25600,3200,launch,1
+18,2.14361,576,25600,3200,launch,1
+19,2.14572,576,25600,3200,launch,1
+20,2.14202,576,25600,3200,launch,1
+21,2.14781,576,25600,3200,launch,1
+22,2.14469,576,25600,3200,launch,1
+23,2.14672,576,25600,3200,launch,1
+24,2.14924,576,25600,3200,launch,1
+25,2.14584,576,25600,3200,launch,1
+26,2.13297,576,25600,3200,launch,1
+27,2.13351,576,25600,3200,launch,1
+28,2.13434,576,25600,3200,launch,1
+29,2.13363,576,25600,3200,launch,1
+30,2.13625,576,25600,3200,launch,1
+31,2.1392,576,25600,3200,launch,1
+32,2.13751,576,25600,3200,launch,1
+33,2.13962,576,25600,3200,launch,1
+34,2.1391,576,25600,3200,launch,1
+35,2.13731,576,25600,3200,launch,1
+36,2.14079,576,25600,3200,launch,1
+37,2.13886,576,25600,3200,launch,1
+38,2.14402,576,25600,3200,launch,1
+39,2.14178,576,25600,3200,launch,1
+40,2.13993,576,25600,3200,launch,1
+41,2.14026,576,25600,3200,launch,1
+42,2.14101,576,25600,3200,launch,1
+43,2.14265,576,25600,3200,launch,1
+44,2.1428,576,25600,3200,launch,1
+45,2.14413,576,25600,3200,launch,1
+46,2.14243,576,25600,3200,launch,1
+47,2.14404,576,25600,3200,launch,1
+48,2.14471,576,25600,3200,launch,1
+49,2.14497,576,25600,3200,launch,1
+50,2.1439,576,25600,3200,launch,1
+51,2.14298,576,25600,3200,launch,1
+52,2.14413,576,25600,3200,launch,1
+53,2.14589,576,25600,3200,launch,1
+54,2.14635,576,25600,3200,launch,1
+55,2.15001,576,25600,3200,launch,1
+56,2.14413,576,25600,3200,launch,1
+57,2.1468,576,25600,3200,launch,1
+58,2.14576,576,25600,3200,launch,1
+59,2.14615,576,25600,3200,launch,1
+60,2.14933,576,25600,3200,launch,1
+61,2.14673,576,25600,3200,launch,1
+62,2.14422,576,25600,3200,launch,1
+63,2.14743,576,25600,3200,launch,1
+64,2.14447,576,25600,3200,launch,1
+65,2.14388,576,25600,3200,launch,1
+66,2.14565,576,25600,3200,launch,1
+67,2.14673,576,25600,3200,launch,1
+68,2.14776,576,25600,3200,launch,1
+69,2.14953,576,25600,3200,launch,1
+70,2.14601,576,25600,3200,launch,1
+71,2.14856,576,25600,3200,launch,1
+72,2.14852,576,25600,3200,launch,1
+73,2.14586,576,25600,3200,launch,1
+74,2.14734,576,25600,3200,launch,1
+75,2.1442,576,25600,3200,launch,1
+76,2.14994,576,25600,3200,launch,1
+77,2.14482,576,25600,3200,launch,1
+78,2.14688,576,25600,3200,launch,1
+79,2.14886,576,25600,3200,launch,1
+80,2.14805,576,25600,3200,launch,1
+81,2.14697,576,25600,3200,launch,1
+82,2.14696,576,25600,3200,launch,1
+83,2.14259,576,25600,3200,launch,1
+84,2.14796,576,25600,3200,launch,1
+85,2.14562,576,25600,3200,launch,1
+86,2.14789,576,25600,3200,launch,1
+87,2.14772,576,25600,3200,launch,1
+88,2.14839,576,25600,3200,launch,1
+89,2.14766,576,25600,3200,launch,1
+90,2.1462,576,25600,3200,launch,1
+91,2.14722,576,25600,3200,launch,1
+92,2.14475,576,25600,3200,launch,1
+93,2.14856,576,25600,3200,launch,1
+94,2.14402,576,25600,3200,launch,1
+95,2.14645,576,25600,3200,launch,1
+96,2.14349,576,25600,3200,launch,1
+97,2.14874,576,25600,3200,launch,1
+98,2.14548,576,25600,3200,launch,1
+99,2.14818,576,25600,3200,launch,1
+100,2.14114,576,25600,3200,launch,1
+101,2.14576,576,25600,3200,launch,1
+102,2.1457,576,25600,3200,launch,1
+103,2.14458,576,25600,3200,launch,1
+104,2.14712,576,25600,3200,launch,1
+105,2.14283,576,25600,3200,launch,1
+106,2.14315,576,25600,3200,launch,1
+107,2.14851,576,25600,3200,launch,1
+108,2.14524,576,25600,3200,launch,1
+109,2.14449,576,25600,3200,launch,1
+110,2.14523,576,25600,3200,launch,1
+111,2.14586,576,25600,3200,launch,1
+112,2.14535,576,25600,3200,launch,1
+113,2.14584,576,25600,3200,launch,1
+114,2.14235,576,25600,3200,launch,1
+115,2.14432,576,25600,3200,launch,1
+116,2.1443,576,25600,3200,launch,1
+117,2.14418,576,25600,3200,launch,1
+118,2.14349,576,25600,3200,launch,1
+119,2.14521,576,25600,3200,launch,1
+120,2.14092,576,25600,3200,launch,1
+121,2.14181,576,25600,3200,launch,1
+122,2.14529,576,25600,3200,launch,1
+123,2.14412,576,25600,3200,launch,1
+124,2.14297,576,25600,3200,launch,1
+125,2.1427,576,25600,3200,launch,1
+126,2.14827,576,25600,3200,launch,1
+127,2.14239,576,25600,3200,launch,1
+128,2.14131,576,25600,3200,launch,1
+129,2.14433,576,25600,3200,launch,1
+130,2.14396,576,25600,3200,launch,1
+131,2.14485,576,25600,3200,launch,1
+132,2.14396,576,25600,3200,launch,1
+133,2.14205,576,25600,3200,launch,1
+134,2.14319,576,25600,3200,launch,1
+135,2.14108,576,25600,3200,launch,1
+136,2.1424,576,25600,3200,launch,1
+137,2.14316,576,25600,3200,launch,1
+138,2.14259,576,25600,3200,launch,1
+139,2.14271,576,25600,3200,launch,1
+140,2.14184,576,25600,3200,launch,1
+141,2.14554,576,25600,3200,launch,1
+142,2.14258,576,25600,3200,launch,1
+143,2.14421,576,25600,3200,launch,1
+144,2.1432,576,25600,3200,launch,1
+145,2.14313,576,25600,3200,launch,1
+146,2.14101,576,25600,3200,launch,1
+147,2.14369,576,25600,3200,launch,1
+148,2.14314,576,25600,3200,launch,1
+149,2.14259,576,25600,3200,launch,1
+150,2.14281,576,25600,3200,launch,1
+151,2.14376,576,25600,3200,launch,1
+152,2.14235,576,25600,3200,launch,1
+153,2.14285,576,25600,3200,launch,1
+154,2.14489,576,25600,3200,launch,1
+155,2.14264,576,25600,3200,launch,1
+156,2.14267,576,25600,3200,launch,1
+157,2.14394,576,25600,3200,launch,1
+158,2.14187,576,25600,3200,launch,1
+159,2.14171,576,25600,3200,launch,1
+160,2.14316,576,25600,3200,launch,1
+161,2.14231,576,25600,3200,launch,1
+162,2.14269,576,25600,3200,launch,1
+163,2.14296,576,25600,3200,launch,1
+164,2.14406,576,25600,3200,launch,1
+165,2.14356,576,25600,3200,launch,1
+166,2.143,576,25600,3200,launch,1
+167,2.1443,576,25600,3200,launch,1
+168,2.14356,576,25600,3200,launch,1
+169,2.14307,576,25600,3200,launch,1
+170,2.14236,576,25600,3200,launch,1
+171,2.14142,576,25600,3200,launch,1
+172,2.14083,576,25600,3200,launch,1
+173,2.14045,576,25600,3200,launch,1
+174,2.14205,576,25600,3200,launch,1
+175,2.14307,576,25600,3200,launch,1
+176,2.14318,576,25600,3200,launch,1
+177,2.143,576,25600,3200,launch,1
+178,2.14466,576,25600,3200,launch,1
+179,2.14172,576,25600,3200,launch,1
+180,2.14159,576,25600,3200,launch,1
+181,2.14177,576,25600,3200,launch,1
+182,2.14318,576,25600,3200,launch,1
+183,2.14246,576,25600,3200,launch,1
+184,2.14194,576,25600,3200,launch,1
+185,2.14555,576,25600,3200,launch,1
+186,2.1428,576,25600,3200,launch,1
+187,2.14114,576,25600,3200,launch,1
+188,2.14516,576,25600,3200,launch,1
+189,2.14303,576,25600,3200,launch,1
+190,2.1426,576,25600,3200,launch,1
+191,2.14678,576,25600,3200,launch,1
+192,2.14262,576,25600,3200,launch,1
+193,2.14133,576,25600,3200,launch,1
+194,2.14515,576,25600,3200,launch,1
+195,2.14199,576,25600,3200,launch,1
+196,2.14381,576,25600,3200,launch,1
+197,2.14188,576,25600,3200,launch,1
+198,2.14342,576,25600,3200,launch,1
+199,2.14393,576,25600,3200,launch,1
+time,kernel,dimension,blocksize,operation,
+0,0.00437544,576,25600,3200,graphApiYesDependency,1
+1,0.00540068,576,25600,3200,graphApiYesDependency,1
+2,0.00547805,576,25600,3200,graphApiYesDependency,1
+3,0.00536175,576,25600,3200,graphApiYesDependency,1
+4,0.005409,576,25600,3200,graphApiYesDependency,1
+5,0.00539496,576,25600,3200,graphApiYesDependency,1
+6,0.00523214,576,25600,3200,graphApiYesDependency,1
+7,0.00539249,576,25600,3200,graphApiYesDependency,1
+8,0.00555752,576,25600,3200,graphApiYesDependency,1
+9,0.00555815,576,25600,3200,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,0.486324,80,25600,6400,graphApiYesDependency,1
+1,0.000840186,80,25600,6400,graphApiYesDependency,1
+2,0.000730529,80,25600,6400,graphApiYesDependency,1
+3,0.000787427,80,25600,6400,graphApiYesDependency,1
+4,0.000813355,80,25600,6400,graphApiYesDependency,1
+5,0.00083689,80,25600,6400,graphApiYesDependency,1
+6,0.000814988,80,25600,6400,graphApiYesDependency,1
+7,0.000807475,80,25600,6400,graphApiYesDependency,1
+8,0.00080483,80,25600,6400,graphApiYesDependency,1
+9,0.000790933,80,25600,6400,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+0,2.12367,80,25600,6400,launch,1
+1,2.13012,80,25600,6400,launch,1
+2,2.13449,80,25600,6400,launch,1
+3,2.15042,80,25600,6400,launch,1
+4,2.14741,80,25600,6400,launch,1
+5,2.13641,80,25600,6400,launch,1
+6,2.12943,80,25600,6400,launch,1
+7,2.13175,80,25600,6400,launch,1
+8,2.1362,80,25600,6400,launch,1
+9,2.15143,80,25600,6400,launch,1
+10,2.15074,80,25600,6400,launch,1
+11,2.14639,80,25600,6400,launch,1
+12,2.159,80,25600,6400,launch,1
+13,2.15369,80,25600,6400,launch,1
+14,2.15247,80,25600,6400,launch,1
+15,2.14841,80,25600,6400,launch,1
+16,2.14811,80,25600,6400,launch,1
+17,2.15874,80,25600,6400,launch,1
+18,2.15775,80,25600,6400,launch,1
+19,2.14777,80,25600,6400,launch,1
+20,2.15736,80,25600,6400,launch,1
+21,2.14684,80,25600,6400,launch,1
+22,2.14121,80,25600,6400,launch,1
+23,2.13428,80,25600,6400,launch,1
+24,2.14221,80,25600,6400,launch,1
+25,2.14735,80,25600,6400,launch,1
+26,2.1478,80,25600,6400,launch,1
+27,2.15218,80,25600,6400,launch,1
+28,2.14234,80,25600,6400,launch,1
+29,2.14217,80,25600,6400,launch,1
+30,2.15488,80,25600,6400,launch,1
+31,2.14656,80,25600,6400,launch,1
+32,2.14556,80,25600,6400,launch,1
+33,2.16096,80,25600,6400,launch,1
+34,2.15512,80,25600,6400,launch,1
+35,2.14704,80,25600,6400,launch,1
+36,2.1427,80,25600,6400,launch,1
+37,2.1475,80,25600,6400,launch,1
+38,2.15687,80,25600,6400,launch,1
+39,2.14609,80,25600,6400,launch,1
+40,2.145,80,25600,6400,launch,1
+41,2.16271,80,25600,6400,launch,1
+42,2.14623,80,25600,6400,launch,1
+43,2.15589,80,25600,6400,launch,1
+44,2.15631,80,25600,6400,launch,1
+45,2.15466,80,25600,6400,launch,1
+46,2.15762,80,25600,6400,launch,1
+47,2.15582,80,25600,6400,launch,1
+48,2.14894,80,25600,6400,launch,1
+49,2.15826,80,25600,6400,launch,1
+50,2.15489,80,25600,6400,launch,1
+51,2.15918,80,25600,6400,launch,1
+52,2.15799,80,25600,6400,launch,1
+53,2.17081,80,25600,6400,launch,1
+54,2.16352,80,25600,6400,launch,1
+55,2.15896,80,25600,6400,launch,1
+56,2.15987,80,25600,6400,launch,1
+57,2.17695,80,25600,6400,launch,1
+58,2.16001,80,25600,6400,launch,1
+59,2.16123,80,25600,6400,launch,1
+60,2.16243,80,25600,6400,launch,1
+61,2.16339,80,25600,6400,launch,1
+62,2.1565,80,25600,6400,launch,1
+63,2.15237,80,25600,6400,launch,1
+64,2.15918,80,25600,6400,launch,1
+65,2.14379,80,25600,6400,launch,1
+66,2.1564,80,25600,6400,launch,1
+67,2.15071,80,25600,6400,launch,1
+68,2.16297,80,25600,6400,launch,1
+69,2.14944,80,25600,6400,launch,1
+70,2.15364,80,25600,6400,launch,1
+71,2.16072,80,25600,6400,launch,1
+72,2.1593,80,25600,6400,launch,1
+73,2.15447,80,25600,6400,launch,1
+74,2.16571,80,25600,6400,launch,1
+75,2.16819,80,25600,6400,launch,1
+76,2.15749,80,25600,6400,launch,1
+77,2.14342,80,25600,6400,launch,1
+78,2.15755,80,25600,6400,launch,1
+79,2.14823,80,25600,6400,launch,1
+80,2.13844,80,25600,6400,launch,1
+81,2.16121,80,25600,6400,launch,1
+82,2.15633,80,25600,6400,launch,1
+83,2.15923,80,25600,6400,launch,1
+84,2.1547,80,25600,6400,launch,1
+85,2.16051,80,25600,6400,launch,1
+86,2.15507,80,25600,6400,launch,1
+87,2.16446,80,25600,6400,launch,1
+88,2.15643,80,25600,6400,launch,1
+89,2.15018,80,25600,6400,launch,1
+90,2.1372,80,25600,6400,launch,1
+91,2.14189,80,25600,6400,launch,1
+92,2.13571,80,25600,6400,launch,1
+93,2.14909,80,25600,6400,launch,1
+94,2.15309,80,25600,6400,launch,1
+95,2.16038,80,25600,6400,launch,1
+96,2.14964,80,25600,6400,launch,1
+97,2.16865,80,25600,6400,launch,1
+98,2.14593,80,25600,6400,launch,1
+99,2.13666,80,25600,6400,launch,1
+100,2.15033,80,25600,6400,launch,1
+101,2.14354,80,25600,6400,launch,1
+102,2.15171,80,25600,6400,launch,1
+103,2.1504,80,25600,6400,launch,1
+104,2.16664,80,25600,6400,launch,1
+105,2.15249,80,25600,6400,launch,1
+106,2.13558,80,25600,6400,launch,1
+107,2.13664,80,25600,6400,launch,1
+108,2.162,80,25600,6400,launch,1
+109,2.15745,80,25600,6400,launch,1
+110,2.1464,80,25600,6400,launch,1
+111,2.14719,80,25600,6400,launch,1
+112,2.1523,80,25600,6400,launch,1
+113,2.15778,80,25600,6400,launch,1
+114,2.15326,80,25600,6400,launch,1
+115,2.15342,80,25600,6400,launch,1
+116,2.16021,80,25600,6400,launch,1
+117,2.1471,80,25600,6400,launch,1
+118,2.15675,80,25600,6400,launch,1
+119,2.15155,80,25600,6400,launch,1
+120,2.14166,80,25600,6400,launch,1
+121,2.16282,80,25600,6400,launch,1
+122,2.15878,80,25600,6400,launch,1
+123,2.15318,80,25600,6400,launch,1
+124,2.15701,80,25600,6400,launch,1
+125,2.15027,80,25600,6400,launch,1
+126,2.13648,80,25600,6400,launch,1
+127,2.14205,80,25600,6400,launch,1
+128,2.17858,80,25600,6400,launch,1
+129,2.14121,80,25600,6400,launch,1
+130,2.15098,80,25600,6400,launch,1
+131,2.13519,80,25600,6400,launch,1
+132,2.14366,80,25600,6400,launch,1
+133,2.14003,80,25600,6400,launch,1
+134,2.13444,80,25600,6400,launch,1
+135,2.15197,80,25600,6400,launch,1
+136,2.14834,80,25600,6400,launch,1
+137,2.138,80,25600,6400,launch,1
+138,2.14184,80,25600,6400,launch,1
+139,2.13891,80,25600,6400,launch,1
+140,2.14423,80,25600,6400,launch,1
+141,2.14572,80,25600,6400,launch,1
+142,2.16293,80,25600,6400,launch,1
+143,2.13539,80,25600,6400,launch,1
+144,2.13828,80,25600,6400,launch,1
+145,2.13871,80,25600,6400,launch,1
+146,2.14135,80,25600,6400,launch,1
+147,2.14289,80,25600,6400,launch,1
+148,2.13509,80,25600,6400,launch,1
+149,2.17268,80,25600,6400,launch,1
+150,2.15663,80,25600,6400,launch,1
+151,2.13352,80,25600,6400,launch,1
+152,2.1534,80,25600,6400,launch,1
+153,2.14962,80,25600,6400,launch,1
+154,2.15875,80,25600,6400,launch,1
+155,2.16918,80,25600,6400,launch,1
+156,2.16936,80,25600,6400,launch,1
+157,2.13516,80,25600,6400,launch,1
+158,2.14746,80,25600,6400,launch,1
+159,2.16065,80,25600,6400,launch,1
+160,2.1467,80,25600,6400,launch,1
+161,2.15782,80,25600,6400,launch,1
+162,2.17305,80,25600,6400,launch,1
+163,2.17415,80,25600,6400,launch,1
+164,2.15762,80,25600,6400,launch,1
+165,2.14748,80,25600,6400,launch,1
+166,2.13695,80,25600,6400,launch,1
+167,2.14435,80,25600,6400,launch,1
+168,2.15256,80,25600,6400,launch,1
+169,2.15712,80,25600,6400,launch,1
+170,2.16651,80,25600,6400,launch,1
+171,2.14865,80,25600,6400,launch,1
+172,2.14981,80,25600,6400,launch,1
+173,2.15896,80,25600,6400,launch,1
+174,2.15765,80,25600,6400,launch,1
+175,2.15309,80,25600,6400,launch,1
+176,2.14935,80,25600,6400,launch,1
+177,2.15969,80,25600,6400,launch,1
+178,2.15942,80,25600,6400,launch,1
+179,2.14428,80,25600,6400,launch,1
+180,2.15318,80,25600,6400,launch,1
+181,2.16322,80,25600,6400,launch,1
+182,2.16461,80,25600,6400,launch,1
+183,2.15773,80,25600,6400,launch,1
+184,2.17573,80,25600,6400,launch,1
+185,2.14256,80,25600,6400,launch,1
+186,2.1493,80,25600,6400,launch,1
+187,2.1603,80,25600,6400,launch,1
+188,2.14683,80,25600,6400,launch,1
+189,2.13776,80,25600,6400,launch,1
+190,2.14898,80,25600,6400,launch,1
+191,2.14521,80,25600,6400,launch,1
+192,2.15079,80,25600,6400,launch,1
+193,2.13885,80,25600,6400,launch,1
+194,2.16444,80,25600,6400,launch,1
+195,2.14107,80,25600,6400,launch,1
+196,2.15736,80,25600,6400,launch,1
+197,2.17003,80,25600,6400,launch,1
+198,2.15415,80,25600,6400,launch,1
+199,2.15216,80,25600,6400,launch,1
+time,kernel,dimension,blocksize,operation,
+0,0.000408962,80,25600,6400,graphApiYesDependency,1
+1,0.000375078,80,25600,6400,graphApiYesDependency,1
+2,0.000636622,80,25600,6400,graphApiYesDependency,1
+3,0.000678741,80,25600,6400,graphApiYesDependency,1
+4,0.00200007,80,25600,6400,graphApiYesDependency,1
+5,0.000652722,80,25600,6400,graphApiYesDependency,1
+6,0.000798858,80,25600,6400,graphApiYesDependency,1
+7,0.000804529,80,25600,6400,graphApiYesDependency,1
+8,0.00077313,80,25600,6400,graphApiYesDependency,1
+9,0.00195346,80,25600,6400,graphApiYesDependency,1
+time,kernel,dimension,blocksize,operation,
+time,kernel,dimension,blocksize,operation,
+time,kernel,dimension,blocksize,operation,
+end Time 2022-06-07 22:39:24
