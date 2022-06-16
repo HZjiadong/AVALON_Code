@@ -1,0 +1,11 @@
+time,kernel,dimension,blocksize,operation,
+0,0.387562,2,29440,29440,graphApiYesDependency,1
+1,0.000973599,2,29440,29440,graphApiYesDependency,1
+2,0.000911731,2,29440,29440,graphApiYesDependency,1
+3,0.000997543,2,29440,29440,graphApiYesDependency,1
+4,0.000992635,2,29440,29440,graphApiYesDependency,1
+5,0.00093212,2,29440,29440,graphApiYesDependency,1
+6,0.00100456,2,29440,29440,graphApiYesDependency,1
+7,0.000850516,2,29440,29440,graphApiYesDependency,1
+8,0.000904328,2,29440,29440,graphApiYesDependency,1
+9,0.000877427,2,29440,29440,graphApiYesDependency,1
