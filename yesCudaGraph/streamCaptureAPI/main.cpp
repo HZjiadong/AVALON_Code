@@ -178,13 +178,13 @@ int main(int argc, char *argv[]) {
 
         //Initialization of cuda graph
         bool graphCreated = false;
-        clock_gettime(CLOCK_REALTIME, &start_time);
         cudaGraph_t graph;
         cudaGraphExec_t instance;
 
         //  Begin Caputure
+        clock_gettime(CLOCK_REALTIME, &start_time);
         checkCudaErrors(cudaStreamBeginCapture(stream, cudaStreamCaptureModeGlobal));
-        call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); //cette function est une stream cuda, not C++ stream!
+        call_kernel_number = gpu_blas_mmul(d_A, d_B, d_C, nr_rows_A, nr_cols_A, nr_cols_B, handle); 
         //  End Capture
         checkCudaErrors(cudaStreamEndCapture(stream, &graph));
         clock_gettime(CLOCK_REALTIME, &end_time);
